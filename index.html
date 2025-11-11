@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - WDD 231 Home Page</title>
+
+    <meta name="description" content="A personal portfolio and home page for WDD 231 assignments and projects.">
+    <meta name="author" content="Matthew Osaruyi Eruogun">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css" media="screen and (min-width: 32rem)">
+
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/courses.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-area">
+            <img src="images/app-indicator.svg" alt="Site Logo" class="site-logo">
+            <span>Matthew Osaruyi Eruogun</span>
+        </div>
+        <button id="menu-button" class="hamburger">&#9776;</button>
+
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chamber/index.html">Chamber Project</a></li>
+                <li><a href="final/index.html">Final Project</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Home</h1>
+
+        <div class="main-content-grid">
+
+            <section class="about-me">
+                <h2>About Me</h2>
+            
+                <p>
+                    I am a dedicated student and developer currently pursuing a Bachelor's Degree in Software Development at BYU-Idaho. This
+                    journey follows my prior achievement, as a BSc. holder in Computer Science.
+                </p>
+            
+                <p>
+                    My focus is on bridging the gap between theoretical computer science and practical, user-centric web
+                    applications and I am particularly passionate about front-end technologies especially JavaScript, modern CSS, and
+                    performance optimization as they are key to creating accessible and high-quality user experiences.
+                </p>
+            
+                <p>
+                    I believe that good software is simple, robust, and clean, and I am driven to master the necessary tools to make
+                    that happen.
+                </p>
+            
+            </section>
+
+            <section class="student-photo">
+                <h2>Student Photo</h2>
+                <div class="photo-placeholder">
+                    <img src="images/me.webp" alt="Your Profile Picture" loading="lazy">
+                </div>
+            </section>
+
+            <section class="courses">
+                <h2>Web Certificate Courses</h2>
+
+                <div class="filter-buttons">
+                    <button id="filter-all">All</button>
+                    <button id="filter-cse">CSE</button>
+                    <button id="filter-wdd">WDD</button>
+                </div>
+
+                <div id="course-cards" class="course-grid">
+                </div>
+
+                <p class="credits-summary">
+                    The total credits for course listed above is <span id="total-credits">0</span>
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/matthew-eruogun/" target="_blank">
+                <img src="images/linkedin.svg" alt="LinkedIn Icon">
+            </a>
+            <a href="https://github.com/Matthew-Osaruyi-Eruogun" target="_blank">
+                <img src="images/github.svg" alt="GitHub Icon">
+            </a>
+        </div>
+
+        <p>
+            &copy; <span id="currentyear"></span> | Matthew Osaruyi Eruogun | Edo State, Nigeria
+        </p>
+
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
+
