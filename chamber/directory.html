@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en=US">
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8">
@@ -16,6 +16,11 @@
     <meta property="og:image"
         content="https://matthew-osaruyi-eruogun.github.io/wdd231/images/benin-chambers-logo.webp">
     <meta property="og:url" content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/directory.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
@@ -51,8 +56,8 @@
             <button id="list-button" aria-label="Show as List">List View</button>
         </div>
 
-        <section id="directory-container" class="grid-view">
-        </section>
+        <div id="directory-container" class="grid-view">
+        </div>
 
     </main>
 
@@ -79,7 +84,7 @@
         </div>
     </footer>
 
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.js" defer></script>
 </body>
 
 </html>
