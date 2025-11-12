@@ -1,0 +1,399 @@
+/* ===================================================
+   Color Palette & Typography
+   =================================================== */
+:root {
+    /* Chamber Colors */
+    --primary-color: #001f4c;
+    /* Deep Navy Blue */
+    --secondary-color: #ffd700;
+    /* Gold */
+    --accent-color: #c71585;
+    /* A bright accent for links/buttons (optional) */
+    --background-color: #f7f7f7;
+    /* Off-White/Light Gray */
+    --text-color: #333;
+    /* Dark Gray for main text */
+    --light-text-color: #ffffff;
+    /* White for dark backgrounds */
+
+    /* Typography */
+    --heading-font: 'Roboto', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+}
+
+/* Include font imports here if using Google Fonts (e.g., @import url('...') ) */
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    min-width: 320px;
+    /* Essential for mobile responsiveness */
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    min-height: 50vh;
+    /* Ensures footer stays down on short pages */
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+
+/* ===================================================
+   Header & Navigation (Mobile First)
+   =================================================== */
+
+header {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    color: var(--light-text-color);
+    text-decoration: none;
+}
+
+.logo {
+    width: 50px;
+    /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px;
+    border: 3px solid var(--secondary-color);
+    /* Add a touch of gold */
+    border-radius: 50%;
+}
+
+h1 {
+    color: var(--light-text-color);
+    font-size: 1.5rem;
+}
+
+/* Mobile Menu Button */
+#menu-toggle {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--light-text-color);
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Mobile Navigation */
+.navigation {
+    width: 100%;
+    display: none;
+    /* Hidden by default on mobile */
+    text-align: center;
+}
+
+.navigation.open {
+    display: block;
+    /* Show when 'open' class is added by JS */
+}
+
+.navigation ul {
+    list-style: none;
+}
+
+.navigation li a {
+    display: block;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--light-text-color);
+    transition: background-color 0.3s;
+}
+
+.navigation li a:hover,
+.navigation li a.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* ===================================================
+   Directory Main Content & Toggle Buttons
+   =================================================== */
+.directory-main h2 {
+    text-align: center;
+    margin: 1.5rem 0 1rem;
+}
+
+.view-toggle {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.view-toggle button {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+    margin: 0 0.5rem;
+    transition: all 0.3s;
+}
+
+.view-toggle button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.view-toggle .view-active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: bold;
+}
+
+
+/* ===================================================
+   Directory Member Display Styles
+   =================================================== */
+
+/* --- Default: Grid View --- */
+#directory-container.grid-view {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Single column on mobile */
+    gap: 1.5rem;
+}
+
+.member-card {
+    background-color: var(--light-text-color);
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.member-card img {
+    max-width: 100%;
+    height: auto;
+    width: 150px;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    border: 3px solid var(--secondary-color);
+}
+
+.member-card hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 0.5rem 0;
+}
+
+/* --- List View (Changes only the container display) --- */
+#directory-container.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* Closer spacing for list items */
+}
+
+/* List view adjustments */
+#directory-container.list-view .member-card {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr auto;
+    /* Logo, Name/Motto, Contact, Website */
+    align-items: center;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    box-shadow: none;
+    /* Remove shadow for a clean list look */
+    border-radius: 0;
+    border-left: 5px solid var(--primary-color);
+    /* Nice list highlight */
+}
+
+#directory-container.list-view .member-card img {
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    border: none;
+    grid-column: 1 / 2;
+}
+
+/* Hide or re-position elements that don't fit well in a list */
+#directory-container.list-view .member-card hr,
+#directory-container.list-view .member-motto {
+    display: none;
+}
+
+#directory-container.list-view .member-name {
+    font-size: 1.1rem;
+    grid-column: 2 / 3;
+}
+
+#directory-container.list-view .member-address,
+#directory-container.list-view .member-phone {
+    grid-column: 3 / 4;
+}
+
+#directory-container.list-view .member-website {
+    grid-column: 4 / 5;
+    text-align: right;
+}
+
+/* ===================================================
+   Footer Styles
+   =================================================== */
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-grid a {
+    color: var(--secondary-color);
+}
+
+.contact-info {
+    order: 1;
+    /* Mobile order */
+}
+
+.social-links {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    filter: none;
+    /* White/Gold effect */
+}
+
+.developer-info {
+    order: 3;
+}
+
+/* ===================================================
+   Media Queries (Desktop Overrides)
+   =================================================== */
+
+@media (min-width: 768px) {
+
+    /* Desktop Header/Navigation */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .header-content {
+        width: auto;
+    }
+
+    #menu-toggle {
+        display: none;
+        /* Hide hamburger on larger screens */
+    }
+
+    .navigation {
+        display: block;
+        /* Always show nav on desktop */
+        width: auto;
+    }
+
+    .navigation ul {
+        display: flex;
+    }
+
+    .navigation li a {
+        border-top: none;
+        padding: 0.75rem 1rem;
+    }
+
+    /* Directory: Grid View on Tablet/Desktop */
+    #directory-container.grid-view {
+        grid-template-columns: 1fr 1fr;
+        /* Two columns on tablets */
+    }
+
+    /* Footer Layout on Tablet/Desktop */
+    .footer-grid {
+        grid-template-columns: 1fr auto 1fr;
+        text-align: left;
+        align-items: center;
+    }
+
+    .social-links {
+        order: 2;
+        justify-content: center;
+    }
+
+    .developer-info {
+        order: 3;
+        text-align: right;
+    }
+ 
+}
+@media (min-width: 1024px) {
+
+    /* Directory: Grid View on Large Desktop */
+    #directory-container.grid-view {
+        grid-template-columns: 1fr 1fr 1fr;
+        /* Three columns on desktop */
+    }
+}

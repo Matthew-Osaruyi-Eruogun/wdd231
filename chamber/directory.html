@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en=US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benin City Chamber of Commerce Directory</title>
+    <meta name="description"
+        content="Official business directory for the Benin City Chamber of Commerce. Find local members, contact details, and more.">
+    <meta name="author" content="Matthew Osaruyi Eruogun, WDD 231">
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <meta property="og:title" content="Benin City Chamber of Commerce Directory">
+    <meta property="og:description" content="Official business directory for the Benin City Chamber of Commerce.">
+    <meta property="og:image"
+        content="https://matthew-osaruyi-eruogun.github.io/wdd231/images/benin-chambers-logo.webp">
+    <meta property="og:url" content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/directory.html">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="images/benin-chambers-logo.webp" alt="Chamber Logo" class="logo">
+                <h1>Benin City Chamber of Commerce</h1>
+            </a>
+            <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+        </div>
+
+        <nav id="main-nav" class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="directory-main">
+        <h2>Business Directory</h2>
+
+        <div class="view-toggle">
+            <button id="grid-button" class="view-active" aria-label="Show as Grid">Grid View</button>
+            <button id="list-button" aria-label="Show as List">List View</button>
+        </div>
+
+        <section id="directory-container" class="grid-view">
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="contact-info">
+                <h3>Benin City Chamber of Commerce</h3>
+                <p>3rd & 4th Floor, Palm House, Benin Sapele Rd, Oka, Benin City, Edo State. PMB:300102 </p>
+                <p>Email: <a href="mailto:info@benin-citycc.org">info@benin-citycc.org.</a></p>
+                <p>Phone: +234-806-055-3201</p>
+            </div>
+
+            <div class="social-links">
+                <a href="#"><img src="images/youtube.svg" alt="YouTube Icon"></a>
+                <a href="#"><img src="images/twitter-x.svg" alt="Twitter Icon"></a>
+                <a href="#"><img src="images/linkedin.svg" alt="LinkedIn Icon"></a>
+            </div>
+
+            <div class="developer-info">
+                <p>&copy; <span id="copyright-year"></span> Benin City Chamber of Commerce</p>
+                <p>WDD 231 Project - Matthew Osaruyi Eruogun</p>
+                <p>Last Modification: <span id="last-modified"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

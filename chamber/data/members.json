@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Protea Hotel Select Emotan",
+        "address": "4 Central Road, Off Sapele Road",
+        "phone": "(+234) 805-555-1001",
+        "website": "https://www.proteabenin.com",
+        "imageFile": "protea.webp",
+        "membershipLevel": 3,
+        "motto": "The Premier Hospitality of the Edo Kingdom."
+    },
+    {
+        "name": "Luciano Luxury Hotel",
+        "address": "12 Ihama Road, G.R.A.",
+        "phone": "(+234) 803-260-0424",
+        "website": "https://lucianoluxuryhotel.com",
+        "imageFile": "luciano.webp",
+        "membershipLevel": 3,
+        "motto": "Where Comfort Meets Royal Class."
+    },
+    {
+        "name": "JCON Digital Solutions",
+        "address": "7 Osula Close, Off Akpakpava Rd",
+        "phone": "(+234) 705-555-2002",
+        "website": "https://www.jcon-digital.com",
+        "imageFile": "jcon.webp",
+        "membershipLevel": 2,
+        "motto": "Driving Benin's Businesses into the Digital Future."
+    },
+    {
+        "name": "Benin Electricity Distribution Plc (BEDC)",
+        "address": "5 Akpakpava Road, Benin City",
+        "phone": "0700-000-2332",
+        "website": "https://beninelectric.com",
+        "imageFile": "bedc.webp",
+        "membershipLevel": 3,
+        "motto": "Powering the Heart of the Edo Economy."
+    },
+    {
+        "name": "Randekhi Royal Hotel",
+        "address": "6 Uhenuyi Street, G.R.A.",
+        "phone": "(+234) 802-884-7928",
+        "website": "https://www.randekhiroyal.com",
+        "imageFile": "randekhi.webp",
+        "membershipLevel": 2,
+        "motto": "A Legacy of Edo Hospitality."
+    },
+    {
+        "name": "Ellah Lakes PLC",
+        "address": "Edo State Oil Palm Cultivation Zone",
+        "phone": "(+234) 805-555-3003",
+        "website": "https://ellahlakes.com",
+        "imageFile": "ellah.webp",
+        "membershipLevel": 3,
+        "motto": "Cultivating Tomorrow's Resources in Edo State."
+    },
+    {
+        "name": "C.O. AKPABOR & CO.",
+        "address": "Ultra Modern Office Complex, 2nd Floor, Oba Market Road",
+        "phone": "(+234) 803-555-4004",
+        "website": "https://www.akpaborco.com",
+        "imageFile": "akpabor.webp",
+        "membershipLevel": 1,
+        "motto": "Trusted Accounting for Local Enterprises."
+    },
+    {
+        "name": "First Guide LLC",
+        "address": "15 Forestry Road, Benin City",
+        "phone": "(+234) 905-555-5005",
+        "website": "https://www.firstguidellc.ng",
+        "imageFile": "firstguide.webp",
+        "membershipLevel": 1,
+        "motto": "Improving Businesses with Tech Solutions."
+    },
+    {
+        "name": "The Saga Hotel",
+        "address": "16 Edo Osagie Crescent, G.R.A.",
+        "phone": "(+234) 805-062-4493",
+        "website": "https://www.sagahotels.ng",
+        "imageFile": "saga.webp",
+        "membershipLevel": 2,
+        "motto": "Making every guest feel special."
+    },
+    {
+        "name": "Edo State Broadcasting Service (EBS)",
+        "address": "Benin Auchi Road, Ekenwan",
+        "phone": "(+234) 708-555-6006",
+        "website": "https://www.ebs.ng",
+        "imageFile": "ebs.webp",
+        "membershipLevel": 3,
+        "motto": "The Authentic Voice of Edo State."
+    }
+]
