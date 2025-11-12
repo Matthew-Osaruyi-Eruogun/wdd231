@@ -88,5 +88,23 @@
         "imageFile": "ebs.webp",
         "membershipLevel": 3,
         "motto": "The Authentic Voice of Edo State."
+    },
+    {
+        "name": "Edo Specialist Hospital",
+        "address": "22 Upper Mission Road, GRA",
+        "phone": "(+234) 807-555-9009",
+        "website": "https://www.edohospital.org",
+        "imageFile": "hospital.webp",
+        "membershipLevel": 3,
+        "motto": "Excellence in healthcare and community service."
+    },
+    {
+        "name": "Benin City Transport Services",
+        "address": "Ring Road Terminus, By the Statue",
+        "phone": "(+234) 708-555-1111",
+        "website": "https://www.bcts.ng",
+        "imageFile": "transport.webp",
+        "membershipLevel": 1,
+        "motto": "Moving Benin forward, reliably and safely."
     }
 ]
