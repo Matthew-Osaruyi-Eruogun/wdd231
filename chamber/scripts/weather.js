@@ -1,0 +1,70 @@
+const CURRENT_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather';
+const FORECAST_URL = 'https://api.openweathermap.org/data/2.5/forecast';
+const API_KEY = 'YOUR_API_KEY_HERE'; // Replace with your actual key
+const CITY_ID = '3585860'; // San Miguel, El Salvador City ID (check OpenWeatherMap for accuracy)
+const UNITS = 'imperial'; // Use 'imperial' for Fahrenheit
+
+async function getWeatherData() {
+    try {
+        // --- Fetch Current Weather ---
+        const currentResponse = await fetch(`${CURRENT_WEATHER_URL}?id=${CITY_ID}&units=${UNITS}&appid=${API_KEY}`);
+        const currentData = await currentResponse.json();
+        displayCurrentWeather(currentData);
+
+        // --- Fetch 3-Day Forecast ---
+        const forecastResponse = await fetch(`${FORECAST_URL}?id=${CITY_ID}&units=${UNITS}&appid=${API_KEY}`);
+        const forecastData = await forecastResponse.json();
+        displayForecast(forecastData);
+
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
+    }
+}
+
+function displayCurrentWeather(data) {
+    const weatherContainer = document.getElementById('current-weather');
+    // Current temperature and description
+    const temp = data.main.temp.toFixed(0);
+    const desc = data.weather[0].description.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    const iconCode = data.weather[0].icon;
+    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
+
+    weatherContainer.innerHTML = `
+        <img src="${iconUrl}" alt="${desc}">
+        <p>Current: ${temp}°F</p>
+        <p>${desc}</p>
+    `;
+}
+
+function displayForecast(data) {
+    const forecastContainer = document.getElementById('forecast-container');
+    const today = new Date();
+    const threeDayForecast = [];
+
+    // Filter the list to get one entry per day for the next 3 days
+    // The OpenWeatherMap forecast provides data every 3 hours (8 entries per day)
+    for (let i = 0; threeDayForecast.length < 3; i++) {
+        const item = data.list[i * 8]; // Get the data at roughly the same time each day (i * 8 entries)
+        if (item) {
+            const date = new Date(item.dt * 1000);
+            if (date.getDate() !== today.getDate() && !threeDayForecast.some(f => f.date.getDate() === date.getDate())) {
+                threeDayForecast.push({
+                    day: date.toLocaleDateString('en-US', { weekday: 'short' }),
+                    temp: item.main.temp_max.toFixed(0)
+                });
+            }
+        }
+    }
+
+    threeDayForecast.forEach(forecast => {
+        const dayElement = document.createElement('div');
+        dayElement.classList.add('forecast-day');
+        dayElement.innerHTML = `
+            <p><strong>${forecast.day}</strong></p>
+            <p>${forecast.temp}°F</p>
+        `;
+        forecastContainer.appendChild(dayElement);
+    });
+}
+
+getWeatherData();

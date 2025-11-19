@@ -1,0 +1,55 @@
+#home-main {
+    display: grid;
+    /* Stack all sections in a single column by default */
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* Hero Section Styling */
+#hero {
+    position: relative;
+    grid-column: 1 / 2;
+    /* Full width */
+}
+
+#hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#cta-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent overlay */
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.cta-button {
+    /* Style your button here */
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* General Card Styling */
+.card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+#spotlights {
+    /* Spotlights section will display one per row on mobile */
+    display: grid;
+    gap: 1rem;
+}

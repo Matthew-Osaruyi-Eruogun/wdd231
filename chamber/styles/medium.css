@@ -1,0 +1,27 @@
+@media only screen and (min-width: 600px) {
+    #home-main {
+        /* Define a two-column layout */
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #hero {
+        /* Hero spans both columns */
+        grid-column: 1 / 3;
+    }
+
+    #events {
+        grid-column: 1 / 2;
+        /* Left Column */
+    }
+
+    #weather {
+        grid-column: 2 / 3;
+        /* Right Column */
+    }
+
+    #spotlights {
+        /* Spotlights spans both columns and displays cards in two columns */
+        grid-column: 1 / 3;
+        grid-template-columns: 1fr 1fr;
+    }
+}
