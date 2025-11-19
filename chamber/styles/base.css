@@ -1,22 +1,39 @@
+:root {
+    --heading-color: #222;
+    /* dark gray */
+}
+
+h1 {
+    color: var(--heading-color);
+    font-size: 1.5rem;
+}
 #home-main {
     display: grid;
-    /* Stack all sections in a single column by default */
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 1rem;
 }
 
-/* Hero Section Styling */
-#hero {
+
+main #hero {
     position: relative;
     grid-column: 1 / 2;
-    /* Full width */
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+
+    
 }
 
-#hero img {
+#hero img, #hero picture {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
+   
 }
 
 #cta-box {
@@ -25,14 +42,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    background: rgba(0, 0, 0, 0.6);
-    /* Semi-transparent overlay */
-    padding: 1rem;
+    background-color: var(--primary-color);
+    padding: 1.5rem 2rem;
     border-radius: 8px;
+    z-index: 10;
 }
 
 .cta-button {
-    /* Style your button here */
     display: inline-block;
     padding: 0.75rem 1.5rem;
     background-color: var(--primary-color);
@@ -41,7 +57,7 @@
     border-radius: 5px;
 }
 
-/* General Card Styling */
+
 .card {
     border: 1px solid #ccc;
     padding: 1rem;
@@ -49,7 +65,12 @@
 }
 
 #spotlights {
-    /* Spotlights section will display one per row on mobile */
+    
     display: grid;
     gap: 1rem;
+}
+
+
+#cta-box h1 {
+    color: var(--primary-color);
 }
