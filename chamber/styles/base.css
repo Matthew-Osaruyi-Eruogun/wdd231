@@ -1,29 +1,21 @@
-/* ===================================================
-   Color Palette & Typography
-   =================================================== */
-:root {
-    /* Chamber Colors */
-    --primary-color: #001f4c;
-    /* Deep Navy Blue */
-    --secondary-color: #ffd700;
-    /* Gold */
-    --accent-color: #c71585;
-    /* A bright accent for links/buttons (optional) */
-    --background-color: #f7f7f7;
-    /* Off-White/Light Gray */
-    --text-color: #333;
-    /* Dark Gray for main text */
-    --light-text-color: #ffffff;
-    /* White for dark backgrounds */
-    --heading-color: #222;
-    /* dark gray for general headings */
 
-    /* Typography */
+:root {
+   
+    --primary-color: #001f4c;
+    --secondary-color: #ffd700;
+    --accent-color: #c71585;
+    --background-color: #f7f7f7;
+    --text-color: #333;
+    --light-text-color: #ffffff;
+    --heading-color: #222;
+  
+
+   
     --heading-font: 'Roboto', sans-serif;
     --body-font: 'Open Sans', sans-serif;
 }
 
-/* Base Styles */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -38,13 +30,12 @@ body {
     min-width: 320px;
 }
 
-/* Set general heading colors */
+
 h1,
 h2,
 h3 {
     font-family: var(--heading-font);
     color: var(--heading-color);
-    /* Dark gray for headings outside of header/footer */
     margin-bottom: 0.5rem;
 }
 
@@ -65,9 +56,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* ===================================================
-   Header & Navigation (Mobile First)
-   =================================================== */
+
 
 header {
     background-color: var(--primary-color);
@@ -100,13 +89,13 @@ header {
     border-radius: 50%;
 }
 
-/* FIX: Ensure header h2 (formerly h1) is white */
+
 header h2 {
     color: var(--light-text-color);
     font-size: 1.5rem;
 }
 
-/* Mobile Menu Button */
+
 #menu-toggle {
     background: none;
     border: none;
@@ -116,7 +105,7 @@ header h2 {
     padding: 0.5rem;
 }
 
-/* Mobile Navigation */
+
 .navigation {
     width: 100%;
     display: none;
@@ -146,9 +135,7 @@ header h2 {
     text-decoration: none;
 }
 
-/* ===================================================
-   Home Page Layout & Hero Section (MOBILE FIRST)
-   =================================================== */
+
 
 #home-main {
     display: grid;
@@ -157,19 +144,17 @@ header h2 {
     padding: 1rem;
 }
 
-/* FIX: HERO LAYOUT WITH PADDING HACK */
+
 main #hero {
     position: relative;
     grid-column: 1 / 2;
     width: 100%;
-    /* 16:9 Aspect Ratio (675 / 1200 = 56.25%) */
     padding-bottom: 56.25%;
     height: 0;
-    /* Ensures padding controls height */
     overflow: hidden;
 }
 
-/* FIX: IMAGE AND PICTURE MUST BE ABSOLUTE TO FILL PADDED SPACE */
+
 #hero img,
 #hero picture {
     position: absolute;
@@ -181,7 +166,6 @@ main #hero {
     display: block;
 }
 
-/* CTA Box (Positioned absolutely over the image) */
 #cta-box {
     position: absolute;
     top: 50%;
@@ -189,13 +173,12 @@ main #hero {
     transform: translate(-50%, -50%);
     text-align: center;
     background-color: var(--primary-color);
-    /* Dark background for contrast */
     padding: 1.5rem 2rem;
     border-radius: 8px;
-    z-index: 10;
+    z-index: 9999;
 }
 
-/* CTA Box H1 (White text for contrast) */
+
 #cta-box h1 {
     color: var(--light-text-color);
     margin: 0;
@@ -205,7 +188,6 @@ main #hero {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     background-color: var(--secondary-color);
-    /* Gold button */
     color: var(--primary-color);
     text-decoration: none;
     border-radius: 5px;
@@ -225,10 +207,6 @@ main #hero {
     display: grid;
     gap: 1rem;
 }
-
-/* ===================================================
-   Footer Styles
-   =================================================== */
 
 footer {
     background-color: var(--primary-color);
@@ -270,7 +248,7 @@ footer {
     width: 30px;
     height: 30px;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(240deg) brightness(100%) contrast(100%);
-    /* White filter */
+   
 }
 
 .developer-info {
