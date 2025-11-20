@@ -175,14 +175,29 @@ main #hero {
     background-color: var(--primary-color);
     padding: 1.5rem 2rem;
     border-radius: 8px;
-    z-index: 9999;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+#hero-statement {
+    grid-column: 1 / 2;
+    /* Ensure it occupies its own grid space */
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 1rem;
+}    
 
-#cta-box h1 {
-    color: var(--light-text-color);
-    margin: 0;
+#hero-statement h1 {
+    font-weight: bold;
+    /* Make it bold */
+    font-style: italic;
+    /* Make it italic */
+    color: var(--primary-color);
+    /* You can change this color if needed */
+    font-size: 2.2rem;
+    /* Adjust size as desired */
 }
+
 
 .cta-button {
     display: inline-block;
