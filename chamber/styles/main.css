@@ -287,10 +287,6 @@ h1 {
     text-align: right;
 }
 
-/* ===================================================
-   Footer Styles
-   =================================================== */
-
 footer {
     background-color: var(--primary-color);
     color: var(--light-text-color);
@@ -328,7 +324,7 @@ footer {
     width: 30px;
     height: 30px;
     filter: none;
-    /* White/Gold effect */
+ 
 }
 
 .developer-info {
