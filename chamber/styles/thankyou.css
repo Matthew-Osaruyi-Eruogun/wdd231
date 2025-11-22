@@ -33,7 +33,7 @@
     text-align: left;
     margin: 2rem 0;
     padding: 1rem;
-    border: 1px dashed #ccc;
+    border: 1px solid var(--medium-border);
     border-radius: 8px;
     background-color: var(--light-blue-bg);
 }

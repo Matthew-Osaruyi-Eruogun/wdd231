@@ -12,6 +12,10 @@
     --light-blue-bg: #f0f8ff;
     --accent-hover: #e6b800;
     --dark-text-secondary: #555;
+    --light-border: #ddd;
+    --medium-border: #ccc;
+    --dark-border: #888;
+    --lightest-border: #eee;
     --heading-font: 'Roboto', sans-serif;
     --body-font: 'Open Sans', sans-serif;
 }

@@ -14,14 +14,14 @@
 form {
     background-color: var(--form-background);
     padding: 1.5rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--light-border);
     border-radius: 8px;
     margin-bottom: 2rem;
 }
 
 fieldset {
     margin: 1.5rem 0;
-    border: 1px solid #ccc;
+    border: 1px solid var(--medium-border);
     border-radius: 5px;
     padding: 1rem;
 }
@@ -48,7 +48,7 @@ select {
     width: 95%;
     padding: 0.75rem;
     margin-top: 0.25rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--medium-border);
     border-radius: 4px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
     transition: border-color 0.3s;
@@ -174,7 +174,7 @@ input[type="submit"]:hover {
     background-color: var(--light-text-color);
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid var(--dark-border);
     width: 80%;
     max-width: 500px;
     border-radius: 8px;
@@ -185,24 +185,21 @@ input[type="submit"]:hover {
 .modal-content h3 {
     color: var(--chamber-primary);
     border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
-    background-color: var(--light-text-color);
-   
+    padding-bottom: 10px;    
 }
 
-.modal-content p {
-   background-color: var(--light-text-color);
-}
-
-.modal-content li {
-  background-color: var(--light-text-color);
-}
 
 .modal-content ul {
     list-style-type: disc;
     padding-left: 20px;
+ }
+
+ .modal-content h3,
+ .modal-content p,
+ .modal-content ul,
+ .modal-content li {
     background-color: var(--light-text-color);
-}
+ }
 
 .close-button {
     color: var(--medium-gray);
