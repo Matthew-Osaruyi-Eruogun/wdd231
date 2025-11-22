@@ -1,0 +1,254 @@
+/* ========================================= */
+/* BASE STYLES for join.html (Small Screens) */
+/* ========================================= */
+#join-main {
+    padding: 1rem;
+}
+
+.membership-form-section h1,
+.membership-levels-section h2 {
+    color: #004d40;
+    /* Dark Teal - a strong color */
+    border-bottom: 2px solid #ffcc33;
+    /* Gold/Yellow accent */
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Form Styles */
+form {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+fieldset {
+    margin: 1.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+legend {
+    color: #004d40;
+    font-weight: 700;
+    padding: 0 0.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    display: block;
+    width: 95%;
+    /* Make fields nearly full width */
+    padding: 0.75rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+    transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #ffcc33;
+    /* Highlight focus with accent color */
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 204, 51, 0.5);
+}
+
+/* Submission Button */
+.submit-button-container {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+input[type="submit"] {
+    background-color: #004d40;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+input[type="submit"]:hover {
+    background-color: #00332c;
+    transform: scale(1.02);
+}
+
+/* Membership Card Styles (Small Screen: Displayed below form) */
+.membership-cards {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card h3 {
+    color: #004d40;
+    margin-top: 0;
+}
+
+.card a {
+    color: #ffcc33;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.card a:hover {
+    text-decoration: underline;
+    color: #e6b800;
+}
+
+/* --- Initial Animation for Cards (Non-hover) --- */
+/* Define the keyframes for the animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.initial-animate {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Stagger the animation */
+.membership-cards .initial-animate:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.membership-cards .initial-animate:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.membership-cards .initial-animate:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.membership-cards .initial-animate:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+
+/* ========================================= */
+/* MODAL STYLES */
+/* ========================================= */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 100;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h3 {
+    color: #004d40;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.modal-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* ========================================= */
+/* MEDIA QUERY: Large Screens (min-width: 1000px) */
+/* (This should be placed in your styles/large.css or below) */
+/* ========================================= */
+@media (min-width: 1000px) {
+    .join-grid-container {
+        display: grid;
+        /* Form on the left (2/3 width), Cards on the right (1/3 width) */
+        grid-template-columns: 2fr 1fr;
+        gap: 30px;
+    }
+
+    .membership-form-section {
+        /* Optional: give the form area a slight shadow for visual separation */
+        padding: 0 1rem;
+    }
+
+    .membership-levels-section {
+        order: 1;
+        /* Pushes the card section to the right column */
+        padding-top: 1rem;
+    }
+
+    .membership-cards {
+        /* Stack the cards vertically in the right column */
+        grid-template-columns: 1fr;
+    }
+}

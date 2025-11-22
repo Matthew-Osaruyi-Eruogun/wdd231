@@ -74,3 +74,49 @@ listButton.addEventListener('click', () => switchView('list'));
 
 // Load members when the page loads
 displayMembers();
+
+        // Set the hidden timestamp field upon page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const timestampField = document.getElementById('timestamp');
+    if (timestampField) {
+        // Set the value to the current ISO date/time string
+        timestampField.value = new Date().toISOString();
+            }
+
+    // Modal Functionality
+    const modalTriggers = document.querySelectorAll('.modal-trigger');
+    const closeButtons = document.querySelectorAll('.close-button');
+
+            modalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (event) => {
+            event.preventDefault();
+            const modalId = event.target.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'block';
+                modal.setAttribute('aria-hidden', 'false');
+                modal.focus(); // Focus on the modal for accessibility
+            }
+        });
+            });
+
+            closeButtons.forEach(closeBtn => {
+        closeBtn.addEventListener('click', () => {
+            const modal = closeBtn.closest('.modal');
+            if (modal) {
+                modal.style.display = 'none';
+                modal.setAttribute('aria-hidden', 'true');
+            }
+        });
+            });
+
+            // Close modal when clicking outside (optional but good practice)
+            window.addEventListener('click', (event) => {
+                if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+        event.target.setAttribute('aria-hidden', 'true');
+                }
+            });
+        });
+
+        
