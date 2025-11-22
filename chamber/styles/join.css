@@ -1,22 +1,17 @@
-/* ========================================= */
-/* BASE STYLES for join.html (Small Screens) */
-/* ========================================= */
 #join-main {
     padding: 1rem;
 }
 
 .membership-form-section h1,
 .membership-levels-section h2 {
-    /* Uses new variables */
     color: var(--chamber-primary);
     border-bottom: 2px solid var(--chamber-accent);
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
 }
 
-/* Form Styles */
+
 form {
-    /* Uses new variables */
     background-color: var(--form-background);
     padding: 1.5rem;
     border: 1px solid #ddd;
@@ -32,7 +27,6 @@ fieldset {
 }
 
 legend {
-    /* Uses new variables */
     color: var(--chamber-primary);
     font-weight: 700;
     padding: 0 0.5rem;
@@ -42,7 +36,6 @@ label {
     display: block;
     margin-bottom: 1rem;
     font-weight: 600;
-    /* Uses standard var(--text-color) from main.css */
     color: var(--text-color);
 }
 
@@ -64,13 +57,11 @@ select {
 input:focus,
 textarea:focus,
 select:focus {
-    /* Uses new variables (Simplified box-shadow) */
     border-color: var(--chamber-accent);
     outline: none;
     box-shadow: 0 0 5px rgba(255, 204, 51, 0.5);
 }
 
-/* Submission Button */
 .submit-button-container {
     display: block;
     text-align: center;
@@ -78,7 +69,6 @@ select:focus {
 }
 
 input[type="submit"] {
-    /* Uses new variables */
     background-color: var(--chamber-primary);
     color: var(--light-text-color);
     padding: 1rem 2rem;
@@ -91,12 +81,11 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    /* Uses new variables */
     background-color: var(--chamber-hover);
     transform: scale(1.02);
 }
 
-/* Membership Card Styles (Small Screen: Displayed below form) */
+
 .membership-cards {
     display: grid;
     gap: 1.5rem;
@@ -104,7 +93,6 @@ input[type="submit"]:hover {
 }
 
 .card {
-    /* Uses variable from main.css */
     background-color: var(--light-text-color);
     padding: 1.5rem;
     border-radius: 8px;
@@ -114,13 +102,11 @@ input[type="submit"]:hover {
 }
 
 .card h3 {
-    /* Uses new variables */
     color: var(--chamber-primary);
     margin-top: 0;
 }
 
 .card a {
-    /* Uses new variables (Passed contrast check now) */
     color: var(--chamber-primary);
     text-decoration: none;
     font-weight: 600;
@@ -219,7 +205,6 @@ input[type="submit"]:hover {
 
 .close-button:hover,
 .close-button:focus {
-    /* Uses standard var(--text-color) from main.css */
     color: var(--text-color);
     text-decoration: none;
     cursor: pointer;
