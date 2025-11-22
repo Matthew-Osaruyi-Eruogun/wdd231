@@ -1,15 +1,16 @@
 :root {
-    
     --primary-color: #001f4c;
     --secondary-color: #ffd700;
-    --accent-color: #c71585;
+    --chamber-primary: #004d40;
+    --chamber-hover: #00332c;
+    --chamber-accent: #ffcc33;
+    --form-background: #f9f9f9;
     --background-color: #f7f7f7;
     --text-color: #333;
     --light-text-color: #ffffff;
     --heading-font: 'Roboto', sans-serif;
     --body-font: 'Open Sans', sans-serif;
 }
-
 
 * {
     box-sizing: border-box;
