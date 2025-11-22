@@ -35,7 +35,7 @@
     padding: 1rem;
     border: 1px dashed #ccc;
     border-radius: 8px;
-    background-color: #f0f8ff;
+    background-color: var(--light-blue-bg);
 }
 
 .submission-details-container h3 {
@@ -72,7 +72,7 @@
 .details-card ul li span {
     text-align: right;
     flex-basis: 60%;
-    color: #555;
+    color: var(--dark-text-secondary);
     font-style: italic;
 }
 
@@ -89,5 +89,5 @@
 }
 
 .cta-button:hover {
-    background-color: #e6b800;
+    background-color: var(--accent-hover);
 }
