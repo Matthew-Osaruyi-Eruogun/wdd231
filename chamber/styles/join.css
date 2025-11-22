@@ -8,9 +8,7 @@
 .membership-form-section h1,
 .membership-levels-section h2 {
     color: #004d40;
-    /* Dark Teal - a strong color */
     border-bottom: 2px solid #ffcc33;
-    /* Gold/Yellow accent */
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
 }
@@ -51,7 +49,6 @@ textarea,
 select {
     display: block;
     width: 95%;
-    /* Make fields nearly full width */
     padding: 0.75rem;
     margin-top: 0.25rem;
     border: 1px solid #ccc;
@@ -64,7 +61,6 @@ input:focus,
 textarea:focus,
 select:focus {
     border-color: #ffcc33;
-    /* Highlight focus with accent color */
     outline: none;
     box-shadow: 0 0 5px rgba(255, 204, 51, 0.5);
 }
@@ -115,7 +111,7 @@ input[type="submit"]:hover {
 }
 
 .card a {
-    color: #ffcc33;
+    color: #004d40;
     text-decoration: none;
     font-weight: 600;
     display: inline-block;
@@ -124,7 +120,8 @@ input[type="submit"]:hover {
 
 .card a:hover {
     text-decoration: underline;
-    color: #e6b800;
+    color: #00332c;
+  
 }
 
 /* --- Initial Animation for Cards (Non-hover) --- */
@@ -169,25 +166,20 @@ input[type="submit"]:hover {
 /* ========================================= */
 .modal {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Stay in place */
     z-index: 100;
-    /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    /* Enable scroll if needed */
     background-color: rgba(0, 0, 0, 0.7);
-    /* Black w/ opacity */
+   
 }
 
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
-    /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
@@ -209,7 +201,7 @@ input[type="submit"]:hover {
 }
 
 .close-button {
-    color: #aaa;
+    color: #666;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -222,6 +214,7 @@ input[type="submit"]:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
 
 
 /* ========================================= */
