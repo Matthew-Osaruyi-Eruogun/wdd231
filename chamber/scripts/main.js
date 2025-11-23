@@ -16,6 +16,17 @@ const directoryContainer = document.getElementById('directory-container');
 const gridButton = document.getElementById('grid-button');
 const listButton = document.getElementById('list-button');
 
+
+if (directoryContainer && gridButton && listButton) {
+    
+    // Event Listeners for the buttons
+    gridButton.addEventListener('click', () => switchView('grid'));
+    listButton.addEventListener('click', () => switchView('list'));
+
+    // Load members when the page loads
+    displayMembers();
+}
+
 // Function to create a single member card/list item
 const createMemberElement = (member) => {
     const card = document.createElement('section');

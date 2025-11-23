@@ -1,7 +1,7 @@
 const CURRENT_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather';
 const FORECAST_URL = 'https://api.openweathermap.org/data/2.5/forecast';
-const API_KEY = 'YOUR_API_KEY_HERE'; // Replace with your actual key
-const CITY_ID = '3585860'; // San Miguel, El Salvador City ID (check OpenWeatherMap for accuracy)
+const API_KEY = '2341257'; 
+const CITY_ID = '2341257'; // Benin City ID (check OpenWeatherMap for accuracy)
 const UNITS = 'imperial'; // Use 'imperial' for Fahrenheit
 
 async function getWeatherData() {
