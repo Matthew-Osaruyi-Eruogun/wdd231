@@ -26,7 +26,7 @@ const createMemberElement = (member) => {
     // NOTE: Ensure your members.json uses NUMBERS (3, 2, 1) for this to work
     const levelName = member.membershipLevel === 3 ? 'Gold' : member.membershipLevel === 2 ? 'Silver' : 'Basic';
     card.innerHTML = `
-        <img src="images/${member.imageFile}" alt="${member.name} logo" loading="lazy">
+        <img src="images/${member.imageFile}" alt="${member.name} logo" loading="lazy" width="217" height="94" >
         <h3 class="member-name">${member.name}</h3>
         <p class="member-level">Membership: ${levelName}</p>
         <p class="member-motto">${member.motto}</p>
