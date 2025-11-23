@@ -1,7 +1,7 @@
 const CURRENT_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather';
 const FORECAST_URL = 'https://api.openweathermap.org/data/2.5/forecast';
 const API_KEY = '51b762834da80ab58a31c482684828a2'; 
-const cityQuery = "Benin City,NG";
+const CITY_QUERY = "Benin City,NG";
 const UNITS = 'imperial'; 
 
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=Benin%20City,NG&units=imperial&appid=51b762834da80ab58a31c482684828a2';
@@ -9,12 +9,12 @@ const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=Benin%20City,N
 async function getWeatherData() {
     try {
         // --- Fetch Current Weather ---
-        const currentResponse = await fetch(`${CURRENT_WEATHER_URL}?id=${CITY_ID}&units=${UNITS}&appid=${API_KEY}`);
+        const currentResponse = await fetch(`${CURRENT_WEATHER_URL}?id=${CITY_QUERY}&units=${UNITS}&appid=${API_KEY}`);
         const currentData = await currentResponse.json();
         displayCurrentWeather(currentData);
 
         // --- Fetch 3-Day Forecast ---
-        const forecastResponse = await fetch(`${FORECAST_URL}?id=${CITY_ID}&units=${UNITS}&appid=${API_KEY}`);
+        const forecastResponse = await fetch(`${FORECAST_URL}?id=${CITY_QUERY}&units=${UNITS}&appid=${API_KEY}`);
         const forecastData = await forecastResponse.json();
         displayForecast(forecastData);
 
