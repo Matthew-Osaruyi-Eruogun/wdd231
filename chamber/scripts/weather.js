@@ -1,10 +1,10 @@
 const CURRENT_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather';
 const FORECAST_URL = 'https://api.openweathermap.org/data/2.5/forecast';
-const API_KEY = 'ee61a08b9d7f7f5fa7ead93a4bf181c7'; 
-const CITY_ID = '2341257'; // Benin City ID (check OpenWeatherMap for accuracy)
-const UNITS = 'imperial'; // Use 'imperial' for Fahrenheit
+const API_KEY = '51b762834da80ab58a31c482684828a2'; 
+const cityQuery = "Benin City,NG";
+const UNITS = 'imperial'; 
 
-const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=Benin City,NG&units=imperial&appid=51b762834da80ab58a31c482684828a2';
+const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=Benin%20City,NG&units=imperial&appid=51b762834da80ab58a31c482684828a2';
 
 async function getWeatherData() {
     try {
