@@ -382,22 +382,26 @@ main #hero {
     /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-/* 3. Open Sans Regular (400) */
+/* open-sans-regular - cyrillic_cyrillic-ext_latin */
 @font-face {
-    font-family: 'Open Sans';
-    font-weight: 400;
-    font-style: normal;
-    src: url('../fonts/open-sans-regular.woff2') format('woff2');
     font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/open-sans-v44-cyrillic_cyrillic-ext_latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-/* 4. Open Sans Semi-Bold (600) */
+/* open-sans-600 - cyrillic_cyrillic-ext_latin */
 @font-face {
-    font-family: 'Open Sans';
-    font-weight: 600;
-    font-style: normal;
-    src: url('../fonts/open-sans-semi-bold.woff2') format('woff2');
     font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/open-sans-v44-cyrillic_cyrillic-ext_latin-600.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* Now, you can use them in your CSS */
