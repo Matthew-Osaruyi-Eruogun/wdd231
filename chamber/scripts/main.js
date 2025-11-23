@@ -17,7 +17,7 @@ const gridButton = document.getElementById('grid-button');
 const listButton = document.getElementById('list-button');
 
 
-if (directoryContainer && gridButton && listButton) {
+if (gridButton && listButton) {
     
     // Event Listeners for the buttons
     gridButton.addEventListener('click', () => switchView('grid'));
