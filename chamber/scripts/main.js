@@ -16,12 +16,14 @@ const directoryContainer = document.getElementById('directory-container');
 const gridButton = document.getElementById('grid-button');
 const listButton = document.getElementById('list-button');
 
+
 // Function to create a single member card/list item
 const createMemberElement = (member) => {
     const card = document.createElement('section');
     card.classList.add('member-card');
 
     // Display level badge (optional styling for Gold/Silver/Regular)
+    // NOTE: Ensure your members.json uses NUMBERS (3, 2, 1) for this to work
     const levelName = member.membershipLevel === 3 ? 'Gold' : member.membershipLevel === 2 ? 'Silver' : 'Basic';
     card.innerHTML = `
         <img src="images/${member.imageFile}" alt="${member.name} logo" loading="lazy">
@@ -42,52 +44,65 @@ const displayMembers = async () => {
         const response = await fetch('data/members.json');
         const members = await response.json();
 
-        directoryContainer.innerHTML = ''; // Clear existing content
-        members.forEach(member => {
-            directoryContainer.appendChild(createMemberElement(member));
-        });
+        // Check if directory container exists (good practice, though covered by 'if' below)
+        if (directoryContainer) {
+            directoryContainer.innerHTML = ''; // Clear existing content
+            members.forEach(member => {
+                directoryContainer.appendChild(createMemberElement(member));
+            });
+        }
     } catch (error) {
         console.error('Error fetching member data:', error);
-        directoryContainer.innerHTML = '<p>Sorry, the business directory is currently unavailable.</p>';
+        if (directoryContainer) {
+            directoryContainer.innerHTML = '<p>Sorry, the business directory is currently unavailable.</p>';
+        }
     }
 };
 
 // --- VIEW TOGGLE FUNCTIONALITY ---
 const switchView = (view) => {
-    // Update the class on the container
-    directoryContainer.classList.remove('grid-view', 'list-view');
-    directoryContainer.classList.add(`${view}-view`);
+    // Check if the container and buttons exist before manipulating them
+    if (directoryContainer && gridButton && listButton) {
+        // Update the class on the container
+        directoryContainer.classList.remove('grid-view', 'list-view');
+        directoryContainer.classList.add(`${view}-view`);
 
-    // Update button visual state
-    gridButton.classList.remove('view-active');
-    listButton.classList.remove('view-active');
-    if (view === 'grid') {
-        gridButton.classList.add('view-active');
-    } else {
-        listButton.classList.add('view-active');
+        // Update button visual state
+        gridButton.classList.remove('view-active');
+        listButton.classList.remove('view-active');
+        if (view === 'grid') {
+            gridButton.classList.add('view-active');
+        } else {
+            listButton.classList.add('view-active');
+        }
     }
 };
 
-// Event Listeners for the buttons
-gridButton.addEventListener('click', () => switchView('grid'));
-listButton.addEventListener('click', () => switchView('list'));
+// --- INITIALIZE DIRECTORY ONLY IF ELEMENTS EXIST (On directory.html) ---
+if (gridButton && listButton) {
 
-// Load members when the page loads
-displayMembers();
+    // Event Listeners for the buttons
+    gridButton.addEventListener('click', () => switchView('grid'));
+    listButton.addEventListener('click', () => switchView('list'));
 
-        // Set the hidden timestamp field upon page load
-        document.addEventListener('DOMContentLoaded', () => {
-            const timestampField = document.getElementById('timestamp');
+    // Load members when the page loads (calls the function defined above)
+    displayMembers();
+}
+
+
+// --- FORM TIMESTAMP & MODAL LOGIC (The bottom part of your original file) ---
+document.addEventListener('DOMContentLoaded', () => {
+    const timestampField = document.getElementById('timestamp');
     if (timestampField) {
         // Set the value to the current ISO date/time string
         timestampField.value = new Date().toISOString();
-            }
+    }
 
     // Modal Functionality
     const modalTriggers = document.querySelectorAll('.modal-trigger');
     const closeButtons = document.querySelectorAll('.close-button');
 
-            modalTriggers.forEach(trigger => {
+    modalTriggers.forEach(trigger => {
         trigger.addEventListener('click', (event) => {
             event.preventDefault();
             const modalId = event.target.getAttribute('data-modal');
@@ -98,9 +113,9 @@ displayMembers();
                 modal.focus(); // Focus on the modal for accessibility
             }
         });
-            });
+    });
 
-            closeButtons.forEach(closeBtn => {
+    closeButtons.forEach(closeBtn => {
         closeBtn.addEventListener('click', () => {
             const modal = closeBtn.closest('.modal');
             if (modal) {
@@ -108,13 +123,13 @@ displayMembers();
                 modal.setAttribute('aria-hidden', 'true');
             }
         });
-            });
+    });
 
-            // Close modal when clicking outside (optional but good practice)
-            window.addEventListener('click', (event) => {
-                if (event.target.classList.contains('modal')) {
-        event.target.style.display = 'none';
-    event.target.setAttribute('aria-hidden', 'true');
-                }
-            });
-        });
+    // Close modal when clicking outside (optional but good practice)
+    window.addEventListener('click', (event) => {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
+            event.target.setAttribute('aria-hidden', 'true');
+        }
+    });
+});
