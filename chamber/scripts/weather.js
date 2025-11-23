@@ -4,6 +4,8 @@ const API_KEY = 'ee61a08b9d7f7f5fa7ead93a4bf181c7';
 const CITY_ID = '2341257'; // Benin City ID (check OpenWeatherMap for accuracy)
 const UNITS = 'imperial'; // Use 'imperial' for Fahrenheit
 
+const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=Benin City,NG&units=imperial&appid=51b762834da80ab58a31c482684828a2';
+
 async function getWeatherData() {
     try {
         // --- Fetch Current Weather ---
