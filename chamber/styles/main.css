@@ -3,11 +3,11 @@
     --secondary-color: #ffd700;
     --chamber-primary: #004d40;
     --chamber-hover: #00332c;
-    --chamber-accent: #ffcc33;
+    --chamber-accent: #fc3;
     --form-background: #f9f9f9;
     --background-color: #f7f7f7;
     --text-color: #333;
-    --light-text-color: #ffffff;
+    --light-text-color: #fff;
     --medium-gray: #666;
     --light-blue-bg: #f0f8ff;
     --accent-hover: #e6b800;
@@ -17,13 +17,13 @@
     --dark-border: #888;
     --lightest-border: #eee;
     --heading-font: 'Roboto', sans-serif;
-    --body-font: 'Open Sans', sans-serif;
+    --body-font: 'Open Sans', sans-serif
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding: 0
 }
 
 body {
@@ -31,8 +31,7 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
     line-height: 1.6;
-    min-width: 320px;
-    
+    min-width: 320px
 }
 
 h1,
@@ -40,25 +39,24 @@ h2,
 h3 {
     font-family: var(--heading-font);
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: .5rem
 }
 
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
-    min-height: 50vh;
-    
+    min-height: 50vh
 }
 
 a {
     color: var(--primary-color);
-    text-decoration: none;
+    text-decoration: none
 }
 
 a:hover {
     color: var(--secondary-color);
-    text-decoration: underline;
+    text-decoration: underline
 }
 
 header {
@@ -67,25 +65,25 @@ header {
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center
 }
 
 .header-content {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center
 }
 
 .logo-link {
     display: flex;
     align-items: center;
     color: var(--light-text-color);
-    text-decoration: none;
+    text-decoration: none
 }
 
 .logo-link h2 {
-    color: var(--light-text-color);
+    color: var(--light-text-color)
 }
 
 .logo {
@@ -93,37 +91,35 @@ header {
     height: auto;
     margin-right: 10px;
     border: 3px solid var(--secondary-color);
-    border-radius: 50%;
+    border-radius: 50%
 }
 
 h1 {
     color: var(--primary-color);
-    font-size: 1.5rem;
+    font-size: 1.5rem
 }
 
-
 #menu-toggle {
-    background: none;
-    border: none;
+    background: 0;
+    border: 0;
     font-size: 2rem;
     color: var(--light-text-color);
     cursor: pointer;
-    padding: 0.5rem;
+    padding: .5rem
 }
 
 .navigation {
     width: 100%;
     display: none;
-    text-align: center;
+    text-align: center
 }
 
 .navigation.open {
-    display: block;
-   
+    display: block
 }
 
 .navigation ul {
-    list-style: none;
+    list-style: none
 }
 
 .navigation li a {
@@ -131,57 +127,53 @@ h1 {
     padding: 1rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     color: var(--light-text-color);
-    transition: background-color 0.3s;
+    transition: background-color .3s
 }
 
 .navigation li a:hover,
 .navigation li a.active {
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    text-decoration: none;
+    text-decoration: none
 }
-
 
 .directory-main h2 {
     text-align: center;
-    margin: 1.5rem 0 1rem;
+    margin: 1.5rem 0 1rem
 }
 
 .view-toggle {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem
 }
 
 .view-toggle button {
     background-color: var(--primary-color);
     color: var(--light-text-color);
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem;
     border: 2px solid var(--primary-color);
     cursor: pointer;
-    margin: 0 0.5rem;
-    transition: all 0.3s;
+    margin: 0 .5rem;
+    transition: all .3s
 }
 
 .view-toggle button:hover {
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    border-color: var(--primary-color);
+    border-color: var(--primary-color)
 }
 
 .view-toggle .view-active {
     background-color: var(--secondary-color);
     color: var(--primary-color);
     border-color: var(--primary-color);
-    font-weight: bold;
+    font-weight: bold
 }
-
-
-
 
 #directory-container.grid-view {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.5rem
 }
 
 .member-card {
@@ -191,18 +183,16 @@ h1 {
     padding: 1rem;
     text-align: center;
     border-radius: 8px;
-    transition: transform 0.3s;
+    transition: transform .3s
 }
 
 .member-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15)
 }
 
-
 .footer-grid h3 {
-    color: var(--light-text-color);
-
+    color: var(--light-text-color)
 }
 
 .member-card img {
@@ -210,64 +200,59 @@ h1 {
     height: auto;
     width: 150px;
     border-radius: 4px;
-    margin-bottom: 0.5rem;
-    border: 3px solid var(--secondary-color);
+    margin-bottom: .5rem;
+    border: 3px solid var(--secondary-color)
 }
 
 .member-card hr {
     border: 0;
     border-top: 1px solid var(--lightest-border);
-    margin: 0.5rem 0;
+    margin: .5rem 0
 }
-
 
 #directory-container.list-view {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-   
+    gap: .5rem
 }
-
 
 #directory-container.list-view .member-card {
     display: grid;
     grid-template-columns: 80px 1fr 1fr auto;
     align-items: center;
     text-align: left;
-    padding: 0.75rem 1rem;
+    padding: .75rem 1rem;
     box-shadow: none;
     border-radius: 0;
-    border-left: 5px solid var(--primary-color);
-    
+    border-left: 5px solid var(--primary-color)
 }
 
 #directory-container.list-view .member-card img {
     width: 60px;
     height: 60px;
     margin: 0;
-    border: none;
-    grid-column: 1 / 2;
+    border: 0;
+    grid-column: 1 / 2
 }
-
 
 #directory-container.list-view .member-card hr,
 #directory-container.list-view .member-motto {
-    display: none;
+    display: none
 }
 
 #directory-container.list-view .member-name {
     font-size: 1.1rem;
-    grid-column: 2 / 3;
+    grid-column: 2 / 3
 }
 
 #directory-container.list-view .member-address,
 #directory-container.list-view .member-phone {
-    grid-column: 3 / 4;
+    grid-column: 3 / 4
 }
 
 #directory-container.list-view .member-website {
     grid-column: 4 / 5;
-    text-align: right;
+    text-align: right
 }
 
 footer {
@@ -276,7 +261,7 @@ footer {
     padding: 1.5rem 1rem;
     text-align: center;
     margin-top: 2rem;
-    font-size: 0.9rem;
+    font-size: .9rem
 }
 
 .footer-grid {
@@ -284,54 +269,46 @@ footer {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto
 }
 
 .footer-grid a {
-    color: var(--secondary-color);
+    color: var(--secondary-color)
 }
 
 .contact-info {
-    order: 1;
- }
+    order: 1
+}
 
 .social-links {
     order: 2;
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1.5rem
 }
 
 .social-links img {
     width: 30px;
     height: 30px;
-    filter: none;
- 
+    filter: none
 }
 
 .developer-info {
-    order: 3;
+    order: 3
 }
 
- 
-
-@media (min-width: 1024px) {
-
-    
+@media(min-width:1024px) {
     #directory-container.grid-view {
-        grid-template-columns: 1fr 1fr 1fr;
-       
+        grid-template-columns: 1fr 1fr 1fr
     }
 }
-
-
 
 main #hero {
     position: relative;
     grid-column: 1 / 2;
     width: 100%;
     padding-bottom: 56.25%;
-    height: 0;
+    height: 0
 }
 
 #hero picture,
@@ -342,75 +319,61 @@ main #hero {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    display: block
 }
-
 
 #hero-statement {
     grid-column: 1 / 2;
     text-align: center;
     padding: 1rem 0;
-    margin-top: 1rem;
+    margin-top: 1rem
 }
 
 #hero-statement h1 {
     font-weight: bold;
     font-style: italic;
     color: var(--primary-color);
-    font-size: 2.2rem;
-   
+    font-size: 2.2rem
 }
-/* roboto-regular - cyrillic_cyrillic-ext */
+
 @font-face {
     font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/roboto-v49-cyrillic_cyrillic-ext-regular.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('../fonts/roboto-v49-cyrillic_cyrillic-ext-regular.woff2') format('woff2')
 }
 
-/* roboto-700 - cyrillic_cyrillic-ext */
 @font-face {
     font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
-    src: url('../fonts/roboto-v49-cyrillic_cyrillic-ext-700.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('../fonts/roboto-v49-cyrillic_cyrillic-ext-700.woff2') format('woff2')
 }
 
-/* open-sans-regular - cyrillic_cyrillic-ext_latin */
 @font-face {
     font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/open-sans-v44-cyrillic_cyrillic-ext_latin-regular.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('../fonts/open-sans-v44-cyrillic_cyrillic-ext_latin-regular.woff2') format('woff2')
 }
 
-/* open-sans-600 - cyrillic_cyrillic-ext_latin */
 @font-face {
     font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
-    src: url('../fonts/open-sans-v44-cyrillic_cyrillic-ext_latin-600.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('../fonts/open-sans-v44-cyrillic_cyrillic-ext_latin-600.woff2') format('woff2')
 }
 
-/* Now, you can use them in your CSS */
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif
 }
 
 h1,
 h2,
 button {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif
 }
