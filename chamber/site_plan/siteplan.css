@@ -1,0 +1,102 @@
+/* -------------------------------------------------------------------
+   SITE PLAN STYLES - ASO-EBI THREAD
+   Color Scheme and Typography applied from the Site Plan Document
+----------------------------------------------------------------------*/
+
+/* Typography & Color Scheme Application */
+body {
+    /* Background Color: Soft Beige #F8F4E3 */
+    background-color: #F8F4E3;
+    /* Body Text Color: Dark Charcoal #2D2D2D */
+    color: #2D2D2D;
+    /* Body Font: Poppins (sans-serif) */
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    /* Primary Accent Color: Gold #D4AF37 */
+    border-bottom: 3px solid #D4AF37;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Headings Typography and Color */
+h1,
+h2,
+h3 {
+    /* Header Font: Playfair Display (serif) */
+    font-family: 'Playfair Display', serif;
+    /* Primary Brand Color: Deep Red #8B0000 */
+    color: #8B0000;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 1.8em;
+    /* Primary Accent Color: Gold #D4AF37 */
+    border-left: 5px solid #D4AF37;
+    padding-left: 10px;
+    margin-top: 30px;
+}
+
+/* Utility Classes for Color Scheme Display */
+.color-example {
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    /* Border matching body text */
+    border: 1px solid #2D2D2D;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 0.8em;
+}
+
+.color-primary {
+    background-color: #8B0000;
+    color: white;
+}
+
+.color-accent {
+    background-color: #D4AF37;
+    color: #2D2D2D;
+}
+
+/* Classes for color definitions in the Color Scheme section */
+.color-background {
+    background-color: #F8F4E3;
+    color: #2D2D2D;
+}
+
+.color-text {
+    background-color: #2D2D2D;
+    color: white;
+}
+
+/* Wireframe Block Styling */
+.wireframe-sketch {
+    border: 1px dashed #2D2D2D;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    /* White background for the sketch area */
+    overflow-x: auto;
+    /* Ensures wide desktop sketch is viewable */
+    white-space: pre-wrap;
+    font-family: monospace;
+}
+
+/* Section Dividers */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #D4AF37;
+    /* Gold accent line */
+    margin: 20px 0;
+}
