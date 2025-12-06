@@ -21,11 +21,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap"
-        rel="stylesheet">
 
-    <link rel="stylesheet" href="styles/normalize.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="styles/main.css" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/medium.css" media="(min-width: 600px)">
     <link rel="stylesheet" href="styles/large.css" media="(min-width: 1000px)">
 
@@ -61,11 +62,14 @@
         </section>
 
         <section id="visitor-message" class="card">
+            <h2>Welcome to Benin City</h2>
             <p id="visit-message-text">Loading visit information...</p>
         </section>
 
         <section id="city-demographics" class="card">
             <h2>Benin City Demographics & Features</h2>
+            <div class="demographics-grid">
+                <p><strong>Population (Metro):</strong> Approx. 2.5 Million</p>
             <div class="demographics-grid">
                 <p><strong>Population (Metro):</strong> Approx. 2.5 Million</p>
                 <p><strong>Major Industries:</strong> Manufacturing, Trade, IT/Tech, Agriculture</p>
@@ -104,7 +108,7 @@
     </footer>
 
     <script src="scripts/main.js" defer></script>
-    <script src="scripts/discover.js" type="module" defer></script>
+    <script src="scripts/discover.js" type="module"></script>
 </body>
 
 </html>
