@@ -69,3 +69,34 @@
         text-align: right;
     }
 }
+
+@media only screen and (min-width: 600px) {
+
+   
+    .demographics-grid p {
+        flex-basis: 22%;
+        
+    }
+
+  
+    #poi-gallery {
+        grid-template-columns: 1fr 1fr;
+             grid-template-areas:
+            "area1 area2"
+            "area3 area4"
+            "area5 area6"
+            "area7 area8";
+        gap: 1.5rem;
+    }
+
+    
+    .poi-card figure img {
+        transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .poi-card figure img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        filter: sepia(0.2);
+    }
+}

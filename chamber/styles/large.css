@@ -1,28 +1,41 @@
 @media only screen and (min-width: 1000px) {
     #home-main {
-        /* Define a three-column layout */
         grid-template-columns: 2fr 1fr 1fr;
-        /* Larger middle column for content, two smaller sidebars */
+        
     }
 
     #hero {
-        /* Hero spans all three columns */
+        
         grid-column: 1 / 4;
     }
 
     #events {
         grid-column: 1 / 2;
-        /* Column 1 (Large) */
-    }
+       
 
     #weather {
         grid-column: 2 / 3;
-        /* Column 2 (Small) */
-    }
+        
 
     #spotlights {
-        /* Spotlights spans columns 1 and 2, displaying three cards */
+        
         grid-column: 1 / 3;
         grid-template-columns: 1fr 1fr 1fr;
     }
+        @media only screen and (min-width: 1000px) {
+        
+            #discover-main {
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+    
+            #poi-gallery {
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-areas:
+                    "area1 area2 area3"
+                    "area4 area5 area5"
+                    "area6 area7 area8";
+                gap: 2rem;
+            }
+        }
 }

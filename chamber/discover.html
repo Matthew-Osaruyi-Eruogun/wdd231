@@ -4,31 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benin City Chamber of Commerce Directory</title>
+    <title>Benin City Chamber of Commerce | Discover</title>
     <meta name="description"
-        content="Official business directory for the Benin City Chamber of Commerce. Find local members, contact details, and more.">
+        content="Discover the rich history, culture, and business opportunities in Benin City, Edo State.">
     <meta name="author" content="Matthew Osaruyi Eruogun, WDD 231">
 
     <link rel="icon" href="images/favicon.ico">
 
-    <meta property="og:title" content="Benin City Chamber of Commerce Directory">
-    <meta property="og:description" content="Official business directory for the Benin City Chamber of Commerce.">
+    <meta property="og:title" content="Discover Benin City">
+    <meta property="og:description"
+        content="Factual and representative information about Benin City's demographics and features.">
     <meta property="og:image"
         content="https://matthew-osaruyi-eruogun.github.io/wdd231/images/benin-chambers-logo.webp">
-    <meta property="og:url" content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/directory.html">
+    <meta property="og:url" content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/discover.html">
 
     
-    <link rel="preload" href="images/benin-city_small.webp" as="image">
     <link rel="preload" href="fonts/roboto-v49-cyrillic_cyrillic-ext-700.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/roboto-v49-cyrillic_cyrillic-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/roboto-v49-cyrillic_cyrillic-ext-regular.woff2" as="font" type="font/woff2"
+        crossorigin>
     <link rel="preload" href="fonts/open-sans-v44-cyrillic_cyrillic-ext_latin-regular.woff2" as="font" type="font/woff2"
-    crossorigin>
+        crossorigin>
 
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/normalize.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="styles/main.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="styles/medium.css" media="(min-width: 600px)">
     <link rel="stylesheet" href="styles/large.css" media="(min-width: 1000px)">
-
 
 </head>
 
@@ -36,9 +36,9 @@
 
     <header>
         <div class="header-content">
-            <a href="index.html" class="logo-link">
+            <a href="home.html" class="logo-link">
                 <img src="images/benin-chambers-logo.webp" alt="Chamber Logo" class="logo">
-                <h1>Benin City Chamber of Commerce</h1>
+                <h2>Benin City Chamber of Commerce</h2>
             </a>
             <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
         </div>
@@ -46,23 +46,38 @@
         <nav id="main-nav" class="navigation">
             <ul>
                 <li><a href="home.html">Home</a></li>
-                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html">Join</a></li>
-                <li><a href="discover.html">Discover</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="directory-main">
-        <h2>Business Directory</h2>
+    <main id="discover-main">
+        <section id="discover-hero" class="card">
+            <h1>Discover the Heart of Edo State: Benin City</h1>
+            <p>Benin City is a historical and commercial hub, offering a unique blend of ancient heritage and modern
+                commerce. Our city appeals to both businesses looking for strategic growth and visitors seeking a
+                cultural experience.</p>
+        </section>
 
-        <div class="view-toggle">
-            <button id="grid-button" class="view-active" aria-label="Show as Grid">Grid View</button>
-            <button id="list-button" aria-label="Show as List">List View</button>
-        </div>
+        <section id="visitor-message" class="card">
+            <p id="visit-message-text">Loading visit information...</p>
+        </section>
 
-        <div id="directory-container" class="grid-view">
-        </div>
+        <section id="city-demographics" class="card">
+            <h2>Benin City Demographics & Features</h2>
+            <div class="demographics-grid">
+                <p><strong>Population (Metro):</strong> Approx. 2.5 Million</p>
+                <p><strong>Major Industries:</strong> Manufacturing, Trade, IT/Tech, Agriculture</p>
+                <p><strong>Key Feature:</strong> Home to the historic Kingdom of Benin.</p>
+                <p><strong>Transportation:</strong> Major regional airport (BEN), extensive road network.</p>
+            </div>
+        </section>
+
+        <section id="poi-gallery" class="card">
+            <h2>Points of Interest</h2>
+        </section>
 
     </main>
 
@@ -90,6 +105,7 @@
     </footer>
 
     <script src="scripts/main.js" defer></script>
+    <script src="scripts/discover.js" type="module" defer></script>
 </body>
 
 </html>
