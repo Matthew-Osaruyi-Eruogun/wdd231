@@ -35,7 +35,7 @@ messageElement.textContent = message;
 localStorage.setItem('lastVisit', today);
 
 
-// --- B. Dynamic Card Creation ---
+// --- B. Dynamic Card Creation (Updated for CLS Fix) ---
 
 const gallery = document.getElementById('poi-gallery');
 
@@ -51,15 +51,20 @@ pointsOfInterest.forEach((spot, index) => {
 
     // Figure and Image
     const figure = document.createElement('figure');
+
+    // 💡 CLS FIX: Create the container for the aspect ratio trick
+    const imageContainer = document.createElement('div');
+    imageContainer.classList.add('image-ratio-box');
+
     const img = document.createElement('img');
     img.setAttribute('src', `images/${spot.image}`);
-    // Assuming images are resized to 300x200
     img.setAttribute('alt', `Photo of ${spot.name}`);
     img.setAttribute('loading', 'lazy');
-    // *** The critical CLS fix is here ***
-    img.setAttribute('width', '300');
-    img.setAttribute('height', '200');
-    figure.appendChild(img);
+
+
+
+    imageContainer.appendChild(img);
+    figure.appendChild(imageContainer); // Figure now holds the container
 
     // Address
     const address = document.createElement('address');
