@@ -4,13 +4,9 @@
 /* --- Color Scheme Variables --- */
 :root {
     --color-primary: #8B0000;
-    /* Deep Red/Maroon */
     --color-accent: #D4AF37;
-    /* Metallic Gold */
     --color-background: #F8F4E3;
-    /* Soft Beige */
     --color-text: #2D2D2D;
-    /* Dark Charcoal */
     --color-white: #FFFFFF;
 }
 
@@ -94,7 +90,6 @@ header {
 /* Mobile Navigation (Hamburger) */
 .hamburger {
     display: none;
-    /* Hidden by default on desktop */
     font-size: 1.5rem;
     background: none;
     border: none;
@@ -111,16 +106,14 @@ header {
     align-items: flex-end;
     justify-content: center;
     text-align: center;
-    /* THIS MUST BE PRESENT AND CORRECT: */
     position: relative;
     padding: 20px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 2. The image must be positioned absolutely to fill the container */
+
 .hero-background-img {
-    /* THIS MUST BE PRESENT AND CORRECT: */
     position: absolute;
     top: 0;
     left: 0;
@@ -133,7 +126,6 @@ header {
 /* 3. The text overlay must sit on top of the image */
 .hero-text-overlay {
     position: absolute;
-    /* Keep this to ensure text is above the image (z-index 5) */
     z-index: 5;
     color: var(--color-white);
     background-color: rgba(0, 0, 0, 0.3);
@@ -244,13 +236,11 @@ main {
     font-weight: 600;
     transition: background-color 0.3s, transform 0.1s;
     text-decoration: none;
-    /* For use on <a> tags */
     display: inline-block;
 }
 
 .cta-primary:hover {
     background-color: #A52A2A;
-    /* Slightly darker red */
     transform: translateY(-1px);
 }
 
@@ -269,7 +259,7 @@ main {
 
 .cta-secondary:hover {
     background-color: #C0A032;
-    /* Slightly darker gold */
+   
 }
 
 /* --- Footer --- */
@@ -297,7 +287,6 @@ footer a:hover {
 /* Tablet and Desktop View: Apply Grid for two columns */
 @media (min-width: 768px) {
     .content-grid {
-        /* 60% (styles) / 40% (vendor CTA) split */
         grid-template-columns: 3fr 2fr;
     }
 }
@@ -305,19 +294,16 @@ footer a:hover {
 /* Mobile View: Stack elements and show hamburger */
 @media (max-width: 767px) {
 
-    /* Navigation Toggle */
     .hamburger {
         display: block;
     }
 
     .nav-links {
         display: none;
-        /* Hide horizontal links by default */
         flex-direction: column;
         width: 100%;
         position: absolute;
         top: 50px;
-        /* Adjust based on header height */
         left: 0;
         background-color: var(--color-white);
         z-index: 10;
@@ -326,7 +312,7 @@ footer a:hover {
 
     .nav-links.open {
         display: flex;
-        /* Show vertical links when open */
+      
     }
 
     .nav-links li {
@@ -390,7 +376,6 @@ footer a:hover {
             font-weight: 600;
             color: var(--color-primary);
             background-color: #fce4e4;
-            /* Light background for type tag */
             display: inline-block;
             padding: 3px 8px;
             border-radius: 5px;
@@ -399,7 +384,6 @@ footer a:hover {
     
         .vendor-rating {
             color: #FFC107;
-            /* Star yellow */
             margin-bottom: 15px;
             font-weight: 600;
         }
@@ -449,11 +433,10 @@ footer a:hover {
                 .style-card-item img {
                     width: 100%;
                     height: 350px;
-                    /* Fixed height for gallery consistency */
                     object-fit: cover;
                     display: block;
                     transition: opacity 0.3s;
-                    /* REQUIRED: Lazy Loading is handled in HTML */
+                  
                 }
         
                 /* Overlay that appears on hover */
@@ -463,16 +446,13 @@ footer a:hover {
                     left: 0;
                     right: 0;
                     background-color: rgba(139, 0, 0, 0.85);
-                    /* Deep Red overlay */
                     color: var(--color-white);
                     padding: 15px;
-                    /* Initially hidden below the card */
                     transform: translateY(100%);
                     transition: transform 0.3s ease-out;
                 }
         
                 .style-card-item:hover .style-info {
-                    /* Slides up on hover */
                     transform: translateY(0);
                 }
         
@@ -586,7 +566,6 @@ footer a:hover {
                 /* --- Modal Dialog Styles (REQUIRED) --- */
         
                 .modal {
-                    /* Hidden by default */
                     position: fixed;
                     z-index: 1000;
                     left: 0;
@@ -594,7 +573,6 @@ footer a:hover {
                     width: 100%;
                     height: 100%;
                     background-color: rgba(0, 0, 0, 0.8);
-                    /* Dark overlay */
                     opacity: 0;
                     visibility: hidden;
                     transition: opacity 0.3s, visibility 0.3s;
