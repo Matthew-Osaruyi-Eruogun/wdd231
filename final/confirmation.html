@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Request Confirmation | Aso-Ebi Thread</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body id="confirmation-page">
+    <main class="confirmation-container">
+        <h1>Thank You for Your Request!</h1>
+        <p class="intro-text">Your quote request has been successfully submitted and forwarded to our network of
+            certified vendors. You should receive responses shortly.</p>
+
+        <section class="submitted-data">
+            <h2>Your Submitted Details</h2>
+            <ul id="form-data-list">
+                <li>
+                    <p>Loading...</p>
+                </li>
+            </ul>
+        </section>
+
+        <p><a href="index.html" class="cta-primary">Return to Homepage</a></p>
+    </main>
+
+    <script>
+        // JavaScript to read the URL parameters (form data) and display them
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const dataList = document.getElementById('form-data-list');
+            dataList.innerHTML = '';
+
+            if (Array.from(params).length === 0) {
+                dataList.innerHTML = '<li>No data was submitted.</li>';
+                return;
+            }
+
+            for (const [key, value] of params.entries()) {
+                const listItem = document.createElement('li');
+                // Format the key for readability (e.g., 'full-name' to 'Full Name')
+                const readableKey = key.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+                // Display the submitted key-value pairs
+                listItem.innerHTML = `<strong>${readableKey}:</strong> ${value || 'N/A'}`;
+                dataList.appendChild(listItem);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+{
+    "vendors": [
+        {
+            "id": 101,
+            "name": "Luxury Lace Palace",
+            "type": "Fabric Vendor",
+            "location": "Lagos Island, NG",
+            "rating": 4.8,
+            "min_bulk_order": 50,
+            "specialties": [
+                "Swiss Lace",
+                "Sequined George",
+                "French Tulle"
+            ],
+            "logo_url": "images/vendor-101-logo.png"
+        },
+        {
+            "id": 205,
+            "name": "Style Stitch Tailoring",
+            "type": "Tailor/Designer",
+            "location": "Abuja, NG",
+            "rating": 4.9,
+            "specialties": [
+                "Bespoke Agbada",
+                "Modern Iro & Buba",
+                "Bridal Wear"
+            ],
+            "contact_email": "stylestitch@email.com",
+            "price_range": "$$$"
+        },
+        {
+            "id": 112,
+            "name": "Okin Fabrics",
+            "type": "Fabric Vendor",
+            "location": "Ibadan, NG",
+            "rating": 4.5,
+            "min_bulk_order": 150,
+            "specialties": [
+                "Ankara",
+                "Adire",
+                "Cotton"
+            ],
+            "logo_url": "images/vendor-112-logo.png"
+        },
+        {
+            "id": 218,
+            "name": "Queen's Couturier",
+            "type": "Tailor/Designer",
+            "location": "Lagos Mainland, NG",
+            "rating": 4.7,
+            "specialties": [
+                "Gele tying",
+                "Female contemporary styles"
+            ],
+            "contact_email": "queenscouturier@email.com",
+            "price_range": "$$"
+        },
+        {
+            "id": 133,
+            "name": "Regal Threads",
+            "type": "Fabric Vendor",
+            "location": "Port Harcourt, NG",
+            "rating": 4.3,
+            "min_bulk_order": 80,
+            "specialties": [
+                "Velvet",
+                "Brocade",
+                "George"
+            ],
+            "logo_url": "images/vendor-133-logo.png"
+        },
+        {
+            "id": 240,
+            "name": "Alpha Designs",
+            "type": "Tailor/Designer",
+            "location": "Kano, NG",
+            "rating": 4.0,
+            "specialties": [
+                "Northern attire (Hawan Dala)",
+                "Gown design"
+            ],
+            "contact_email": "alphadesigns@email.com",
+            "price_range": "$$"
+        },
+        {
+            "id": 155,
+            "name": "Diamond Textiles",
+            "type": "Fabric Vendor",
+            "location": "Lagos Island, NG",
+            "rating": 4.6,
+            "min_bulk_order": 100,
+            "specialties": [
+                "Lace",
+                "Tulle",
+                "Silk"
+            ],
+            "logo_url": "images/vendor-155-logo.png"
+        },
+        {
+            "id": 261,
+            "name": "Elegant Stitch",
+            "type": "Tailor/Designer",
+            "location": "Abuja, NG",
+            "rating": 4.8,
+            "specialties": [
+                "Corporate Traditional wear",
+                "Children's Aso-Ebi"
+            ],
+            "contact_email": "elegantstitch@email.com",
+            "price_range": "$$$"
+        },
+        {
+            "id": 177,
+            "name": "Global Prints Store",
+            "type": "Fabric Vendor",
+            "location": "Lagos Mainland, NG",
+            "rating": 4.2,
+            "min_bulk_order": 30,
+            "specialties": [
+                "Wax Print (Ankara)",
+                "Tie-Dye (Adire)"
+            ],
+            "logo_url": "images/vendor-177-logo.png"
+        },
+        {
+            "id": 282,
+            "name": "The Fashion Architects",
+            "type": "Tailor/Designer",
+            "location": "Ibadan, NG",
+            "rating": 4.5,
+            "specialties": [
+                "Agbada",
+                "Sokoto/Buba sets"
+            ],
+            "contact_email": "fashionarchitects@email.com",
+            "price_range": "$$"
+        },
+        {
+            "id": 199,
+            "name": "Gold Thread Fabrics",
+            "type": "Fabric Vendor",
+            "location": "Enugu, NG",
+            "rating": 4.7,
+            "min_bulk_order": 60,
+            "specialties": [
+                "Heavy Lace",
+                "Sequin Materials"
+            ],
+            "logo_url": "images/vendor-199-logo.png"
+        },
+        {
+            "id": 290,
+            "name": "Bespoke Clothiers",
+            "type": "Tailor/Designer",
+            "location": "Lagos Island, NG",
+            "rating": 4.9,
+            "specialties": [
+                "High-end suits",
+                "Traditional men's wear"
+            ],
+            "contact_email": "bespoke@email.com",
+            "price_range": "$$$$"
+        },
+        {
+            "id": 100,
+            "name": "Traditional Wears Co.",
+            "type": "Fabric Vendor",
+            "location": "Ogun, NG",
+            "rating": 4.1,
+            "min_bulk_order": 40,
+            "specialties": [
+                "Aso-Oke",
+                "Fila",
+                "Gele"
+            ],
+            "logo_url": "images/vendor-100-logo.png"
+        },
+        {
+            "id": 200,
+            "name": "Modern Bride Atelier",
+            "type": "Tailor/Designer",
+            "location": "Lagos Mainland, NG",
+            "rating": 5.0,
+            "specialties": [
+                "Engagement Dresses",
+                "Reception Gowns"
+            ],
+            "contact_email": "modernbride@email.com",
+            "price_range": "$$$$"
+        },
+        {
+            "id": 102,
+            "name": "Silk & Satin Imports",
+            "type": "Fabric Vendor",
+            "location": "Abuja, NG",
+            "rating": 4.4,
+            "min_bulk_order": 70,
+            "specialties": [
+                "Satin",
+                "Chiffon",
+                "Brocade"
+            ],
+            "logo_url": "images/vendor-102-logo.png"
+        }
+    ]
+}

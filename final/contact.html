@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Quote or Consultation | Aso-Ebi Thread</title>
+    <meta name="description"
+        content="Submit a request for bulk fabric quotes or contact a verified tailor for a bespoke Aso-Ebi design consultation." />
+    <meta name="author" content="Your Name" />
+
+    <link rel="icon" href="images/favicon.ico">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body id="contact-page">
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">Aso-Ebi Thread</a>
+            <nav class="main-nav">
+                <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                    &#9776;
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="styles-gallery.html">Style Gallery</a></li>
+                    <li><a href="vendors.html">Vendor Directory</a></li>
+                    <li><a href="contact.html" class="active">Request Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Request a Quote or Consultation</h1>
+        <p class="intro-text">Fill out the form below to connect directly with certified Aso-Ebi vendors or tailors.</p>
+
+        <form id="quote-form" action="confirmation.html" method="get">
+            <fieldset>
+                <legend>Your Contact Information</legend>
+                <label for="full-name">Full Name:*</label>
+                <input type="text" id="full-name" name="full-name" required>
+
+                <label for="email">Email:*</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+            </fieldset>
+
+            <fieldset>
+                <legend>Request Details</legend>
+
+                <label for="service-type">I am looking for:*</label>
+                <select id="service-type" name="service-type" required>
+                    <option value="" disabled selected>Select a Service</option>
+                    <option value="fabric">Bulk Fabric Purchase (Vendor)</option>
+                    <option value="tailor">Tailoring & Custom Design (Tailor)</option>
+                    <option value="general">General Inquiry</option>
+                </select>
+
+                <label for="event-date">Target Event Date:</label>
+                <input type="date" id="event-date" name="event-date">
+
+                <label for="quantity">Approximate Quantity (Yards/Pieces):</label>
+                <input type="number" id="quantity" name="quantity" min="1" placeholder="e.g., 50 yards or 10 outfits">
+
+                <label for="message">Detailed Request / Fabric Description:*</label>
+                <textarea id="message" name="message" rows="5" required
+                    placeholder="Specify fabric type (Lace, Ankara, George), desired colors, or style complexity..."></textarea>
+            </fieldset>
+
+            <fieldset class="consent-fieldset">
+                <input type="checkbox" id="consent" name="consent" required>
+                <label for="consent">I consent to Aso-Ebi Thread sharing my request with relevant certified
+                    vendors.</label>
+            </fieldset>
+
+            <button type="submit" class="cta-primary">Submit Request</button>
+        </form>
+
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Aso-Ebi Thread. All rights reserved.</p>
+        <p>
+            <a href="attributions.html">Attributions</a> |
+            <a href="https://youtu.be/your-video-link" target="_blank">Video Demonstration</a> |
+            Privacy Policy
+        </p>
+    </footer>
+
+    <script src="scripts/main.js" type="module"></script>
+</body>
+
+</html>

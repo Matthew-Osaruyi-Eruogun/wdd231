@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certified Aso-Ebi Fabric Vendors & Tailors | Aso-Ebi Thread</title>
+    <meta name="description"
+        content="Browse our curated directory of certified Nigerian Aso-Ebi fabric vendors and professional fashion designers/tailors across Nigeria." />
+    <meta name="author" content="Your Name" />
+    <meta property="og:title" content="Aso-Ebi Vendor Directory" />
+    <meta property="og:description"
+        content="Find trusted fabric suppliers and experienced tailors for your next traditional event." />
+
+    <link rel="icon" href="images/favicon.ico">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body id="vendors-page">
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">Aso-Ebi Thread</a>
+            <nav class="main-nav">
+                <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                    &#9776;
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="styles-gallery.html">Style Gallery</a></li>
+                    <li><a href="vendors.html" class="active">Vendor Directory</a></li>
+                    <li><a href="contact.html">Request Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="vendor-header">
+            <h1>Certified Vendor Directory</h1>
+            <p>Connect with verified fabric vendors and skilled tailors. Use the filters below to refine your search.
+            </p>
+        </section>
+
+        <section class="vendor-filters">
+            <h2>Filter Vendors</h2>
+            <label for="vendor-type">Filter by Service Type:</label>
+            <select id="vendor-type" aria-label="Filter vendors by type">
+                <option value="all">Show All</option>
+                <option value="Fabric Vendor">Fabric Vendors</option>
+                <option value="Tailor/Designer">Tailors & Designers</option>
+            </select>
+        </section>
+
+        <section id="vendor-list" class="vendor-grid">
+            <p id="loading-message">Loading vendor data...</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Aso-Ebi Thread. All rights reserved.</p>
+        <p>
+            <a href="attributions.html">Attributions</a> |
+            <a href="https://youtu.be/your-video-link" target="_blank">Video Demonstration</a> |
+            Privacy Policy
+        </p>
+    </footer>
+
+    <script src="main.js" type="module"></script>
+    <script src="vendorDisplay.js" type="module"></script>
+</body>
+
+</html>
