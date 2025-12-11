@@ -1,0 +1,38 @@
+/* -------------------------------------------------------------------------- */
+/* Universal Box-Sizing Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base Body Setup */
+html,
+body {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    /* Use flex to allow the main content to grow and push the footer down */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure images scale correctly */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Set up the main content area for a mobile-first, single-column stack */
+main {
+    flex-grow: 1;
+    /* Allows main to occupy available vertical space */
+    width: 100%;
+    /* Use a responsive padding, keeping the max-width in the main styles.css */
+    padding: 20px 5%;
+}
