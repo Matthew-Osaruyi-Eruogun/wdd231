@@ -1,20 +1,18 @@
-/* BASE: Applies to all screen sizes (Mobile-first) */
+
 
 body {
     font-family: 'Roboto', sans-serif;
     max-width: 1200px;
-    /* Optional max width for desktop */
     margin: 0 auto;
     padding: 0;
 }
 
-/* HEADER AND NAV (Vertical Stacked Navigation) */
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    /* Use a color scheme */
     background-color: #333;
     color: white;
 }
@@ -24,34 +22,47 @@ header {
     padding: 0;
     margin: 0;
     display: none;
-    /* Hidden by default, shown/hidden by JS */
     flex-direction: column;
     text-align: center;
 }
-
-/* Use JS to toggle this class on the nav element */
 #main-nav.open ul {
     display: flex;
 }
 
-/* MAIN CONTENT (Single Column for Mobile) */
+
+#main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+   
+}
+
+
+#main-nav ul li a:visited {
+    color: white;
+}
+
+
+#main-nav ul li a:hover {
+    color: #cbd5e1;
+}
+
 main {
     padding: 1rem;
 }
 
 .main-content-grid {
-    /* No special layout needed here; sections stack by default */
     display: block;
 }
 
-/* COURSE CARDS (Simple stack for mobile) */
+
 .course-card {
     border: 1px solid #ccc;
     margin-bottom: 1rem;
     padding: 1rem;
 }
 
-/* Footer styles (Vertical stack) */
+
 footer {
     text-align: center;
     padding: 1rem;
@@ -59,27 +70,24 @@ footer {
     color: white;
 }
 
-/* css/small.css */
+footer .social-links a {
+    text-decoration: none;
+}
+
 
 .site-logo {
     display: block;
-    /* Ensures it behaves as a block element */
     width: 40px;
-    /* Adjust this value to make it bigger */
     height: auto;
-    /* Maintain aspect ratio */
     margin-right: 10px;
-    /* Give some space between logo and your name */
+  
 }
 
-/* Also, ensure the parent logo-area is styled correctly to hold both */
 .logo-area {
     display: flex;
-    /* Make the logo and text align horizontally */
     align-items: center;
-    /* Vertically center them */
     gap: 5px;
-    /* Adds space between the logo and name */
+   
 }
 
 .social-links img {

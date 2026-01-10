@@ -1,33 +1,36 @@
 /* Media query applied only when screen width is 32rem (512px) or larger */
 @media screen and (min-width: 32rem) {
 
-    /* HEADER AND NAV (Horizontal Layout) */
+   
     #menu-button {
         display: none;
-        /* Hide hamburger on large screens */
+        
+    }
+
+    .nav a main-nav {
+        color: #e8f5e9;
     }
 
     #main-nav ul {
         display: flex !important;
-        /* Force horizontal display */
         flex-direction: row;
+       
+
     }
 
     #main-nav li a {
         padding: 0.5rem 1rem;
     }
 
-    /* MAIN LAYOUT (Using CSS Grid for the required multi-column layout) */
+    
     .main-content-grid {
         display: grid;
-        /* Define columns for desktop view: 
-           About Me (2 parts), Student Photo (1 part), Courses (3 parts) */
         grid-template-columns: 2fr 1fr;
         gap: 20px;
         padding: 1rem 2rem;
     }
 
-    /* Span the courses section across both columns below the top sections */
+    
     .courses {
         grid-column: 1 / span 2;
     }
