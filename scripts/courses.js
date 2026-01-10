@@ -95,7 +95,7 @@ function renderCourseCards(courseList) {
 
         card.innerHTML = `
             <p class="subject">${course.subject} ${course.number}</p>
-            <h4 class="title">${course.title}</h4>
+            <h3 class="title">${course.title}</h3>
             <p class="credits">Credits: ${course.credits}</p>
         `;
         courseContainer.appendChild(card);
