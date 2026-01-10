@@ -17,6 +17,31 @@ header {
     color: white;
 }
 
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+img[src*="my-photo.webp"] {
+    width: 400px;
+    aspect-ratio: 1 / 1;
+}
+
+
+.site-logo {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+}
+
+
+footer img {
+    width: 30px;
+    aspect-ratio: 1 / 1;
+}
+
 #main-nav ul {
     list-style: none;
     padding: 0;
