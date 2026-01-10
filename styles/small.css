@@ -83,6 +83,14 @@ footer .social-links a {
   
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
 .logo-area {
     display: flex;
     align-items: center;
