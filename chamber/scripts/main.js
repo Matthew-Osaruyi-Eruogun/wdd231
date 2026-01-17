@@ -17,23 +17,31 @@ const gridButton = document.getElementById('grid-button');
 const listButton = document.getElementById('list-button');
 
 
-// Function to create a single member card/list item
 const createMemberElement = (member) => {
     const card = document.createElement('section');
     card.classList.add('member-card');
 
-    // Display level badge (optional styling for Gold/Silver/Regular)
-    // NOTE: Ensure your members.json uses NUMBERS (3, 2, 1) for this to work
     const levelName = member.membershipLevel === 3 ? 'Gold' : member.membershipLevel === 2 ? 'Silver' : 'Basic';
+
     card.innerHTML = `
-        <img src="images/${member.imageFile}" alt="${member.name} logo" loading="lazy" width="200" height="150" style="object-fit: contain;">
+        <img src="images/${member.imageFile}" 
+             alt="${member.name} official logo" 
+             loading="lazy" 
+             width="200" 
+             height="150">
         <h3 class="member-name">${member.name}</h3>
-        <p class="member-level">Membership: ${levelName}</p>
-        <p class="member-motto">${member.motto}</p>
+        <p class="member-level">Membership: <strong>${levelName}</strong></p>
+        <p class="member-motto"><em>${member.motto}</em></p>
         <hr>
         <p class="member-address">${member.address}</p>
         <p class="member-phone">${member.phone}</p>
-        <a href="${member.website}" target="_blank" class="member-website">${member.website.replace('https://', '')}</a>
+        <a href="${member.website}" 
+           target="_blank" 
+           rel="noopener" 
+           class="member-website" 
+           aria-label="Visit ${member.name} website">
+           ${member.website.replace('https://', '').replace('http://', '')}
+        </a>
     `;
     return card;
 };
@@ -46,7 +54,7 @@ const displayMembers = async () => {
 
         // Check if directory container exists (good practice, though covered by 'if' below)
         if (directoryContainer) {
-            directoryContainer.innerHTML = ''; // Clear existing content
+            directoryContainer.innerHTML = ''; 
             members.forEach(member => {
                 directoryContainer.appendChild(createMemberElement(member));
             });
