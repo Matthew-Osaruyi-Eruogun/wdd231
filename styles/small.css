@@ -135,3 +135,20 @@ img {
     justify-content: center;
     padding-top: 10px;
 }
+
+#main-nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+
+header,
+footer {
+    background-color: #333;
+    color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+}

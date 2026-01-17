@@ -1,25 +1,40 @@
-/* Media query applied only when screen width is 32rem (512px) or larger */
-@media screen and (min-width: 32rem) {
+@media screen and (min-width: 64rem) {
 
    
-    #menu-button {
+    #menu-toggle {
         display: none;
-        
     }
-
 
     #main-nav ul {
         display: flex !important;
         flex-direction: row;
-       
-
     }
 
     #main-nav li a {
         padding: 0.5rem 1rem;
     }
 
+ 
+    #directory-container.grid-view {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    #directory-container.list-view .member-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        border-bottom: 1px solid #ddd;
+    }
+
     
+    #directory-container.list-view .member-card img {
+        display: none;
+    }
+
+   
     .main-content-grid {
         display: grid;
         grid-template-columns: 2fr 1fr;
@@ -27,26 +42,33 @@
         padding: 1rem 2rem;
     }
 
-    
     .courses {
         grid-column: 1 / span 2;
     }
 
-    
     .course-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 15px;
     }
 
-   
-    .course-card.completed {
-       
-        border-left: 5px solid forestgreen;
-        background-color: #e8f5e9;
+    .site-logo {
+        width: 60px;
+        height: auto;
     }
 
-    
+    header {
+        padding: 1.5rem 2rem;
+    }
+
+    .logo-area {
+        align-items: center;
+    }
+
+    .social-links img {
+        width: 45px;
+    }
+
     main h1,
     main section {
         padding-left: 0;
@@ -55,34 +77,7 @@
 }
 
 
-
-@media screen and (min-width: 32rem) {
-
-    .site-logo {
-        width: 60px;
-        height: auto;
-    }
-
-    
-    header {
-        padding: 1.5rem 2rem;
-    }
-
-    .logo-area {
-        
-        align-items: center;
-    }
-}
-
-
-
-@media screen and (min-width: 32rem) {
-
-   
-    .social-links img {
-        width: 45px;
-       
-    }
-
-
+.course-card.completed {
+    border-left: 5px solid forestgreen;
+    background-color: #e8f5e9;
 }

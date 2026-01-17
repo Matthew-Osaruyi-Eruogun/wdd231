@@ -1,0 +1,37 @@
+
+@media screen and (min-width: 37.5rem) {
+ 
+
+
+    #main-nav ul li a.active {
+        background-color: #444;
+        font-weight: bold;
+        border-bottom: 3px solid #cbd5e1;
+    }
+
+   
+    #directory-container.grid-view {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    #main-nav ul li a.active {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ffcc00;
+        font-weight: bold;
+    }
+
+    .member-card {
+        padding: 1.5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .logo-area h2 {
+        font-size: 1.5rem;
+    }
+}
