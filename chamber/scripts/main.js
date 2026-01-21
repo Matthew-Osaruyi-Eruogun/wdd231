@@ -1,22 +1,29 @@
 // --- FOOTER DATES ---
-document.getElementById('copyright-year').textContent = new Date().getFullYear();
-document.getElementById('last-modified').textContent = document.lastModified;
+const yearSpan = document.getElementById('copyright-year');
+const lastModifiedSpan = document.getElementById('last-modified');
+
+if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+if (lastModifiedSpan) lastModifiedSpan.textContent = document.lastModified;
 
 // --- MOBILE NAVIGATION TOGGLE ---
 const menuButton = document.getElementById('menu-toggle');
 const nav = document.getElementById('main-nav');
 
-menuButton.addEventListener('click', () => {
-    nav.classList.toggle('open');
-    menuButton.setAttribute('aria-expanded', nav.classList.contains('open'));
-});
+if (menuButton && nav) {
+    menuButton.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', isOpen);
+        menuButton.innerHTML = isOpen ? '&#10006;' : '&#9776;';
+    });
+}
 
 // --- MEMBER DIRECTORY LOGIC ---
 const directoryContainer = document.getElementById('directory-container');
 const gridButton = document.getElementById('grid-button');
 const listButton = document.getElementById('list-button');
 
-
+/**
+ * Creates a member card section */
 const createMemberElement = (member) => {
     const card = document.createElement('section');
     card.classList.add('member-card');
@@ -46,15 +53,14 @@ const createMemberElement = (member) => {
     return card;
 };
 
-// Function to fetch and display members
 const displayMembers = async () => {
     try {
         const response = await fetch('data/members.json');
+        if (!response.ok) throw new Error('Failed to fetch data');
         const members = await response.json();
 
-        // Check if directory container exists (good practice, though covered by 'if' below)
         if (directoryContainer) {
-            directoryContainer.innerHTML = ''; 
+            directoryContainer.innerHTML = '';
             members.forEach(member => {
                 directoryContainer.appendChild(createMemberElement(member));
             });
@@ -62,82 +68,70 @@ const displayMembers = async () => {
     } catch (error) {
         console.error('Error fetching member data:', error);
         if (directoryContainer) {
-            directoryContainer.innerHTML = '<p>Sorry, the business directory is currently unavailable.</p>';
+            directoryContainer.innerHTML = '<p class="error-msg">Sorry, the business directory is currently unavailable.</p>';
         }
     }
 };
 
 // --- VIEW TOGGLE FUNCTIONALITY ---
 const switchView = (view) => {
-    // Check if the container and buttons exist before manipulating them
     if (directoryContainer && gridButton && listButton) {
-        // Update the class on the container
         directoryContainer.classList.remove('grid-view', 'list-view');
         directoryContainer.classList.add(`${view}-view`);
 
-        // Update button visual state
-        gridButton.classList.remove('view-active');
-        listButton.classList.remove('view-active');
         if (view === 'grid') {
             gridButton.classList.add('view-active');
+            listButton.classList.remove('view-active');
+            gridButton.setAttribute('aria-pressed', 'true');
+            listButton.setAttribute('aria-pressed', 'false');
         } else {
             listButton.classList.add('view-active');
+            gridButton.classList.remove('view-active');
+            listButton.setAttribute('aria-pressed', 'true');
+            gridButton.setAttribute('aria-pressed', 'false');
         }
     }
 };
 
-// --- INITIALIZE DIRECTORY ONLY IF ELEMENTS EXIST (On directory.html) ---
+// Initialize Directory
 if (gridButton && listButton) {
-
-    // Event Listeners for the buttons
     gridButton.addEventListener('click', () => switchView('grid'));
     listButton.addEventListener('click', () => switchView('list'));
-
-    // Load members when the page loads (calls the function defined above)
     displayMembers();
 }
 
-
-// --- FORM TIMESTAMP & MODAL LOGIC (The bottom part of your original file) ---
+// --- FORM & MODAL LOGIC ---
 document.addEventListener('DOMContentLoaded', () => {
+    // Timestamp for forms
     const timestampField = document.getElementById('timestamp');
     if (timestampField) {
-        // Set the value to the current ISO date/time string
         timestampField.value = new Date().toISOString();
     }
 
-    // Modal Functionality
+    // Modal Handling
     const modalTriggers = document.querySelectorAll('.modal-trigger');
     const closeButtons = document.querySelectorAll('.close-button');
 
     modalTriggers.forEach(trigger => {
-        trigger.addEventListener('click', (event) => {
-            event.preventDefault();
-            const modalId = event.target.getAttribute('data-modal');
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modalId = trigger.getAttribute('data-modal');
             const modal = document.getElementById(modalId);
             if (modal) {
+                modal.showModal();
                 modal.style.display = 'block';
                 modal.setAttribute('aria-hidden', 'false');
-                modal.focus(); // Focus on the modal for accessibility
             }
         });
     });
 
-    closeButtons.forEach(closeBtn => {
-        closeBtn.addEventListener('click', () => {
-            const modal = closeBtn.closest('.modal');
+    closeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const modal = btn.closest('.modal');
             if (modal) {
                 modal.style.display = 'none';
                 modal.setAttribute('aria-hidden', 'true');
             }
         });
-    });
-
-    // Close modal when clicking outside (optional but good practice)
-    window.addEventListener('click', (event) => {
-        if (event.target.classList.contains('modal')) {
-            event.target.style.display = 'none';
-            event.target.setAttribute('aria-hidden', 'true');
-        }
     });
 });

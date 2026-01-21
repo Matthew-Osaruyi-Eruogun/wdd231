@@ -1,9 +1,11 @@
+/* --- 1. FONTS --- */
+/* Audit Fix: Shortened filenames and corrected font-family mapping */
 @font-face {
     font-display: swap;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    src: url(../fonts/roboto-v49-cyrillic_cyrillic-ext-regular.woff2) format('woff2');
+    src: url(../fonts/roboto-reg.woff2) format('woff2');
 }
 
 @font-face {
@@ -11,7 +13,7 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
-    src: url(../fonts/roboto-v49-cyrillic_cyrillic-ext-700.woff2) format('woff2');
+    src: url(../fonts/roboto-700.woff2) format('woff2');
 }
 
 @font-face {
@@ -19,12 +21,16 @@
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
-    src: url(../fonts/open-sans-v44-cyrillic_cyrillic-ext_latin-regular.woff2) format('woff2');
+    src: url(../fonts/open-sans-reg.woff2) format('woff2');
 }
 
+/* --- 2. VARIABLES --- */
 :root {
     --primary-color: #001f4c;
-    --secondary-color: #ffd700;
+    --secondary-color: #856404;
+    /* Fixed: Darkened Gold for accessibility contrast */
+    --member-link: #003d80;
+    /* Fixed: High contrast blue for links */
     --chamber-primary: #004d40;
     --chamber-hover: #00332c;
     --background-color: #f7f7f7;
@@ -38,7 +44,7 @@
     --body-font: 'Open Sans', sans-serif;
 }
 
-
+/* --- 3. BASE STYLES --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -80,7 +86,7 @@ a:hover {
     text-decoration: underline;
 }
 
-
+/* --- 4. HEADER & NAVIGATION --- */
 header {
     background-color: var(--primary-color);
     color: var(--light-text-color);
@@ -136,23 +142,19 @@ header {
 .navigation li a {
     display: block;
     padding: 1rem 0;
-    border-top: 1px solid rgb(255 255 255 / .2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     color: var(--light-text-color);
 }
 
 .navigation li a:hover,
 .navigation li a.active {
     background-color: var(--secondary-color);
-    color: var(--primary-color);
+    color: white;
+    /* Accessible white text on dark gold */
     text-decoration: none;
 }
 
-
-#directory-container {
-    min-height: 800px;
-    gap: 1rem;
-}
-
+/* --- 5. DIRECTORY & VIEW TOGGLES --- */
 .view-toggle {
     text-align: center;
     margin-bottom: 1.5rem;
@@ -169,7 +171,7 @@ header {
 
 .view-toggle .view-active {
     background-color: var(--secondary-color);
-    color: var(--primary-color);
+    color: white;
     font-weight: 700;
 }
 
@@ -181,7 +183,25 @@ header {
     transition: transform .3s, box-shadow 0.3s;
 }
 
-.member-card img {
+.member-website {
+    text-decoration: underline !important;
+    font-weight: bold;
+    color: var(--member-link);
+}
+
+/* --- 6. GRID VIEW --- */
+#directory-container.grid-view {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.grid-view .member-card {
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.grid-view .member-card img {
     width: 200px;
     height: 150px;
     object-fit: contain;
@@ -192,30 +212,7 @@ header {
     margin: 0 auto 0.5rem;
 }
 
-.member-website {
-    text-decoration: underline !important;
-    font-weight: bold;
-    color: #004a99;
-}
-
-
-#directory-container.grid-view {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-.grid-view .member-card {
-    text-align: center;
-    box-shadow: 0 4px 6px rgb(0 0 0 / .1);
-}
-
-.grid-view .member-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgb(0 0 0 / .15);
-}
-
-
+/* --- 7. LIST VIEW (Images Dropped) --- */
 #directory-container.list-view {
     display: flex;
     flex-direction: column;
@@ -224,17 +221,17 @@ header {
 
 #directory-container.list-view .member-card {
     display: grid;
-    grid-template-columns: 80px 1fr 1fr auto;
+    grid-template-columns: 1fr 1fr auto;
+    /* Fixed: Grid columns adjusted for removed image */
     align-items: center;
     text-align: left;
     border-radius: 0;
     border-left: 5px solid var(--primary-color);
 }
 
+/* Audit Fix: Effectively "drops" the image in list view */
 #directory-container.list-view .member-card img {
-    width: 60px;
-    height: 60px;
-    margin: 0;
+    display: none;
 }
 
 #directory-container.list-view .member-motto,
@@ -242,7 +239,7 @@ header {
     display: none;
 }
 
-
+/* --- 8. FOOTER --- */
 footer {
     background-color: var(--primary-color);
     color: var(--light-text-color);
@@ -270,9 +267,19 @@ footer {
     height: 30px;
 }
 
+/* --- 9. RESPONSIVE QUERIES --- */
+@media(min-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
 
 @media(min-width: 1024px) {
     #directory-container.grid-view {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
