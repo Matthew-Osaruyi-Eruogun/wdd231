@@ -1,5 +1,4 @@
 /* --- 1. FONTS --- */
-/* Audit Fix: Shortened filenames and corrected font-family mapping */
 @font-face {
     font-display: swap;
     font-family: 'Roboto';
@@ -28,9 +27,7 @@
 :root {
     --primary-color: #001f4c;
     --secondary-color: #856404;
-    /* Fixed: Darkened Gold for accessibility contrast */
     --member-link: #003d80;
-    /* Fixed: High contrast blue for links */
     --chamber-primary: #004d40;
     --chamber-hover: #00332c;
     --background-color: #f7f7f7;
@@ -72,7 +69,7 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
-    min-height: 60vh;
+    min-height: 800px;
 }
 
 a {
@@ -94,6 +91,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 80px;
 }
 
 .header-content {
@@ -111,10 +109,11 @@ header {
 
 .logo {
     width: 50px;
-    height: auto;
+    height: 50px;
     margin-right: 10px;
     border: 3px solid var(--secondary-color);
     border-radius: 50%;
+    object-fit: cover;
 }
 
 #menu-toggle {
@@ -123,12 +122,15 @@ header {
     font-size: 2rem;
     color: var(--light-text-color);
     cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .navigation {
     width: 100%;
     display: none;
     text-align: center;
+    min-height: 0;
 }
 
 .navigation.open {
@@ -150,11 +152,15 @@ header {
 .navigation li a.active {
     background-color: var(--secondary-color);
     color: white;
-    /* Accessible white text on dark gold */
     text-decoration: none;
 }
 
 /* --- 5. DIRECTORY & VIEW TOGGLES --- */
+#directory-container {
+    min-height: 600px;
+    display: block;
+}
+
 .view-toggle {
     text-align: center;
     margin-bottom: 1.5rem;
@@ -222,14 +228,12 @@ header {
 #directory-container.list-view .member-card {
     display: grid;
     grid-template-columns: 1fr 1fr auto;
-    /* Fixed: Grid columns adjusted for removed image */
     align-items: center;
     text-align: left;
     border-radius: 0;
     border-left: 5px solid var(--primary-color);
 }
 
-/* Audit Fix: Effectively "drops" the image in list view */
 #directory-container.list-view .member-card img {
     display: none;
 }

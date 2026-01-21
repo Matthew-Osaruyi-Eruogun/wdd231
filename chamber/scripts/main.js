@@ -24,16 +24,22 @@ const listButton = document.getElementById('list-button');
 
 /**
  * Creates a member card section */
-const createMemberElement = (member) => {
+const createMemberElement = (member, index) => {
     const card = document.createElement('section');
     card.classList.add('member-card');
 
     const levelName = member.membershipLevel === 3 ? 'Gold' : member.membershipLevel === 2 ? 'Silver' : 'Basic';
 
+
+    const isFirst = index === 0;
+    const loadingStrategy = isFirst ? 'eager' : 'lazy';
+    const priority = isFirst ? 'fetchpriority="high"' : '';
+
     card.innerHTML = `
         <img src="images/${member.imageFile}" 
              alt="${member.name} official logo" 
-             loading="lazy" 
+             loading="${loadingStrategy}" 
+             ${priority}
              width="200" 
              height="150">
         <h3 class="member-name">${member.name}</h3>
@@ -61,8 +67,8 @@ const displayMembers = async () => {
 
         if (directoryContainer) {
             directoryContainer.innerHTML = '';
-            members.forEach(member => {
-                directoryContainer.appendChild(createMemberElement(member));
+                members.forEach((member, index) => {
+                directoryContainer.appendChild(createMemberElement(member, index));
             });
         }
     } catch (error) {
@@ -102,13 +108,11 @@ if (gridButton && listButton) {
 
 // --- FORM & MODAL LOGIC ---
 document.addEventListener('DOMContentLoaded', () => {
-    // Timestamp for forms
     const timestampField = document.getElementById('timestamp');
     if (timestampField) {
         timestampField.value = new Date().toISOString();
     }
 
-    // Modal Handling
     const modalTriggers = document.querySelectorAll('.modal-trigger');
     const closeButtons = document.querySelectorAll('.close-button');
 
@@ -118,7 +122,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const modalId = trigger.getAttribute('data-modal');
             const modal = document.getElementById(modalId);
             if (modal) {
-                modal.showModal();
+                // Check if browser supports showModal(), otherwise fallback to display block
+                if (typeof modal.showModal === "function") {
+                    modal.showModal();
+                }
                 modal.style.display = 'block';
                 modal.setAttribute('aria-hidden', 'false');
             }
@@ -129,6 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => {
             const modal = btn.closest('.modal');
             if (modal) {
+                if (typeof modal.close === "function") {
+                    modal.close();
+                }
                 modal.style.display = 'none';
                 modal.setAttribute('aria-hidden', 'true');
             }
