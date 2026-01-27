@@ -3,9 +3,11 @@
    <url>
       <loc>https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/home.html</loc>
       <lastmod>2026-01-27</lastmod>
+      <priority>1.0</priority>
    </url>
    <url>
       <loc>https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/directory.html</loc>
       <lastmod>2026-01-27</lastmod>
+      <priority>0.8</priority>
    </url>
 </urlset>
