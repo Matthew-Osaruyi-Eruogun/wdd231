@@ -32,6 +32,11 @@ h3 {
     margin-bottom: 1rem;
 }
 
+header .logo-link h2,
+footer h3 {
+    color: var(--light-text-color);
+}
+
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -59,6 +64,7 @@ header {
     display: flex;
     align-items: center;
     color: var(--light-text-color);
+    text-decoration: none;
 }
 
 .logo {
@@ -102,7 +108,7 @@ header {
     background-color: var(--secondary-color);
 }
 
-/* --- 4. HERO SECTION (Centered Button Fix) --- */
+/* --- 4. HERO SECTION (Layout Fix) --- */
 #hero {
     position: relative;
     width: 100%;
@@ -127,9 +133,9 @@ header {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     white-space: nowrap;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .cta:hover {
@@ -169,63 +175,4 @@ footer a {
     width: 30px;
     margin: 1rem 0.5rem;
     filter: brightness(0) invert(1);
-}
-
-/* --- 7. MEDIUM SCREENS (600px+) --- */
-@media only screen and (min-width: 600px) {
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    #menu-toggle {
-        display: none;
-    }
-
-    .navigation {
-        display: block;
-        width: auto;
-    }
-
-    .navigation ul {
-        display: flex;
-    }
-
-    .navigation li a {
-        border: none;
-    }
-
-    .home-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    #spotlights {
-        grid-column: 1 / 3;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-    }
-
-    .footer-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        text-align: left;
-        align-items: center;
-    }
-}
-
-/* --- 8. LARGE SCREENS (1000px+) --- */
-@media only screen and (min-width: 1000px) {
-    .home-grid {
-        grid-template-columns: 1.5fr 1fr 1.5fr;
-    }
-
-    #spotlights {
-        grid-column: auto;
-        grid-template-columns: 1fr;
-    }
-
-    main {
-        padding: 2rem;
-    }
 }
