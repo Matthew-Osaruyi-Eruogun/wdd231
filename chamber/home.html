@@ -7,33 +7,29 @@
     <title>Home | Benin City Chamber of Commerce</title>
 
     <meta name="description"
-        content="Empowering businesses in Edo State, Nigeria. Join the Benin City Chamber of Commerce for networking and growth.">
+        content="Empowering businesses in Edo State, Nigeria. Join the Benin City Chamber of Commerce for networking, resources, and growth.">
     <meta name="author" content="Matthew Osaruyi Eruogun">
     <link rel="icon" href="favicon.ico">
+    <link rel="canonical" href="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/home.html">
 
     <meta property="og:title" content="Benin City Chamber of Commerce">
     <meta property="og:description"
-        content="Empowering businesses in Edo State, Nigeria. Join the Benin City Chamber of Commerce today for exclusive networking, resources, and growth opportunities.">
+        content="Empowering businesses in Edo State, Nigeria. Join today for exclusive networking and growth opportunities.">
     <meta property="og:image"
         content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/images/benin-city_large.webp">
     <meta property="og:url" content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/home.html">
 
     <link rel="preconnect" href="https://api.openweathermap.org">
-    <link rel="dns-prefetch" href="https://api.openweathermap.org">
-    <link rel="preconnect" href="https://openweathermap.org">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link rel="preload" href="styles/normalize.css" as="style">
-    <link rel="preload" href="styles/main.css" as="style">
-
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap"
-        rel="stylesheet">
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/medium.css" media="(min-width: 600px)">
     <link rel="stylesheet" href="styles/large.css" media="(min-width: 1000px)">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
 
     <script src="scripts/main.js" defer></script>
     <script src="scripts/weather.js" defer></script>
@@ -44,11 +40,11 @@
     <header>
         <div class="header-content">
             <a href="home.html" class="logo-link">
-                <img src="images/benin-chambers-logo.webp" alt="Benin City Chamber Logo" class="logo" width="44"
-                    height="43">
+                <img src="images/benin-chambers-logo.webp" alt="Benin City Chamber Logo" class="logo" width="60"
+                    height="60">
                 <h2>Benin City Chamber</h2>
             </a>
-            <button id="menu-toggle" aria-label="Open Navigation Menu">&#9776;</button>
+            <button id="menu-toggle" aria-label="Open Navigation Menu" aria-expanded="false">&#9776;</button>
         </div>
         <nav class="navigation">
             <ul>
@@ -62,12 +58,13 @@
 
     <main>
         <h1>Empowering Businesses in Edo State, Nigeria.</h1>
+
         <section id="hero">
-            <h2 class="visually-hidden">Hero Welcome</h2>
+            <h2 class="visually-hidden">Welcome to Benin City</h2>
             <picture>
                 <source srcset="images/benin-city_large.webp" media="(min-width: 1000px)">
                 <source srcset="images/benin-city_medium.webp" media="(min-width: 600px)">
-                <img src="images/benin-city_small.webp" alt="Benin City Skyline and Traffic" width="400" height="300"
+                <img src="images/benin-city_small.webp" alt="Benin City Skyline and Traffic" width="480" height="320"
                     fetchpriority="high">
             </picture>
             <a href="join.html" class="cta">Join the Chamber Today!</a>
@@ -80,7 +77,7 @@
             </section>
 
             <section id="weather" class="card">
-                <h2>Weather</h2>
+                <h2>Local Weather</h2>
                 <div id="current-weather"></div>
                 <div id="forecast-container"></div>
             </section>
@@ -97,22 +94,22 @@
             <div class="contact">
                 <h3>Contact Us</h3>
                 <p>Palm House, Benin City</p>
-                <p><a href="mailto:info@benin-citycc.org">info@benin-citycc.org</a></p>
+                <p><a href="mailto:info@benin-citycc.org" class="footer-link">info@benin-citycc.org</a></p>
             </div>
             <div class="social-links">
                 <a href="#" aria-label="Visit our YouTube channel">
-                    <img src="images/youtube.svg" alt="YouTube Icon" width="30" height="30">
+                    <img src="images/youtube.svg" alt="YouTube" width="30" height="30">
                 </a>
-                <a href="#" aria-label="Follow us on X (formerly Twitter)">
-                    <img src="images/twitter-x.svg" alt="Twitter X Icon" width="30" height="30">
+                <a href="#" aria-label="Follow us on X">
+                    <img src="images/twitter-x.svg" alt="Twitter X" width="30" height="30">
                 </a>
                 <a href="#" aria-label="Connect with us on LinkedIn">
-                    <img src="images/linkedin.svg" alt="LinkedIn Icon" width="30" height="30">
+                    <img src="images/linkedin.svg" alt="LinkedIn" width="30" height="30">
                 </a>
             </div>
             <div class="legal">
-                <p>&copy; <span id="currentyear"></span> | Matthew Osaruyi Eruogun</p>
-                <p id="lastModified"></p>
+                <p>&copy; <span id="copyright-year"></span> | Matthew Osaruyi Eruogun</p>
+                <p id="last-modified"></p>
             </div>
         </div>
     </footer>
