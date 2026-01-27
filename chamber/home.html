@@ -12,7 +12,8 @@
     <link rel="icon" href="favicon.ico">
 
     <meta property="og:title" content="Benin City Chamber of Commerce">
-    <meta property="og:description" content="Empowering businesses in Edo State, Nigeria.">
+<meta property="og:description"
+    content="Empowering businesses in Edo State, Nigeria. Join the Benin City Chamber of Commerce today for exclusive networking, resources, and growth opportunities.">
     <meta property="og:image"
         content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/images/benin-city_large.webp">
     <meta property="og:url" content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/home.html">
@@ -24,6 +25,8 @@
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/medium.css" media="(min-width: 600px)">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 1000px)">
 
     <script src="scripts/main.js" defer></script>
     <script src="scripts/weather.js" defer></script>
@@ -85,9 +88,15 @@
                 <p><a href="mailto:info@benin-citycc.org">info@benin-citycc.org</a></p>
             </div>
             <div class="social-links">
-                <a href="#"><img src="images/youtube.svg" alt="YouTube"></a>
-                <a href="#"><img src="images/twitter-x.svg" alt="Twitter"></a>
-                <a href="#"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+                <a href="#" aria-label="Visit our YouTube channel">
+                    <img src="images/youtube.svg" alt="YouTube Icon">
+                </a>
+                <a href="#" aria-label="Follow us on X">
+                    <img src="images/twitter-x.svg" alt="Twitter X Icon">
+                </a>
+                <a href="#" aria-label="Connect with us on LinkedIn">
+                    <img src="images/linkedin.svg" alt="LinkedIn Icon">
+                </a>
             </div>
             <div class="legal">
                 <p>&copy; <span id="currentyear"></span> | Matthew Osaruyi Eruogun</p>

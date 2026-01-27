@@ -1,47 +1,16 @@
-/* --- 1. FONTS --- */
-@font-face {
-    font-display: swap;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../fonts/roboto-reg.woff2) format('woff2');
-}
-
-@font-face {
-    font-display: swap;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    src: url(../fonts/roboto-700.woff2) format('woff2');
-}
-
-@font-face {
-    font-display: swap;
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../fonts/open-sans-reg.woff2) format('woff2');
-}
-
-/* --- 2. VARIABLES --- */
+/* --- 1. FONTS & VARIABLES --- */
 :root {
     --primary-color: #001f4c;
     --secondary-color: #856404;
-    --member-link: #003d80;
-    --chamber-primary: #004d40;
-    --chamber-hover: #00332c;
     --background-color: #f7f7f7;
     --text-color: #333;
     --light-text-color: #fff;
-    --medium-gray: #666;
-    --light-blue-bg: #f0f8ff;
     --light-border: #ddd;
-    --lightest-border: #eee;
     --heading-font: 'Roboto', sans-serif;
     --body-font: 'Open Sans', sans-serif;
 }
 
-/* --- 3. BASE STYLES --- */
+/* --- 2. BASE STYLES --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -53,37 +22,23 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
     line-height: 1.6;
-    min-width: 320px;
 }
 
 h1,
 h2,
-h3,
-button {
+h3 {
     font-family: var(--heading-font);
     color: var(--primary-color);
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
 }
 
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
-    min-height: 800px;
 }
 
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: var(--secondary-color);
-    text-decoration: underline;
-}
-
-/* --- 4. HEADER & NAVIGATION --- */
+/* --- 3. HEADER & NAV (Mobile First) --- */
 header {
     background-color: var(--primary-color);
     color: var(--light-text-color);
@@ -91,11 +46,6 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 80px;
-}
-
-footer h3, header h2 {
-    color: var(--light-text-color);
 }
 
 .header-content {
@@ -115,24 +65,20 @@ footer h3, header h2 {
     width: 50px;
     height: 50px;
     margin-right: 10px;
-    border: 3px solid var(--secondary-color);
     border-radius: 50%;
-    object-fit: cover;
 }
 
 #menu-toggle {
-    background: 0;
-    border: 0;
+    background: none;
+    border: none;
     font-size: 2rem;
-    color: var(--light-text-color);
+    color: white;
     cursor: pointer;
-    min-width: 44px;
-    min-height: 44px;
 }
 
 .navigation {
-    width: 100%;
     display: none;
+    width: 100%;
     text-align: center;
 }
 
@@ -146,172 +92,94 @@ footer h3, header h2 {
 
 .navigation li a {
     display: block;
-    padding: 1rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--light-text-color);
-}
-
-.navigation li a:hover,
-.navigation li a.active {
-    background-color: var(--secondary-color);
+    padding: 1rem;
     color: white;
     text-decoration: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* --- 5. SHARED COMPONENTS (Cards & Buttons) --- */
-.card,
-.member-card,
-.spotlight-card {
-    background-color: var(--light-text-color);
-    border: 1px solid var(--light-border);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.view-toggle {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.view-toggle button {
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
-    padding: .5rem 1rem;
-    border: 2px solid var(--primary-color);
-    cursor: pointer;
-    margin: 0 .5rem;
-}
-
-.view-toggle .view-active {
+.navigation li a.active {
     background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
-    font-weight: 700;
 }
 
-/* --- 6. DIRECTORY SPECIFIC --- */
-#directory-container.grid-view {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-.grid-view .member-card {
-    text-align: center;
-}
-
-.grid-view .member-card img {
+/* --- 4. HERO SECTION (Centered Button Fix) --- */
+#hero {
+    position: relative;
     width: 100%;
-    max-width: 200px;
+    margin-bottom: 2rem;
+}
+
+#hero img {
+    width: 100%;
     height: auto;
-    aspect-ratio: 4/3;
-    object-fit: contain;
-    background-color: #f4f4f4;
-    border: 2px solid var(--light-border);
-    margin: 0 auto 1rem;
     display: block;
-}
-
-#directory-container.list-view {
-    display: flex;
-    flex-direction: column;
-    gap: .75rem;
-}
-
-#directory-container.list-view .member-card {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    align-items: center;
     border-radius: 4px;
-    padding: 0.75rem 1rem;
 }
 
-#directory-container.list-view .member-card img,
-#directory-container.list-view .member-motto,
-#directory-container.list-view hr {
-    display: none;
+.cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    transition: 0.3s;
 }
 
-/* --- 7. HOME PAGE GRID --- */
+.cta:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+/* --- 5. HOME GRID & CARDS --- */
 .home-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    margin-top: 2rem;
 }
 
-.spotlight-card {
-    text-align: center;
+.card {
+    background: white;
+    padding: 1.5rem;
+    border: 1px solid var(--light-border);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.spotlight-card img {
-    max-height: 100px;
-    width: auto;
-    margin-bottom: 1rem;
-}
-
-/* --- 8. FOOTER --- */
+/* --- 6. FOOTER --- */
 footer {
     background-color: var(--primary-color);
-    color: var(--light-text-color);
+    color: white;
     padding: 2rem 1rem;
-    text-align: center;
     margin-top: 3rem;
+    text-align: center;
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+footer a {
+    color: var(--light-text-color);
 }
 
 .social-links img {
     width: 30px;
-    height: 30px;
+    margin: 1rem 0.5rem;
     filter: brightness(0) invert(1);
-    /* Ensures icons are white */
 }
 
-/* --- 9. RESPONSIVE QUERIES --- */
-
-
-@media (min-width: 700px) {
-    .home-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    #weather {
-        grid-column: span 2;
-    }
-
-    #directory-container.grid-view {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        text-align: left;
-    }
-
-    .social-links {
-        justify-content: flex-start;
-    }
-}
-
-/* Large Devices (Desktop, 1000px+) */
-@media (min-width: 1000px) {
+/* --- 7. MEDIUM SCREENS (600px+) --- */
+@media only screen and (min-width: 600px) {
     header {
         flex-direction: row;
         justify-content: space-between;
-        padding: 1rem 2rem;
+    }
+
+    #menu-toggle {
+        display: none;
     }
 
     .navigation {
@@ -321,31 +189,43 @@ footer {
 
     .navigation ul {
         display: flex;
-        gap: 1rem;
     }
 
     .navigation li a {
-        border-top: none;
-        padding: 0.5rem 1rem;
-    }
-
-    #menu-toggle {
-        display: none;
+        border: none;
     }
 
     .home-grid {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
-    #weather {
-        grid-column: span 1;
-    }
-
-    #directory-container.grid-view {
-        grid-template-columns: repeat(3, 1fr);
+    #spotlights {
+        grid-column: 1 / 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
     }
 
     .footer-grid {
-        grid-template-columns: 2fr 1fr 1.5fr;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        text-align: left;
+        align-items: center;
+    }
+}
+
+/* --- 8. LARGE SCREENS (1000px+) --- */
+@media only screen and (min-width: 1000px) {
+    .home-grid {
+        grid-template-columns: 1.5fr 1fr 1.5fr;
+    }
+
+    #spotlights {
+        grid-column: auto;
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 2rem;
     }
 }
