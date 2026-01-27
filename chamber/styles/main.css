@@ -134,7 +134,6 @@ header h2 {
     width: 100%;
     display: none;
     text-align: center;
-    min-height: 0;
 }
 
 .navigation.open {
@@ -159,10 +158,15 @@ header h2 {
     text-decoration: none;
 }
 
-/* --- 5. DIRECTORY & VIEW TOGGLES --- */
-#directory-container {
-    min-height: 600px;
-    display: block;
+/* --- 5. SHARED COMPONENTS (Cards & Buttons) --- */
+.card,
+.member-card,
+.spotlight-card {
+    background-color: var(--light-text-color);
+    border: 1px solid var(--light-border);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .view-toggle {
@@ -181,25 +185,11 @@ header h2 {
 
 .view-toggle .view-active {
     background-color: var(--secondary-color);
-    color: white;
+    border-color: var(--secondary-color);
     font-weight: 700;
 }
 
-.member-card {
-    background-color: var(--light-text-color);
-    border: 1px solid var(--light-border);
-    padding: 1rem;
-    border-radius: 8px;
-    transition: transform .3s, box-shadow 0.3s;
-}
-
-.member-website {
-    text-decoration: underline !important;
-    font-weight: bold;
-    color: var(--member-link);
-}
-
-/* --- 6. GRID VIEW --- */
+/* --- 6. DIRECTORY SPECIFIC --- */
 #directory-container.grid-view {
     display: grid;
     grid-template-columns: 1fr;
@@ -208,58 +198,71 @@ header h2 {
 
 .grid-view .member-card {
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .grid-view .member-card img {
-    width: 200px;
-    height: 150px;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    aspect-ratio: 4/3;
     object-fit: contain;
     background-color: #f4f4f4;
-    border: 3px solid var(--secondary-color);
-    border-radius: 4px;
+    border: 2px solid var(--light-border);
+    margin: 0 auto 1rem;
     display: block;
-    margin: 0 auto 0.5rem;
 }
 
-/* --- 7. LIST VIEW (Images Dropped) --- */
 #directory-container.list-view {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: .75rem;
 }
 
 #directory-container.list-view .member-card {
     display: grid;
-    grid-template-columns: 1fr 1fr auto;
+    grid-template-columns: 1.5fr 1fr 1fr;
     align-items: center;
-    text-align: left;
-    border-radius: 0;
-    border-left: 5px solid var(--primary-color);
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
 }
 
-#directory-container.list-view .member-card img {
-    display: none;
-}
-
+#directory-container.list-view .member-card img,
 #directory-container.list-view .member-motto,
 #directory-container.list-view hr {
     display: none;
+}
+
+/* --- 7. HOME PAGE GRID --- */
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.spotlight-card {
+    text-align: center;
+}
+
+.spotlight-card img {
+    max-height: 100px;
+    width: auto;
+    margin-bottom: 1rem;
 }
 
 /* --- 8. FOOTER --- */
 footer {
     background-color: var(--primary-color);
     color: var(--light-text-color);
-    padding: 1.5rem 1rem;
+    padding: 2rem 1rem;
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -273,21 +276,76 @@ footer {
 .social-links img {
     width: 30px;
     height: 30px;
+    filter: brightness(0) invert(1);
+    /* Ensures icons are white */
 }
 
 /* --- 9. RESPONSIVE QUERIES --- */
-@media(min-width: 600px) {
+
+/* Medium Devices (Tablets, 700px+) */
+@media (min-width: 700px) {
+    .home-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #weather {
+        grid-column: span 2;
+    }
+
+    #directory-container.grid-view {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr 1fr;
+        text-align: left;
+    }
+
+    .social-links {
+        justify-content: flex-start;
     }
 }
 
-@media(min-width: 1024px) {
+/* Large Devices (Desktop, 1000px+) */
+@media (min-width: 1000px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+
+    .navigation {
+        display: block;
+        width: auto;
+    }
+
+    .navigation ul {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .navigation li a {
+        border-top: none;
+        padding: 0.5rem 1rem;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #weather {
+        grid-column: span 1;
+    }
+
     #directory-container.grid-view {
         grid-template-columns: repeat(3, 1fr);
     }
 
     .footer-grid {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1.5fr;
     }
 }

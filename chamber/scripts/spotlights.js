@@ -14,9 +14,12 @@ async function getSpotlights() {
 function displaySpotlights(members) {
     const spotlightsContainer = document.getElementById('spotlight-container');
 
-    // Filter for Gold and Silver only
+    // Filter for Gold (3) and Silver (2) levels
     const goldAndSilver = members.filter(member =>
-        member.membershipLevel === 'Gold' || member.membershipLevel === 'Silver'
+        member.membershipLevel === 'Gold' ||
+        member.membershipLevel === 'Silver' ||
+        member.membershipLevel === 3 ||
+        member.membershipLevel === 2
     );
 
     // Randomize: Fisher-Yates Shuffle
@@ -25,32 +28,30 @@ function displaySpotlights(members) {
         [goldAndSilver[i], goldAndSilver[j]] = [goldAndSilver[j], goldAndSilver[i]];
     }
 
-    // Select 3 members
     const selectedSpotlights = goldAndSilver.slice(0, 3);
-
     spotlightsContainer.innerHTML = '';
 
     selectedSpotlights.forEach(member => {
-        const card = document.createElement('article'); 
+        const card = document.createElement('article');
         card.classList.add('spotlight-card', 'card');
 
+        // Logic to display name if level is numeric
+        const levelDisplay = (member.membershipLevel === 3 || member.membershipLevel === 'Gold') ? 'Gold' : 'Silver';
+
         card.innerHTML = `
-            <h3>${member.companyName}</h3>
-            <img src="${member.logoUrl}" 
-                 alt="${member.companyName} Logo" 
-                 loading="lazy" 
-                 width="150" 
-                 height="100">
-            <p><strong>Level:</strong> ${member.membershipLevel}</p>
+            <h3>${member.companyName || member.name}</h3>
+            <img src="${member.logoUrl || 'images/' + member.imageFile}" 
+                 alt="${member.companyName || member.name} Logo" 
+                 loading="lazy" width="150" height="100">
+            <p><strong>Level:</strong> ${levelDisplay}</p>
             <hr>
             <p>📞 ${member.phone}</p>
             <p>📍 ${member.address}</p>
-            <p><a href="${member.websiteUrl}" target="_blank" aria-label="Visit ${member.companyName} website">
-                ${member.websiteUrl.replace('https://', '').replace('http://', '')}
+            <p><a href="${member.websiteUrl || member.website}" target="_blank" rel="noopener">
+                Visit Website
             </a></p>
         `;
         spotlightsContainer.appendChild(card);
     });
 }
-
 getSpotlights();
