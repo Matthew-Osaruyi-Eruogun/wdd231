@@ -19,10 +19,10 @@ async function getWeatherData() {
         const currentData = await currentResponse.json();
         displayCurrentWeather(currentData);
 
-        // --- Fetch 3-Day Forecast (FIX 1 applied here too) ---
+       
         const forecastResponse = await fetch(`${FORECAST_URL}?q=${CITY_QUERY}&units=${UNITS}&appid=${API_KEY}`);
 
-        // --- FIX 2 applied here too ---
+     
         if (!forecastResponse.ok) {
             throw new Error(`Forecast API request failed with status: ${forecastResponse.status}`);
         }
@@ -32,7 +32,7 @@ async function getWeatherData() {
 
     } catch (error) {
         console.error('Error fetching weather data:', error);
-        // Add user-facing message here if needed
+        
     }
 }
 
@@ -46,7 +46,6 @@ function displayCurrentWeather(data) {
         return;
     }
 
-    // Current temperature and description
     const temp = data.main.temp.toFixed(0);
     const desc = data.weather[0].description.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
     const iconCode = data.weather[0].icon;
@@ -59,52 +58,34 @@ function displayCurrentWeather(data) {
     `;
 }
 
+
 function displayForecast(data) {
     const forecastContainer = document.getElementById('forecast-container');
-    // --- FIX 3: Add safety check for forecast data ---
-    if (!data || data.cod !== "200" || !data.list) {
-        console.error("Invalid or incomplete forecast data received:", data);
-        return;
-    }
+    if (!data || data.cod !== "200" || !data.list) return;
 
-    // Clear previous forecast elements
-    forecastContainer.innerHTML = '';
+    forecastContainer.innerHTML = '<h3>3-Day Forecast</h3>'; // Keep the heading
 
     const today = new Date();
     const threeDayForecast = [];
 
-    // Filter the list to get one entry per day for the next 3 days
-    // The OpenWeatherMap forecast provides data every 3 hours (8 entries per day)
-    // NOTE: This logic is still prone to missing days if the first entry is too late in the day.
-    for (let i = 0; threeDayForecast.length < 3; i++) {
-        // We'll use list[i] and check the date, rather than skipping 8 entries at once, 
-        // to more reliably grab the next three distinct days.
+    for (let i = 0; i < data.list.length && threeDayForecast.length < 3; i++) {
         const item = data.list[i];
+        const date = new Date(item.dt * 1000);
 
-        if (item) {
-            const date = new Date(item.dt * 1000);
-            // Check if the date is not today and the day hasn't been added yet
-            if (date.getDate() !== today.getDate() && !threeDayForecast.some(f => f.date.getDate() === date.getDate())) {
-                threeDayForecast.push({
-                    day: date.toLocaleDateString('en-US', { weekday: 'short' }),
-                    temp: item.main.temp_max.toFixed(0),
-                    date: date // store the date object to check against
-                });
-            }
+        if (date.getDate() !== today.getDate() && !threeDayForecast.some(f => f.date.getDate() === date.getDate())) {
+            threeDayForecast.push({
+                day: date.toLocaleDateString('en-US', { weekday: 'long' }), // "Monday" instead of "Mon"
+                temp: Math.round(item.main.temp),
+                date: date
+            });
         }
-        // If the loop runs too long without finding 3 days, break to prevent infinite loop. 
-        if (i > data.list.length) break;
     }
 
     threeDayForecast.forEach(forecast => {
         const dayElement = document.createElement('div');
         dayElement.classList.add('forecast-day');
-        dayElement.innerHTML = `
-            <p><strong>${forecast.day}</strong></p>
-            <p>${forecast.temp}°F</p>
-        `;
+        dayElement.innerHTML = `<p>${forecast.day}: <strong>${forecast.temp}°F</strong></p>`;
         forecastContainer.appendChild(dayElement);
     });
 }
-
 getWeatherData();
