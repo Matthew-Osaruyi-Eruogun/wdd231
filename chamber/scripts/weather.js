@@ -5,11 +5,9 @@ const CITY_QUERY = "Benin City,NG";
 const UNITS = 'imperial';
 
 async function getWeatherData() {
-    // 1. Check for containers first to prevent console errors on other pages
     const weatherContainer = document.getElementById('current-weather');
     const forecastContainer = document.getElementById('forecast-container');
 
-    // If these elements don't exist, stop the script immediately
     if (!weatherContainer || !forecastContainer) return;
 
     try {
@@ -27,6 +25,7 @@ async function getWeatherData() {
 
     } catch (error) {
         console.error('Error fetching weather data:', error);
+        weatherContainer.innerHTML = '<p>Weather data currently unavailable.</p>';
     }
 }
 
@@ -35,12 +34,15 @@ function displayCurrentWeather(data, container) {
 
     const temp = Math.round(data.main.temp);
     const desc = data.weather[0].description.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-    // Kept @4x for high resolution
     const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
 
     container.innerHTML = `
         <div class="weather-info">
-            <img src="${iconUrl}" alt="${desc}" width="100" height="100">
+            <img src="${iconUrl}" 
+                 alt="Current weather condition: ${desc}" 
+                 width="100" 
+                 height="100" 
+                 loading="lazy">
             <p><strong>${temp}°F</strong> - ${desc}</p>
         </div>
     `;
@@ -49,7 +51,10 @@ function displayCurrentWeather(data, container) {
 function displayForecast(data, container) {
     if (!data || !data.list) return;
 
+    // Clear loading content
     container.innerHTML = '<h3>3-Day Forecast</h3>';
+    const forecastList = document.createElement('div');
+    forecastList.classList.add('forecast-list');
 
     // Filter to get one forecast per day (targeting ~12:00 PM)
     const dailyForecasts = data.list.filter(item => item.dt_txt.includes("12:00:00")).slice(0, 3);
@@ -62,8 +67,10 @@ function displayForecast(data, container) {
         const dayElement = document.createElement('div');
         dayElement.classList.add('forecast-day');
         dayElement.innerHTML = `<p>${dayName}: <strong>${temp}°F</strong></p>`;
-        container.appendChild(dayElement);
+        forecastList.appendChild(dayElement);
     });
+
+    container.appendChild(forecastList);
 }
 
 getWeatherData();
