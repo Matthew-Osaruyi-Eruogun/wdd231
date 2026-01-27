@@ -7,25 +7,27 @@
     <title>Home | Benin City Chamber of Commerce</title>
 
     <meta name="description"
-        content="Empowering businesses in Edo State, Nigeria. Join the Benin City Chamber of Commerce to grow your network and access local business resources.">
+        content="Empowering businesses in Edo State, Nigeria. Join the Benin City Chamber of Commerce for networking and growth.">
     <meta name="author" content="Matthew Osaruyi Eruogun">
     <link rel="icon" href="favicon.ico">
 
-    <meta property="og:title" content="Benin City Chamber of Commerce - Empowering Edo Businesses">
-    <meta property="og:description"
-        content="Connecting entrepreneurs and driving economic growth in Benin City. Join our community today!">
+    <meta property="og:title" content="Benin City Chamber of Commerce">
+    <meta property="og:description" content="Empowering businesses in Edo State, Nigeria.">
     <meta property="og:image"
         content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/images/benin-city_large.webp">
     <meta property="og:url" content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/home.html">
-    <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
+
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/weather.js" defer></script>
+    <script src="scripts/spotlights.js" defer></script>
 </head>
 
 <body>
@@ -34,13 +36,11 @@
             <a href="home.html" class="logo-link">
                 <img src="images/benin-chambers-logo.webp" alt="Benin City Chamber Logo" class="logo" width="50"
                     height="50">
-                <h2>Benin City Chamber of Commerce</h2>
+                <h2>Benin City Chamber</h2>
             </a>
-            <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav"
-                aria-label="Open main navigation menu">&#9776;</button>
+            <button id="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
         </div>
-
-        <nav id="main-nav" class="navigation">
+        <nav class="navigation">
             <ul>
                 <li><a href="home.html" class="active">Home</a></li>
                 <li><a href="directory.html">Directory</a></li>
@@ -50,90 +50,51 @@
         </nav>
     </header>
 
-    <main id="home-main">
+    <main>
+        <h1>Empowering Businesses in Edo State, Nigeria.</h1>
         <section id="hero">
             <picture>
                 <source srcset="images/benin-city_large.webp" media="(min-width: 1000px)">
                 <source srcset="images/benin-city_medium.webp" media="(min-width: 600px)">
-                <img src="images/benin-city_small.webp" alt="Benin City Skyline" loading="eager" fetchpriority="high"
-                    width="1200" height="675">
+                <img src="images/benin-city_small.webp" alt="Benin City Skyline" width="400" height="300">
             </picture>
-            <div id="cta-box">
-                <a href="join.html" class="cta-button">Join the Chamber Today!</a>
-            </div>
-        </section>
-
-        <section id="hero-statement">
-            <h1>Empowering Businesses in Edo State, Nigeria.</h1>
+            <a href="join.html" class="cta">Join the Chamber Today!</a>
         </section>
 
         <div class="home-grid">
             <section id="events" class="card">
-                <h2>Upcoming Events 📅</h2>
-                <article>
-                    <h3>Monthly Business Summit</h3>
-                    <p>Date: Last Friday of the month</p>
-                    <p>Location: Edo Hotels Conference Hall</p>
-                    <a href="#" aria-label="Details about Monthly Business Summit">Details...</a>
-                </article>
-                <hr>
-                <article>
-                    <h3>Benin Tech Expo 2026</h3>
-                    <p>Date: April 15-17, 2026</p>
-                    <p>Location: University of Benin Auditorium</p>
-                    <a href="#" aria-label="Details about Benin Tech Expo 2026">Details...</a>
-                </article>
+                <h2>Upcoming Events</h2>
             </section>
-
-            <section id="spotlights" class="card">
-                <h2>Member Spotlights ✨</h2>
-                <div id="spotlight-container">
-                    <p>Loading member advertisements...</p>
-                </div>
-            </section>
-
             <section id="weather" class="card">
-                <h2>Benin City Weather ☀️</h2>
-                <div id="current-weather">
-                    <p>Loading current weather...</p>
-                </div>
+                <h2>Weather</h2>
+                <div id="current-weather"></div>
                 <div id="forecast-container"></div>
+            </section>
+            <section id="spotlights" class="card">
+                <h2>Member Spotlights</h2>
+                <div id="spotlight-container"></div>
             </section>
         </div>
     </main>
 
     <footer>
         <div class="footer-grid">
-            <div class="contact-info">
-                <h3>Benin City Chamber of Commerce</h3>
-                <p>3rd & 4th Floor, Palm House, Benin Sapele Rd, Benin City, Edo State.</p>
-                <p>Email: <a href="mailto:info@benin-citycc.org">info@benin-citycc.org</a></p>
-                <p>Phone: +234-806-055-3201</p>
+            <div class="contact">
+                <h3>Contact Us</h3>
+                <p>Palm House, Benin City</p>
+                <p><a href="mailto:info@benin-citycc.org">info@benin-citycc.org</a></p>
             </div>
-
             <div class="social-links">
-                <a href="https://youtube.com" aria-label="Visit our YouTube channel">
-                    <img src="images/youtube.svg" alt="YouTube Icon">
-                </a>
-                <a href="https://x.com" aria-label="Follow us on X">
-                    <img src="images/twitter-x.svg" alt="Twitter Icon">
-                </a>
-                <a href="https://linkedin.com" aria-label="Connect on LinkedIn">
-                    <img src="images/linkedin.svg" alt="LinkedIn Icon">
-                </a>
+                <a href="#"><img src="images/youtube.svg" alt="YouTube"></a>
+                <a href="#"><img src="images/twitter-x.svg" alt="Twitter"></a>
+                <a href="#"><img src="images/linkedin.svg" alt="LinkedIn"></a>
             </div>
-
-            <div class="developer-info">
-                <p>&copy; <span id="copyright-year"></span> Benin City Chamber of Commerce</p>
-                <p>Matthew Osaruyi Eruogun | WDD 231 Project</p>
-                <p>Last Modification: <span id="last-modified"></span></p>
+            <div class="legal">
+                <p>&copy; <span id="currentyear"></span> | Matthew Osaruyi Eruogun</p>
+                <p id="lastModified"></p>
             </div>
         </div>
     </footer>
-
-    <script src="scripts/main.js" defer></script>
-    <script src="scripts/weather.js" defer></script>
-    <script src="scripts/spotlights.js" defer></script>
 </body>
 
 </html>
