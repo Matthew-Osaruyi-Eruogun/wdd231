@@ -23,17 +23,18 @@ async function getWeatherData() {
     }
 }
 
+
 function displayCurrentWeather(data) {
     const weatherContainer = document.getElementById('current-weather');
     if (!data) return;
 
     const temp = Math.round(data.main.temp);
     const desc = data.weather[0].description.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-    const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`; // Added @2x for better resolution
+    const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
 
     weatherContainer.innerHTML = `
         <div class="weather-info">
-            <img src="${iconUrl}" alt="${desc}">
+            <img src="${iconUrl}" alt="${desc}" width="100" height="100">
             <p><strong>${temp}°F</strong> - ${desc}</p>
         </div>
     `;

@@ -14,7 +14,6 @@ async function getSpotlights() {
 function displaySpotlights(members) {
     const spotlightsContainer = document.getElementById('spotlight-container');
 
-    // Filter for Gold (3) and Silver (2) levels
     const goldAndSilver = members.filter(member =>
         member.membershipLevel === 'Gold' ||
         member.membershipLevel === 'Silver' ||
@@ -22,7 +21,6 @@ function displaySpotlights(members) {
         member.membershipLevel === 2
     );
 
-    // Randomize: Fisher-Yates Shuffle
     for (let i = goldAndSilver.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [goldAndSilver[i], goldAndSilver[j]] = [goldAndSilver[j], goldAndSilver[i]];
@@ -35,19 +33,22 @@ function displaySpotlights(members) {
         const card = document.createElement('article');
         card.classList.add('spotlight-card', 'card');
 
-        // Logic to display name if level is numeric
+        const companyName = member.companyName || member.name;
         const levelDisplay = (member.membershipLevel === 3 || member.membershipLevel === 'Gold') ? 'Gold' : 'Silver';
 
         card.innerHTML = `
-            <h3>${member.companyName || member.name}</h3>
+            <h3>${companyName}</h3>
             <img src="${member.logoUrl || 'images/' + member.imageFile}" 
-                 alt="${member.companyName || member.name} Logo" 
+                 alt="${companyName} Logo" 
                  loading="lazy" width="150" height="100">
             <p><strong>Level:</strong> ${levelDisplay}</p>
             <hr>
             <p>📞 ${member.phone}</p>
             <p>📍 ${member.address}</p>
-            <p><a href="${member.websiteUrl || member.website}" target="_blank" rel="noopener">
+            <p><a href="${member.websiteUrl || member.website}" 
+                  target="_blank" 
+                  rel="noopener" 
+                  aria-label="Visit ${companyName} website">
                 Visit Website
             </a></p>
         `;

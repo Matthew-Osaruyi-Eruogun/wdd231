@@ -171,6 +171,23 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+
+.spotlight-card img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+
+
 /* --- 6. FOOTER --- */
 footer {
     background-color: var(--primary-color);
