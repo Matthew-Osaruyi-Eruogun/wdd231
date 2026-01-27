@@ -81,9 +81,8 @@ header {
 
 .logo {
     width: 44px;
-    height: auto;
-    margin-right: 10px;
-    border-radius: 50%;
+    height: 43px;
+    object-fit: contain;
 }
 
 #menu-toggle {
