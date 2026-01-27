@@ -282,7 +282,7 @@ footer {
 
 /* --- 9. RESPONSIVE QUERIES --- */
 
-/* Medium Devices (Tablets, 700px+) */
+
 @media (min-width: 700px) {
     .home-grid {
         grid-template-columns: 1fr 1fr;
