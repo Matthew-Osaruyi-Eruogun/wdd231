@@ -94,6 +94,10 @@ header {
     min-height: 80px;
 }
 
+header h2 {
+    color: var(--light-text-color);
+}
+
 .header-content {
     width: 100%;
     display: flex;
