@@ -3,7 +3,8 @@ const yearSpan = document.querySelector('#copyright-year') || document.querySele
 const lastModifiedSpan = document.querySelector('#last-modified') || document.querySelector('#lastModified');
 
 if (yearSpan) yearSpan.textContent = new Date().getFullYear();
-if (lastModifiedSpan) lastModifiedSpan.textContent = `Last Modification: ${document.lastModified}`;
+// document.lastModified returns the full date/time string from the server
+if (lastModifiedSpan) lastModifiedSpan.textContent = document.lastModified;
 
 // --- MOBILE NAVIGATION TOGGLE ---
 const menuButton = document.querySelector('#menu-toggle');
@@ -13,6 +14,10 @@ if (menuButton && nav) {
     menuButton.addEventListener('click', () => {
         const isOpen = nav.classList.toggle('open');
         menuButton.setAttribute('aria-expanded', isOpen);
+
+        // Accessibility: Update the label for screen readers
+        menuButton.setAttribute('aria-label', isOpen ? 'Close Menu' : 'Open Menu');
+
         // Toggle between hamburger (☰) and X (×)
         menuButton.innerHTML = isOpen ? '<span>&times;</span>' : '<span>&#9776;</span>';
     });
@@ -23,18 +28,16 @@ const directoryContainer = document.querySelector('#directory-container');
 const gridButton = document.querySelector('#grid-button');
 const listButton = document.querySelector('#list-button');
 
-// Only run this if we are on the Directory page
 if (directoryContainer) {
     const createMemberElement = (member, index) => {
         const card = document.createElement('section');
         card.classList.add('member-card');
 
-        // Logic to handle both numeric (3, 2, 1) and string ("Gold", "Silver") levels
         let levelName = 'Basic';
         if (member.membershipLevel === 3 || member.membershipLevel === 'Gold') levelName = 'Gold';
         if (member.membershipLevel === 2 || member.membershipLevel === 'Silver') levelName = 'Silver';
 
-        // Performance: Eager load the first 2 images to help LCP (Largest Contentful Paint)
+        // LCP Optimization: Eager load the first 2 images
         const loadingStrategy = index < 2 ? 'eager' : 'lazy';
 
         card.innerHTML = `
@@ -56,6 +59,7 @@ if (directoryContainer) {
 
     const displayMembers = async () => {
         try {
+            // Updated to look for data folder in common chamber paths
             const response = await fetch('data/members.json');
             if (!response.ok) throw new Error('Data fetch failed');
             const members = await response.json();
@@ -72,18 +76,15 @@ if (directoryContainer) {
 
     displayMembers();
 
-    // View Toggle Listeners
     if (gridButton && listButton) {
         gridButton.addEventListener('click', () => {
-            directoryContainer.classList.add('grid-view');
-            directoryContainer.classList.remove('list-view');
+            directoryContainer.classList.replace('list-view', 'grid-view');
             gridButton.classList.add('view-active');
             listButton.classList.remove('view-active');
         });
 
         listButton.addEventListener('click', () => {
-            directoryContainer.classList.add('list-view');
-            directoryContainer.classList.remove('grid-view');
+            directoryContainer.classList.replace('grid-view', 'list-view');
             listButton.classList.add('view-active');
             gridButton.classList.remove('view-active');
         });

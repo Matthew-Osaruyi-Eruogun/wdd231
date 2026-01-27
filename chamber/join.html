@@ -8,41 +8,38 @@
     <meta name="description"
         content="Submit your application to join the Benin City Chamber of Commerce. Explore detailed benefits and pricing for all our membership levels.">
     <meta name="author" content="Matthew Osaruyi Eruogun, WDD 231">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="canonical" href="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/join.html">
+
     <meta property="og:title" content="Join the Benin City Chamber of Commerce Today!">
     <meta property="og:description"
-        content="Connect, grow, and empower your business in Edo State. Review membership benefits (Bronze, Silver, Gold, NP) and submit your application instantly.">
+        content="Connect, grow, and empower your business in Edo State. Review membership benefits and submit your application instantly.">
     <meta property="og:image"
         content="https://matthew-osaruyi-eruogun.github.io/wdd231/images/benin-chambers-logo.webp">
     <meta property="og:url" content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/join.html">
 
-    <link rel="preconnect" href="https://matthew-osaruyi-eruogun.github.io">
-    <link rel="preload" href="images/benin-city_small.webp" as="image">
-    <link rel="preload" href="fonts/roboto-v49-cyrillic_cyrillic-ext-700.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/roboto-v49-cyrillic_cyrillic-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/open-sans-v44-cyrillic_cyrillic-ext_latin-regular.woff2" as="font" type="font/woff2"
+    <link rel="preload" href="fonts/roboto-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/roboto-reg.woff2" as="font" type="font/woff2"
         crossorigin>
-    
-    <link rel="icon" href="images/favicon.ico">
-    
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/join.css">
-    <link rel="stylesheet" href="styles/medium.css" media="(min-width: 600px)">
-    <link rel="stylesheet" href="styles/large.css" media="(min-width: 1000px)">
 
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css?v=1.1">
+    <link rel="stylesheet" href="styles/join.css?v=1.1">
+    <link rel="stylesheet" href="styles/medium.css?v=1.1" media="(min-width: 600px)">
+    <link rel="stylesheet" href="styles/large.css?v=1.1" media="(min-width: 1000px)">
 </head>
 
 <body>
-
     <header>
         <div class="header-content">
             <a href="home.html" class="logo-link">
-                <img src="images/benin-chambers-logo.webp" alt="Chamber Logo" class="logo">
-                <h2>Benin City Chamber of Commerce</h2>
+                <img src="images/benin-chambers-logo.webp" alt="Benin City Chamber of Commerce Logo" class="logo"
+                    width="90" height="88">
+                <h1>Benin City Chamber of Commerce</h1>
             </a>
-            <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+            <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav"
+                aria-label="Toggle Menu">&#9776;</button>
         </div>
-
         <nav id="main-nav" class="navigation">
             <ul>
                 <li><a href="home.html">Home</a></li>
@@ -57,165 +54,14 @@
         <div class="join-grid-container">
             <section class="membership-form-section">
                 <h1>Join Our Community</h1>
-                <p>Please provide the following information to apply to join the Benin City Chamber of Commerce.
-                    Required fields are marked with an asterisk (*).</p>
-
                 <form method="get" action="thankyou.html">
-
-                    <fieldset>
-                        <legend>Applicant Information</legend>
-
-                        <label for="fname">
-                            Applicant's First Name *
-                            <input type="text" id="fname" name="fname" required title="Applicant's First Name"
-                                autocomplete="given-name">
-                        </label>
-
-                        <label for="lname">
-                            Applicant's Last Name *
-                            <input type="text" id="lname" name="lname" required title="Applicant's Last Name"
-                                autocomplete="family-name">
-                        </label>
-
-                        <label for="orgtitle">
-                            Organizational Title
-                            <input type="text" id="orgtitle" name="orgtitle"
-                                title="Organizational Title (7+ alpha characters, hyphens, and spaces only)"
-                                autocomplete="organization-title" pattern="[A-Za-z\s-]{7,}"
-                                placeholder="e.g., General Manager">
-                        </label>
-
-                        <label for="email">
-                            Email Address *
-                            <input type="email" id="email" name="email" required title="Applicant's Email Address"
-                                autocomplete="email" placeholder="name@example.com">
-                        </label>
-
-                        <label for="phone">
-                            Mobile Phone Number *
-                            <input type="tel" id="phone" name="phone" required title="Applicant's Mobile Phone Number"
-                                autocomplete="tel">
-                        </label>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>Business Information</legend>
-
-                        <label for="bizname">
-                            Business/Organization's Name *
-                            <input type="text" id="bizname" name="bizname" required title="Business/Organization's Name"
-                                autocomplete="organization">
-                        </label>
-
-                        <label for="level">
-                            Select Membership Level
-                            <select id="level" name="level" title="Membership Level Selection">
-                                <option value="" selected disabled>-- Select a Level --</option>
-                                <option value="np">NP Membership (Non-Profit, No Fee)</option>
-                                <option value="bronze">Bronze Membership</option>
-                                <option value="silver">Silver Membership</option>
-                                <option value="gold">Gold Membership</option>
-                            </select>
-                        </label>
-
-                        <label for="description">
-                            Business/Organization's Description
-                            <textarea id="description" name="description" title="Business/Organization's Description"
-                                rows="5" placeholder="Tell us about your organization..."></textarea>
-                        </label>
-
-                    </fieldset>
-
                     <input type="hidden" id="timestamp" name="timestamp">
-
                     <label class="submit-button-container">
                         <input type="submit" value="Submit Membership Application">
                     </label>
-
                 </form>
             </section>
-
-            <section class="membership-levels-section">
-                <h2>Explore Membership Benefits</h2>
-                <div class="membership-cards">
-
-                    <div class="card np-card initial-animate">
-                        <h3>NP Membership</h3>
-                        <p>No fee for non-profit organizations.</p>
-                        <a href="#" class="modal-trigger" data-modal="np-modal">View Benefits &rarr;</a>
-                    </div>
-
-                    <div class="card bronze-card initial-animate">
-                        <h3>Bronze Membership</h3>
-                        <p>Our essential level for networking and growth.</p>
-                        <a href="#" class="modal-trigger" data-modal="bronze-modal">View Benefits &rarr;</a>
-                    </div>
-
-                    <div class="card silver-card initial-animate">
-                        <h3>Silver Membership</h3>
-                        <p>Increased benefits, including event and training discounts.</p>
-                        <a href="#" class="modal-trigger" data-modal="silver-modal">View Benefits &rarr;</a>
-                    </div>
-
-                    <div class="card gold-card initial-animate">
-                        <h3>Gold Membership</h3>
-                        <p>Our premium level with maximum advertising and VIP access.</p>
-                        <a href="#" class="modal-trigger" data-modal="gold-modal">View Benefits &rarr;</a>
-                    </div>
-                </div>
-            </section>
         </div>
-
-        <div id="np-modal" class="modal" role="dialog" aria-labelledby="np-modal-title" aria-modal="true">
-            <div class="modal-content">
-                <span class="close-button" role="button" aria-label="Close dialog">&times;</span>
-                <h3 id="np-modal-title">NP Membership Benefits</h3>
-                <ul>
-                    <li>Basic directory listing.</li>
-                    <li>Access to general chamber newsletters.</li>
-                    <li>Ability to attend monthly networking events (fee may apply).</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="bronze-modal" class="modal" role="dialog" aria-labelledby="bronze-modal-title" aria-modal="true">
-            <div class="modal-content">
-                <span class="close-button" role="button" aria-label="Close dialog">&times;</span>
-                <h3 id="bronze-modal-title">Bronze Membership Benefits</h3>
-                <ul>
-                    <li>**All NP benefits included.**</li>
-                    <li>Discounted admission to one special chamber event per year.</li>
-                    <li>Access to member-only business resources portal.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="silver-modal" class="modal" role="dialog" aria-labelledby="silver-modal-title" aria-modal="true">
-            <div class="modal-content">
-                <span class="close-button" role="button" aria-label="Close dialog">&times;</span>
-                <h3 id="silver-modal-title">Silver Membership Benefits</h3>
-                <ul>
-                    <li>**All Bronze benefits included.**</li>
-                    <li>20% discount on all chamber event and training tickets.</li>
-                    <li>One brief mention/feature in the quarterly e-newsletter.</li>
-                    <li>Free annual business consultation session (1 hour).</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="gold-modal" class="modal" role="dialog" aria-labelledby="gold-modal-title" aria-modal="true">
-            <div class="modal-content">
-                <span class="close-button" role="button" aria-label="Close dialog">&times;</span>
-                <h3 id="gold-modal-title">Gold Membership Benefits</h3>
-                <ul>
-                    <li>**All Silver benefits included.**</li>
-                    <li>50% discount on all chamber event and training tickets.</li>
-                    <li>Quarterly 'Spotlight' advertising position on the Chamber home page.</li>
-                    <li>Exclusive invitation to VIP networking events with board members.</li>
-                </ul>
-            </div>
-        </div>
-
     </main>
 
     <footer>
@@ -223,16 +69,17 @@
             <div class="contact-info">
                 <h3>Benin City Chamber of Commerce</h3>
                 <p>3rd & 4th Floor, Palm House, Benin Sapele Rd, Oka, Benin City, Edo State. PMB:300102 </p>
-                <p>Email: <a href="mailto:info@benin-citycc.org">info@benin-citycc.org.</a></p>
+                <p>Email: <a href="mailto:info@benin-citycc.org">info@benin-citycc.org</a></p>
                 <p>Phone: +234-806-055-3201</p>
             </div>
-
             <div class="social-links">
-                <a href="#"><img src="images/youtube.svg" alt="YouTube Icon"></a>
-                <a href="#"><img src="images/twitter-x.svg" alt="Twitter Icon"></a>
-                <a href="#"><img src="images/linkedin.svg" alt="LinkedIn Icon"></a>
+                <a href="#" aria-label="Visit our YouTube channel"><img src="images/youtube.svg" alt="YouTube"
+                        width="30" height="30"></a>
+                <a href="#" aria-label="Visit our Twitter page"><img src="images/twitter-x.svg" alt="Twitter" width="30"
+                        height="30"></a>
+                <a href="#" aria-label="Visit our LinkedIn page"><img src="images/linkedin.svg" alt="LinkedIn"
+                        width="30" height="30"></a>
             </div>
-
             <div class="developer-info">
                 <p>&copy; <span id="copyright-year"></span> Benin City Chamber of Commerce</p>
                 <p>WDD 231 Project - Matthew Osaruyi Eruogun</p>
@@ -240,9 +87,7 @@
             </div>
         </div>
     </footer>
-
-    
-    <script src="scripts/main.js" defer></script>
+    <script src="scripts/main.js?v=1.1" defer></script>
     <script src="scripts/join.js" defer></script>
 </body>
 

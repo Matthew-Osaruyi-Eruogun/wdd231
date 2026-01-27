@@ -5,48 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benin City Chamber of Commerce | Discover</title>
-
     <meta name="description"
         content="Explore the ancient history, vibrant culture, and strategic business opportunities in Nigeria's historic Benin City.">
     <meta name="author" content="Matthew Osaruyi Eruogun, WDD 231">
-
     <link rel="icon" href="images/favicon.ico">
+    <link rel="canonical" href="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/discover.html">
 
-    <meta property="og:title" content="Discover Benin City: History, Culture, and Commerce in Edo State">
+    <meta property="og:title" content="Discover Benin City: History, Culture, and Commerce">
     <meta property="og:description"
-        content="Learn factual, representative information about Benin City's rich heritage, demographics, and features for visitors and investors.">
+        content="Learn factual information about Benin City's rich heritage and strategic features.">
     <meta property="og:image"
         content="https://matthew-osaruyi-eruogun.github.io/wdd231/images/benin-chambers-logo.webp">
     <meta property="og:url" content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/discover.html">
-    <link rel="preconnect" href="https://matthew-osaruyi-eruogun.github.io">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap"
-        rel="stylesheet" media="print" onload="this.media='all'">
-    <link rel="preload" href="fonts/roboto-v49-cyrillic_cyrillic-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/open-sans-v44-cyrillic_cyrillic-ext_latin-regular.woff2" as="font" type="font/woff2"
+    <link rel="preload" href="fonts/roboto-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/roboto-reg.woff2" as="font" type="font/woff2"
         crossorigin>
 
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/medium.css" media="(min-width: 600px)">
-    <link rel="stylesheet" href="styles/large.css" media="(min-width: 1000px)">
-
+    <link rel="stylesheet" href="styles/main.css?v=1.1">
+    <link rel="stylesheet" href="styles/medium.css?v=1.1" media="(min-width: 600px)">
+    <link rel="stylesheet" href="styles/large.css?v=1.1" media="(min-width: 1000px)">
 </head>
 
 <body>
-
     <header>
         <div class="header-content">
             <a href="home.html" class="logo-link">
-                <img src="images/benin-chambers-logo.webp" alt="Chamber Logo" class="logo" width="90" height="88">
-                <h2>Benin City Chamber of Commerce</h2>
+                <img src="images/benin-chambers-logo.webp" alt="Benin City Chamber of Commerce Logo" class="logo"
+                    width="90" height="88">
+                <h1>Benin City Chamber of Commerce</h1>
             </a>
-            <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+            <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav"
+                aria-label="Toggle Menu">&#9776;</button>
         </div>
-
         <nav id="main-nav" class="navigation">
             <ul>
                 <li><a href="home.html">Home</a></li>
@@ -61,28 +53,24 @@
         <section id="discover-hero" class="card">
             <h1>Discover the Heart of Edo State: Benin City</h1>
             <p>Benin City is a historical and commercial hub, offering a unique blend of ancient heritage and modern
-                commerce. Our city appeals to both businesses looking for strategic growth and visitors seeking a
-                cultural experience.</p>
+                commerce.</p>
         </section>
-
         <section id="visitor-message" class="card">
             <h2>Welcome to Benin City</h2>
             <p id="visit-message-text">Loading visit information...</p>
         </section>
         <section id="city-demographics" class="card">
             <h2>Benin City Demographics & Features</h2>
-    <div class="demographics-grid">
-            <p><strong>Population (Metro):</strong> Approx. 2.5 Million</p>
-            <p><strong>Major Industries:</strong> Manufacturing, Trade, IT/Tech, Agriculture</p>
-            <p><strong>Key Feature:</strong> Home to the historic Kingdom of Benin.</p>
-            <p><strong>Transportation:</strong> Major regional airport (BEN), extensive road network.</p>
-    </div>
-</section>
-
+            <div class="demographics-grid">
+                <p><strong>Population (Metro):</strong> Approx. 2.5 Million</p>
+                <p><strong>Major Industries:</strong> Manufacturing, Trade, IT/Tech, Agriculture</p>
+                <p><strong>Key Feature:</strong> Home to the historic Kingdom of Benin.</p>
+                <p><strong>Transportation:</strong> Major regional airport (BEN), extensive road network.</p>
+            </div>
+        </section>
         <section id="poi-gallery" class="card">
             <h2>Points of Interest</h2>
         </section>
-
     </main>
 
     <footer>
@@ -90,16 +78,17 @@
             <div class="contact-info">
                 <h3>Benin City Chamber of Commerce</h3>
                 <p>3rd & 4th Floor, Palm House, Benin Sapele Rd, Oka, Benin City, Edo State. PMB:300102 </p>
-                <p>Email: <a href="mailto:info@benin-citycc.org">info@benin-citycc.org.</a></p>
+                <p>Email: <a href="mailto:info@benin-citycc.org">info@benin-citycc.org</a></p>
                 <p>Phone: +234-806-055-3201</p>
             </div>
-
             <div class="social-links">
-                <a href="#"><img src="images/youtube.svg" alt="YouTube Icon"></a>
-                <a href="#"><img src="images/twitter-x.svg" alt="Twitter Icon"></a>
-                <a href="#"><img src="images/linkedin.svg" alt="LinkedIn Icon"></a>
+                <a href="#" aria-label="Visit our YouTube channel"><img src="images/youtube.svg" alt="YouTube"
+                        width="30" height="30"></a>
+                <a href="#" aria-label="Visit our Twitter page"><img src="images/twitter-x.svg" alt="Twitter" width="30"
+                        height="30"></a>
+                <a href="#" aria-label="Visit our LinkedIn page"><img src="images/linkedin.svg" alt="LinkedIn"
+                        width="30" height="30"></a>
             </div>
-
             <div class="developer-info">
                 <p>&copy; <span id="copyright-year"></span> Benin City Chamber of Commerce</p>
                 <p>WDD 231 Project - Matthew Osaruyi Eruogun</p>
@@ -107,8 +96,7 @@
             </div>
         </div>
     </footer>
-
-    <script src="scripts/main.js" defer></script>
+    <script src="scripts/main.js?v=1.1" defer></script>
     <script src="scripts/discover.js" type="module"></script>
 </body>
 
