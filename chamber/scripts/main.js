@@ -1,12 +1,27 @@
-// --- FOOTER DATES ---
-const yearSpan = document.querySelector('#copyright-year') || document.querySelector('#currentyear');
-const lastModifiedSpan = document.querySelector('#last-modified') || document.querySelector('#lastModified');
+// --- 1. FOOTER DATES & FORMATTING ---
+const yearSpan = document.querySelector('#copyright-year');
+const lastModifiedSpan = document.querySelector('#last-modified');
 
-if (yearSpan) yearSpan.textContent = new Date().getFullYear();
-// document.lastModified returns the full date/time string from the server
-if (lastModifiedSpan) lastModifiedSpan.textContent = document.lastModified;
+if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+}
 
-// --- MOBILE NAVIGATION TOGGLE ---
+if (lastModifiedSpan) {
+    // Format: MM/DD/YYYY HH:MM:SS
+    const lastMod = new Date(document.lastModified);
+    const formattedDate = new Intl.DateTimeFormat("en-US", {
+        month: "2-digit",
+        day: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+    }).format(lastMod);
+
+    lastModifiedSpan.textContent = `Last Modification: ${formattedDate}`;
+}
+
+// --- 2. MOBILE NAVIGATION TOGGLE ---
 const menuButton = document.querySelector('#menu-toggle');
 const nav = document.querySelector('.navigation');
 
@@ -16,14 +31,14 @@ if (menuButton && nav) {
         menuButton.setAttribute('aria-expanded', isOpen);
 
         // Accessibility: Update the label for screen readers
-        menuButton.setAttribute('aria-label', isOpen ? 'Close Menu' : 'Open Menu');
+        menuButton.setAttribute('aria-label', isOpen ? 'Close Navigation Menu' : 'Open Navigation Menu');
 
         // Toggle between hamburger (☰) and X (×)
         menuButton.innerHTML = isOpen ? '<span>&times;</span>' : '<span>&#9776;</span>';
     });
 }
 
-// --- DIRECTORY LOGIC ---
+// --- 3. DIRECTORY LOGIC ---
 const directoryContainer = document.querySelector('#directory-container');
 const gridButton = document.querySelector('#grid-button');
 const listButton = document.querySelector('#list-button');
@@ -33,35 +48,39 @@ if (directoryContainer) {
         const card = document.createElement('section');
         card.classList.add('member-card');
 
+        // Membership Level Logic
         let levelName = 'Basic';
         if (member.membershipLevel === 3 || member.membershipLevel === 'Gold') levelName = 'Gold';
-        if (member.membershipLevel === 2 || member.membershipLevel === 'Silver') levelName = 'Silver';
+        else if (member.membershipLevel === 2 || member.membershipLevel === 'Silver') levelName = 'Silver';
 
-        // LCP Optimization: Eager load the first 2 images
+        // LCP Optimization: Eager load the first 2 images to improve speed scores
         const loadingStrategy = index < 2 ? 'eager' : 'lazy';
+        const fetchPriority = index < 2 ? 'high' : 'auto';
 
         card.innerHTML = `
-            <img src="images/${member.imageFile || member.logoUrl.split('/').pop()}" 
+            <img src="images/${member.imageFile || 'placeholder.webp'}" 
                  alt="${member.name || member.companyName} logo" 
                  loading="${loadingStrategy}" 
+                 fetchpriority="${fetchPriority}"
                  width="200" 
                  height="150">
             <h3>${member.name || member.companyName}</h3>
-            <p><strong>${levelName} Member</strong></p>
-            <p><em>${member.motto || 'Community Partner'}</em></p>
+            <p class="membership-badge">${levelName} Member</p>
+            <p class="motto"><em>${member.motto || 'Building Edo State together'}</em></p>
             <hr>
-            <p>${member.address}</p>
-            <p>${member.phone}</p>
-            <p><a href="${member.website || member.websiteUrl}" target="_blank" rel="noopener">Visit Website</a></p>
+            <div class="contact-info">
+                <p>${member.address}</p>
+                <p>${member.phone}</p>
+                <p><a href="${member.website}" target="_blank" rel="noopener">Visit Website</a></p>
+            </div>
         `;
         return card;
     };
 
     const displayMembers = async () => {
         try {
-            // Updated to look for data folder in common chamber paths
             const response = await fetch('data/members.json');
-            if (!response.ok) throw new Error('Data fetch failed');
+            if (!response.ok) throw new Error('Could not load member data.');
             const members = await response.json();
 
             directoryContainer.innerHTML = '';
@@ -70,21 +89,22 @@ if (directoryContainer) {
             });
         } catch (error) {
             console.error('Error loading members:', error);
-            directoryContainer.innerHTML = '<p>Unable to load member directory at this time.</p>';
+            directoryContainer.innerHTML = '<p class="error">The member directory is currently unavailable.</p>';
         }
     };
 
     displayMembers();
 
+    // View Toggle Listeners
     if (gridButton && listButton) {
         gridButton.addEventListener('click', () => {
-            directoryContainer.classList.replace('list-view', 'grid-view');
+            directoryContainer.className = 'grid-view'; // Direct assignment is cleaner
             gridButton.classList.add('view-active');
             listButton.classList.remove('view-active');
         });
 
         listButton.addEventListener('click', () => {
-            directoryContainer.classList.replace('grid-view', 'list-view');
+            directoryContainer.className = 'list-view';
             listButton.classList.add('view-active');
             gridButton.classList.remove('view-active');
         });

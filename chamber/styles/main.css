@@ -121,6 +121,7 @@ header {
 
 .navigation li a.active {
     background-color: #c99805;
+    color:#001f4c;
     font-weight: bold;
 }
 
