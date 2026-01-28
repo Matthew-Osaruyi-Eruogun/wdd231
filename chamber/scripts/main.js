@@ -7,7 +7,6 @@ if (yearSpan) {
 }
 
 if (lastModifiedSpan) {
-    // Format: MM/DD/YYYY HH:MM:SS
     const lastMod = new Date(document.lastModified);
     const formattedDate = new Intl.DateTimeFormat("en-US", {
         month: "2-digit",
@@ -29,11 +28,7 @@ if (menuButton && nav) {
     menuButton.addEventListener('click', () => {
         const isOpen = nav.classList.toggle('open');
         menuButton.setAttribute('aria-expanded', isOpen);
-
-        // Accessibility: Update the label for screen readers
         menuButton.setAttribute('aria-label', isOpen ? 'Close Navigation Menu' : 'Open Navigation Menu');
-
-        // Toggle between hamburger (☰) and X (×)
         menuButton.innerHTML = isOpen ? '<span>&times;</span>' : '<span>&#9776;</span>';
     });
 }
@@ -53,25 +48,26 @@ if (directoryContainer) {
         if (member.membershipLevel === 3 || member.membershipLevel === 'Gold') levelName = 'Gold';
         else if (member.membershipLevel === 2 || member.membershipLevel === 'Silver') levelName = 'Silver';
 
-        // LCP Optimization: Eager load the first 2 images to improve speed scores
+        // LCP Optimization
         const loadingStrategy = index < 2 ? 'eager' : 'lazy';
         const fetchPriority = index < 2 ? 'high' : 'auto';
+        const companyName = member.name || member.companyName;
 
         card.innerHTML = `
             <img src="images/${member.imageFile || 'placeholder.webp'}" 
-                 alt="${member.name || member.companyName} logo" 
+                 alt="${companyName} logo" 
                  loading="${loadingStrategy}" 
                  fetchpriority="${fetchPriority}"
                  width="200" 
                  height="150">
-            <h3>${member.name || member.companyName}</h3>
-            <p class="membership-badge">${levelName} Member</p>
+            <h3>${companyName}</h3>
+            <p class="membership-badge"><strong>${levelName} Member</strong></p>
             <p class="motto"><em>${member.motto || 'Building Edo State together'}</em></p>
             <hr>
             <div class="contact-info">
                 <p>${member.address}</p>
                 <p>${member.phone}</p>
-                <p><a href="${member.website}" target="_blank" rel="noopener">Visit Website</a></p>
+                <p><a href="${member.website}" target="_blank" rel="noopener" aria-label="Visit ${companyName} website">Visit Website</a></p>
             </div>
         `;
         return card;
@@ -95,10 +91,9 @@ if (directoryContainer) {
 
     displayMembers();
 
-    // View Toggle Listeners
     if (gridButton && listButton) {
         gridButton.addEventListener('click', () => {
-            directoryContainer.className = 'grid-view'; // Direct assignment is cleaner
+            directoryContainer.className = 'grid-view';
             gridButton.classList.add('view-active');
             listButton.classList.remove('view-active');
         });
