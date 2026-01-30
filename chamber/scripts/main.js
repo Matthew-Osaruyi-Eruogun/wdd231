@@ -29,6 +29,7 @@ if (menuButton && nav) {
         const isOpen = nav.classList.toggle('open');
         menuButton.setAttribute('aria-expanded', isOpen);
         menuButton.setAttribute('aria-label', isOpen ? 'Close Navigation Menu' : 'Open Navigation Menu');
+        // Clean innerHTML toggle
         menuButton.innerHTML = isOpen ? '<span>&times;</span>' : '<span>&#9776;</span>';
     });
 }
@@ -48,10 +49,10 @@ if (directoryContainer) {
         if (member.membershipLevel === 3 || member.membershipLevel === 'Gold') levelName = 'Gold';
         else if (member.membershipLevel === 2 || member.membershipLevel === 'Silver') levelName = 'Silver';
 
-        // LCP Optimization
+        // LCP Optimization: First 2 images load fast, others lazy load
         const loadingStrategy = index < 2 ? 'eager' : 'lazy';
         const fetchPriority = index < 2 ? 'high' : 'auto';
-        const companyName = member.name || member.companyName;
+        const companyName = member.name || member.companyName || "Chamber Member";
 
         card.innerHTML = `
             <img src="images/${member.imageFile || 'placeholder.webp'}" 
@@ -59,7 +60,8 @@ if (directoryContainer) {
                  loading="${loadingStrategy}" 
                  fetchpriority="${fetchPriority}"
                  width="200" 
-                 height="150">
+                 height="150"
+                 style="object-fit: contain;">
             <h3>${companyName}</h3>
             <p class="membership-badge"><strong>${levelName} Member</strong></p>
             <p class="motto"><em>${member.motto || 'Building Edo State together'}</em></p>
@@ -67,7 +69,10 @@ if (directoryContainer) {
             <div class="contact-info">
                 <p>${member.address}</p>
                 <p>${member.phone}</p>
-                <p><a href="${member.website}" target="_blank" rel="noopener" aria-label="Visit ${companyName} website">Visit Website</a></p>
+                <p><a href="${member.website}" 
+                      target="_blank" 
+                      rel="noopener" 
+                      aria-label="Visit the official website of ${companyName}">Visit Website</a></p>
             </div>
         `;
         return card;

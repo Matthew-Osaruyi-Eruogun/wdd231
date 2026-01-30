@@ -30,7 +30,7 @@ function displaySpotlights(members) {
     const container = document.querySelector('#spotlight-container');
     if (!container) return;
 
-    container.innerHTML = ""; // Clear the loading state
+    container.innerHTML = "";
 
     members.forEach(member => {
         const card = document.createElement('div');
@@ -38,14 +38,16 @@ function displaySpotlights(members) {
 
         const buttonText = member.websiteLabel || 'Visit Website';
 
+        // Optimization: Added loading="lazy" and ensured aspect-ratio is maintained
         card.innerHTML = `
             <h3>${member.name}</h3>
             <div class="spotlight-logo">
                 <img src="images/${member.imageFile}" 
-                     alt="${member.name} Company Logo" 
+                     alt="${member.name} Logo" 
                      width="150" 
                      height="100" 
-                     loading="lazy">
+                     loading="lazy"
+                     style="object-fit: contain;">
             </div>
             <p class="motto"><em>"${member.motto}"</em></p>
             <hr>
@@ -55,7 +57,7 @@ function displaySpotlights(members) {
                    target="_blank" 
                    rel="noopener" 
                    class="member-link"
-                   aria-label="Visit ${member.name} website">
+                   aria-label="Visit the official website of ${member.name}">
                    ${buttonText}
                 </a>
             </div>

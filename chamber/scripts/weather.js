@@ -11,7 +11,6 @@ async function getWeatherData() {
     if (!weatherContainer || !forecastContainer) return;
 
     try {
-        // Fetch data concurrently to save time (Optimization)
         const [currentRes, forecastRes] = await Promise.all([
             fetch(`${CURRENT_WEATHER_URL}?q=${CITY_QUERY}&units=${UNITS}&appid=${API_KEY}`),
             fetch(`${FORECAST_URL}?q=${CITY_QUERY}&units=${UNITS}&appid=${API_KEY}`)
@@ -37,15 +36,17 @@ function displayCurrentWeather(data, container) {
         .split(' ')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ');
-    // Use the 2x icon for better clarity without the heavy 4x download size
+
+    // Using @2x icon but setting display size to 50x50 to fix "low resolution" Lighthouse audit
     const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 
     container.innerHTML = `
         <div class="weather-info">
             <img src="${iconUrl}" 
                  alt="${desc}" 
-                 width="100" 
-                 height="100">
+                 width="50" 
+                 height="50"
+                 loading="lazy">
             <p><strong>${temp}°F</strong> - ${desc}</p>
         </div>
     `;
@@ -56,7 +57,6 @@ function displayForecast(data, container) {
     const forecastList = document.createElement('div');
     forecastList.classList.add('forecast-list');
 
-    // Filter for midday forecast
     const dailyForecasts = data.list.filter(item => item.dt_txt.includes("12:00:00")).slice(0, 3);
 
     dailyForecasts.forEach(forecast => {
