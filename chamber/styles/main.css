@@ -24,6 +24,7 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
     line-height: 1.6;
+    font-size: 16px;
 }
 
 h1,
@@ -94,6 +95,8 @@ header {
     font-size: 2.5rem;
     color: white;
     cursor: pointer;
+    min-width: 48px;
+    min-height: 48px;
     padding: 0.5rem;
 }
 
@@ -158,6 +161,8 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     white-space: nowrap;
     transition: transform 0.2s;
+    min-width: 48px;
+    min-height: 48px;
 }
 
 .cta:hover {
@@ -179,22 +184,7 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-#current-weather {
-    min-height: 160px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#forecast-container {
-    min-height: 150px;
-    margin-top: 1rem;
-    border-top: 1px solid var(--light-border);
-    padding-top: 1rem;
-}
-
-/* --- Spotlight Layout & Logo Reset --- */
+/* --- 6. SPOTLIGHTS --- */
 #spotlight-container {
     display: flex;
     flex-direction: column;
@@ -213,11 +203,6 @@ header {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.spotlight-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
 .spotlight-logo {
     width: 100%;
     height: 120px;
@@ -228,8 +213,6 @@ header {
     overflow: hidden;
 }
 
-
-
 .spotlight-card img {
     max-width: 100%;
     max-height: 100%;
@@ -238,96 +221,318 @@ header {
     object-fit: contain;
 }
 
-.spotlight-card .motto {
-    font-style: italic;
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 0.5rem;
-}
-
 .spotlight-card a {
     display: inline-block;
-    margin-top: auto;
-    padding: 0.6rem 1.2rem;
+    margin-top: 1rem;
+    padding: 0.8rem 1.2rem;
     background-color: var(--primary-color);
     color: white;
     text-decoration: none;
     border-radius: 4px;
-    font-size: 0.85rem;
-    transition: background 0.2s;
-}
-
-.spotlight-card a:hover {
-    background-color: var(--secondary-color);
-}
-
-/* --- 6. FOOTER --- */
-footer {
-    background-color: var(--footer-bg);
-    color: #ffffff;
-    padding: 3rem 1rem;
-    margin-top: 3rem;
-    text-align: center;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-footer a {
-    color: #ffd700;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-.social-links img {
-    width: 30px;
-    height: 30px;
-    margin: 0.5rem;
-    filter: brightness(0) invert(1);
-}
-
-.social-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 0.9rem;
     min-width: 48px;
     min-height: 48px;
-    padding: 4px;
-}
-
-/* --- 7. MEDIA QUERIES --- */
-@media (min-width: 768px) {
-    .home-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    #spotlights {
-        grid-column: span 2;
-    }
-
-    #spotlight-container {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .spotlight-card {
-        flex: 1;
-        max-width: 350px;
-        height: auto;
-    }
-}
-
-@media (min-width: 1000px) {
-    .footer-grid {
-        grid-template-columns: repeat(3, 1fr);
-        align-items: center;
-    }
-}
+        :root {
+            --primary-color: #001f4c;
+            --secondary-color: #916d03;
+            --accent-color: #c99805;
+            --background-color: #f7f7f7;
+            --text-color: #333;
+            --light-text-color: #fff;
+            --light-border: #ddd;
+            --heading-font: 'Roboto', sans-serif;
+            --body-font: 'Open Sans', sans-serif;
+            --footer-bg: #00132e;
+        }
+    
+        /* --- 2. BASE STYLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+    
+        body {
+            font-family: var(--body-font);
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+    
+        h1,
+        h2,
+        h3 {
+            font-family: var(--heading-font);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+    
+        header .logo-link h2,
+        footer h3 {
+            color: var(--light-text-color);
+            margin-bottom: 0;
+        }
+    
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+    
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    
+        /* --- 3. HEADER & NAV --- */
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .header-content {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+    
+        .logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+    
+        #menu-toggle {
+            background: none;
+            border: none;
+            font-size: 2.5rem;
+            color: white;
+            cursor: pointer;
+            min-width: 48px;
+            min-height: 48px;
+            padding: 0.5rem;
+        }
+    
+        .navigation {
+            display: none;
+            width: 100%;
+            text-align: center;
+        }
+    
+        .navigation.open {
+            display: block;
+        }
+    
+        .navigation ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+    
+        .navigation li a {
+            display: block;
+            padding: 1rem;
+            color: white;
+            text-decoration: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.3s;
+        }
+    
+        .navigation li a.active {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+    
+        /* --- 4. HERO SECTION --- */
+        #hero {
+            position: relative;
+            width: 100%;
+            margin-bottom: 2rem;
+            background-color: #eee;
+        }
+    
+        #hero img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 480 / 320;
+            display: block;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+    
+        .cta {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            white-space: nowrap;
+            transition: transform 0.2s;
+            min-width: 48px;
+            min-height: 48px;
+        }
+    
+        .cta:hover {
+            transform: translateX(-50%) scale(1.05);
+        }
+    
+        /* --- 5. HOME GRID & WEATHER --- */
+        .home-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border: 1px solid var(--light-border);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+    
+        /* --- 6. SPOTLIGHTS --- */
+        #spotlight-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+    
+        .spotlight-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            padding: 1.5rem;
+            border: 1px solid var(--light-border);
+            border-radius: 8px;
+            background-color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .spotlight-logo {
+            width: 100%;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+    
+        .spotlight-card img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+    
+        .spotlight-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.2rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            min-width: 48px;
+            min-height: 48px;
+        }
+    
+        /* --- 7. FOOTER & SOCIALS (Critical for SEO 100) --- */
+        footer {
+            background-color: var(--footer-bg);
+            color: #ffffff;
+            padding: 3rem 1rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+    
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+    
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 48px;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+    
+        .social-links img {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1);
+        }
+    
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+    
+        /* --- 8. MEDIA QUERIES --- */
+        @media (min-width: 768px) {
+            .home-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+    
+            #spotlights {
+                grid-column: span 2;
+            }
+    
+            #spotlight-container {
+                flex-direction: row;
+                justify-content: center;
+            }
+    
+            .spotlight-card {
+                flex: 1;
+                max-width: 350px;
+            }
+        }
+    
+        @media (min-width: 1000px) {
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+                align-items: center;
+            }
+        }
