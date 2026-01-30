@@ -237,7 +237,7 @@ header {
 
 footer {
     background-color: var(--footer-bg);
-    color: #fff;
+    color: #fff !important;
     padding: 3rem 1rem;
     margin-top: 3rem;
     text-align: center
@@ -251,8 +251,9 @@ footer {
     margin: 0 auto
 }
 
-.footer-link,
-footer a {
+footer a,
+footer a.footer-link,
+footer .contact a {
     color: var(--accent-color) !important;
     text-decoration: underline
 }
