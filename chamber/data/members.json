@@ -1,110 +1,206 @@
 [
     {
         "name": "Protea Hotel Select Emotan",
+        "category": "Hospitality",
         "address": "4 Central Road, Off Sapele Road",
         "phone": "(+234) 805-555-1001",
         "website": "https://www.proteabenin.com",
+        "websiteLabel": "Book a Room",
         "imageFile": "protea.webp",
         "membershipLevel": 3,
-        "motto": "The Premier Hospitality of the Edo Kingdom."
+        "motto": "The Premier Hospitality of the Edo Kingdom.",
+        "tags": [
+            "Hotel",
+            "Luxury",
+            "Events",
+            "GRA"
+        ]
     },
     {
         "name": "Luciano Luxury Hotel",
+        "category": "Hospitality",
         "address": "12 Ihama Road, G.R.A.",
         "phone": "(+234) 803-260-0424",
         "website": "https://lucianoluxuryhotel.com",
+        "websiteLabel": "Experience Luxury",
         "imageFile": "luciano.webp",
         "membershipLevel": 3,
-        "motto": "Where Comfort Meets Royal Class."
+        "motto": "Where Comfort Meets Royal Class.",
+        "tags": [
+            "Boutique",
+            "Hotel",
+            "Ihama",
+            "Luxury"
+        ]
     },
     {
         "name": "JCON Digital Solutions",
+        "category": "Technology",
         "address": "7 Osula Close, Off Akpakpava Rd",
         "phone": "(+234) 705-555-2002",
         "website": "https://www.jcon-digital.com",
+        "websiteLabel": "Get a Quote",
         "imageFile": "jcon.webp",
         "membershipLevel": 2,
-        "motto": "Driving Benin's Businesses into the Digital Future."
+        "motto": "Driving Benin's Businesses into the Digital Future.",
+        "tags": [
+            "Web Design",
+            "Software",
+            "Digital Marketing",
+            "Akpakpava"
+        ]
     },
     {
         "name": "Benin Electricity Distribution Plc (BEDC)",
+        "category": "Utilities",
         "address": "5 Akpakpava Road, Benin City",
         "phone": "0700-000-2332",
         "website": "https://beninelectric.com",
+        "websiteLabel": "Contact Support",
         "imageFile": "bedc.webp",
         "membershipLevel": 3,
-        "motto": "Powering the Heart of the Edo Economy."
+        "motto": "Powering the Heart of the Edo Economy.",
+        "tags": [
+            "Electricity",
+            "Infrastructure",
+            "Power",
+            "Public Utility"
+        ]
     },
     {
         "name": "Randekhi Royal Hotel",
+        "category": "Hospitality",
         "address": "6 Uhenuyi Street, G.R.A.",
         "phone": "(+234) 802-884-7928",
         "website": "https://www.randekhiroyal.com",
+        "websiteLabel": "Visit Randekhi",
         "imageFile": "randekhi.webp",
         "membershipLevel": 2,
-        "motto": "A Legacy of Edo Hospitality."
+        "motto": "A Legacy of Edo Hospitality.",
+        "tags": [
+            "Hotel",
+            "Traditional",
+            "GRA",
+            "Tourism"
+        ]
     },
     {
         "name": "Ellah Lakes PLC",
+        "category": "Agribusiness",
         "address": "Edo State Oil Palm Cultivation Zone",
         "phone": "(+234) 805-555-3003",
         "website": "https://ellahlakes.com",
+        "websiteLabel": "Investor Relations",
         "imageFile": "ellah.webp",
         "membershipLevel": 3,
-        "motto": "Cultivating Tomorrow's Resources in Edo State."
+        "motto": "Cultivating Tomorrow's Resources in Edo State.",
+        "tags": [
+            "Agriculture",
+            "Oil Palm",
+            "Publicly Traded",
+            "Production"
+        ]
     },
     {
         "name": "C.O. AKPABOR & CO.",
+        "category": "Financial Services",
         "address": "Ultra Modern Office Complex, 2nd Floor, Oba Market Road",
         "phone": "(+234) 803-555-4004",
         "website": "https://www.akpaborco.com",
+        "websiteLabel": "Consulting",
         "imageFile": "akpabor.webp",
         "membershipLevel": 1,
-        "motto": "Trusted Accounting for Local Enterprises."
+        "motto": "Trusted Accounting for Local Enterprises.",
+        "tags": [
+            "Accounting",
+            "Audit",
+            "Tax",
+            "Finance"
+        ]
     },
     {
         "name": "First Guide LLC",
+        "category": "Technology",
         "address": "15 Forestry Road, Benin City",
         "phone": "(+234) 905-555-5005",
         "website": "https://www.firstguidellc.ng",
+        "websiteLabel": "Our Services",
         "imageFile": "firstguide.webp",
         "membershipLevel": 1,
-        "motto": "Improving Businesses with Tech Solutions."
+        "motto": "Improving Businesses with Tech Solutions.",
+        "tags": [
+            "IT Solutions",
+            "Consulting",
+            "Tech",
+            "Business Growth"
+        ]
     },
     {
         "name": "The Saga Hotel",
+        "category": "Hospitality",
         "address": "16 Edo Osagie Crescent, G.R.A.",
         "phone": "(+234) 805-062-4493",
         "website": "https://www.sagahotels.ng",
+        "websiteLabel": "Book Now",
         "imageFile": "saga.webp",
         "membershipLevel": 2,
-        "motto": "Making every guest feel special."
+        "motto": "Making every guest feel special.",
+        "tags": [
+            "Hotel",
+            "Modern",
+            "GRA",
+            "Leisure"
+        ]
     },
     {
         "name": "Edo State Broadcasting Service (EBS)",
+        "category": "Media",
         "address": "Benin Auchi Road, Ekenwan",
         "phone": "(+234) 708-555-6006",
         "website": "https://www.ebs.ng",
+        "websiteLabel": "Watch Live",
         "imageFile": "ebs.webp",
         "membershipLevel": 3,
-        "motto": "The Authentic Voice of Edo State."
+        "motto": "The Authentic Voice of Edo State.",
+        "tags": [
+            "Radio",
+            "TV",
+            "News",
+            "Government"
+        ]
     },
     {
         "name": "Edo Specialist Hospital",
+        "category": "Healthcare",
         "address": "22 Upper Mission Road, GRA",
         "phone": "(+234) 807-555-9009",
         "website": "https://www.edohospital.org",
+        "websiteLabel": "Patient Portal",
         "imageFile": "hospital.webp",
         "membershipLevel": 3,
-        "motto": "Excellence in healthcare and community service."
+        "motto": "Excellence in healthcare and community service.",
+        "tags": [
+            "Hospital",
+            "Medical",
+            "Specialist",
+            "Health"
+        ]
     },
     {
         "name": "Benin City Transport Services",
+        "category": "Transportation",
         "address": "Ring Road Terminus, By the Statue",
         "phone": "(+234) 708-555-1111",
         "website": "https://www.bcts.ng",
+        "websiteLabel": "Route Info",
         "imageFile": "transport.webp",
         "membershipLevel": 1,
-        "motto": "Moving Benin forward, reliably and safely."
+        "motto": "Moving Benin forward, reliably and safely.",
+        "tags": [
+            "Transport",
+            "Bus",
+            "Ring Road",
+            "Logistics"
+        ]
     }
 ]

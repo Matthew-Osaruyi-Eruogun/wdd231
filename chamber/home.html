@@ -19,18 +19,21 @@
         content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/images/benin-city_large.webp">
     <meta property="og:url" content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/home.html">
 
-    <link rel="preload" fetchpriority="high" as="image" href="images/benin-city_small.webp" type="image/webp">
-    <link rel="preconnect" href="https://api.openweathermap.org">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.openweathermap.org">
 
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/medium.css" media="(min-width: 600px)">
-    <link rel="stylesheet" href="styles/large.css" media="(min-width: 1000px)">
+    <link rel="preload" fetchpriority="high" as="image" href="images/benin-city_small.webp" type="image/webp">
+    <link rel="preload" href="styles/normalize.css" as="style">
+    <link rel="preload" href="styles/main.css" as="style">
 
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <link rel="stylesheet" href="styles/medium.css" media="(min-width: 600px)">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 1000px)">
 
     <script src="scripts/main.js" defer></script>
     <script src="scripts/weather.js" defer></script>
@@ -85,7 +88,8 @@
 
             <section id="spotlights" class="card">
                 <h2>Member Spotlights</h2>
-                <div id="spotlight-container"></div>
+                <div id="spotlight-container">
+                </div>
             </section>
         </div>
     </main>
@@ -99,14 +103,13 @@
             </div>
             <div class="social-links">
                 <a href="#" aria-label="Visit our YouTube channel">
-                    <img src="images/youtube.svg" alt="Follow Benin City Chamber on YouTube" width="30" height="30">
+                    <img src="images/youtube.svg" alt="YouTube Icon" width="30" height="30">
                 </a>
                 <a href="#" aria-label="Follow us on X">
-                    <img src="images/twitter-x.svg" alt="Follow Benin City Chamber on X" width="30" height="30">
+                    <img src="images/twitter-x.svg" alt="X Icon" width="30" height="30">
                 </a>
                 <a href="#" aria-label="Connect with us on LinkedIn">
-                    <img src="images/linkedin.svg" alt="Connect with Benin City Chamber on LinkedIn" width="30"
-                        height="30">
+                    <img src="images/linkedin.svg" alt="LinkedIn Icon" width="30" height="30">
                 </a>
             </div>
             <div class="legal">
