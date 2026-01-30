@@ -11,6 +11,17 @@
     <meta name="author" content="Matthew Osaruyi Eruogun">
     <link rel="icon" href="favicon.ico">
     <link rel="canonical" href="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/home.html">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta property="og:title" content="Benin City Chamber of Commerce - Growing Edo Businesses">
+    <meta property="og:description"
+        content="Join the Benin City Chamber of Commerce today for exclusive networking, local resources, and business growth opportunities.">
+    <meta property="og:image"
+        content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/images/benin-city_large.webp">
+    <meta property="og:url" content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/home.html">
+    <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,223 +32,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap"
         rel="stylesheet">
 
-    <style>
-        /* Consolidated Critical CSS - Fixes Render Blocking */
-        :root {
-            --primary-color: #001f4c;
-            --secondary-color: #916d03;
-            --accent-color: #ffcc00;
-            --background-color: #f7f7f7;
-            --text-color: #333;
-            --light-text-color: #fff;
-            --heading-font: 'Roboto', sans-serif;
-            --body-font: 'Open Sans', sans-serif;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: var(--body-font);
-            color: var(--text-color);
-            background-color: var(--background-color);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--primary-color);
-            color: var(--light-text-color);
-            padding: 1rem;
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo-link {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: inherit;
-            gap: 10px;
-        }
-
-        .logo {
-            height: 60px;
-            width: 60px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: none;
-            flex-direction: column;
-            background: #002b6b;
-        }
-
-        nav.open ul {
-            display: flex;
-        }
-
-        nav a {
-            display: block;
-            padding: 1rem;
-            color: white;
-            text-decoration: none;
-            text-align: center;
-            border-bottom: 1px solid #003a8f;
-        }
-
-        nav a.active {
-            background-color: var(--secondary-color);
-        }
-
-        #menu-toggle {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
-        }
-
-        h1 {
-            text-align: center;
-            margin: 1rem 0;
-            font-size: 1.5rem;
-        }
-
-        /* Hero & CLS Mitigation */
-        #hero {
-            position: relative;
-            min-height: 320px;
-            background: #eee;
-            overflow: hidden;
-            border-radius: 8px;
-        }
-
-        #hero img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .hero-box {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            width: 100%;
-        }
-
-        .cta {
-            background: var(--accent-color);
-            color: var(--primary-color);
-            padding: 1rem 1.5rem;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        .home-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            min-height: 200px;
-        }
-
-        footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 2rem 1rem;
-            margin-top: 2rem;
-            text-align: center;
-        }
-
-        .footer-grid {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .social-links img {
-            margin: 0 10px;
-            transition: transform 0.3s;
-        }
-
-        .social-links img:hover {
-            transform: scale(1.1);
-        }
-
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
-
-        /* Tablet View */
-        @media (min-width: 600px) {
-            #menu-toggle {
-                display: none;
-            }
-
-            nav ul {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                background: none;
-            }
-
-            nav a {
-                border: none;
-            }
-
-            .home-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-        }
-
-        /* Desktop View */
-        @media (min-width: 1000px) {
-            .home-grid {
-                grid-template-columns: 1fr 1fr 1fr;
-            }
-
-            #spotlights {
-                grid-column: span 3;
-            }
-        }
-    </style>
-
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
     <script src="scripts/main.js" defer></script>
     <script src="scripts/weather.js" defer></script>
     <script src="scripts/spotlights.js" defer></script>
@@ -271,7 +67,7 @@
             <picture>
                 <source srcset="images/benin-city_large.webp" media="(min-width: 1000px)">
                 <source srcset="images/benin-city_medium.webp" media="(min-width: 600px)">
-                <img src="images/benin-city_small.webp" alt="Benin City Skyline" width="480" height="320"
+                <img src="images/benin-city_small.webp" alt="Benin City Skyline and Traffic" width="480" height="320"
                     fetchpriority="high">
             </picture>
             <div class="hero-box">
@@ -304,20 +100,22 @@
         <div class="footer-grid">
             <div class="contact">
                 <h3>Contact Us</h3>
-                <address>Palm House, Benin City, Nigeria</address>
-                <p><a href="mailto:info@benin-citycc.org" style="color: var(--accent-color);">info@benin-citycc.org</a>
-                </p>
+                <address>
+                    Palm House, Benin City<br>
+                    Nigeria
+                </address>
+                <p><a href="mailto:info@benin-citycc.org" class="footer-link">info@benin-citycc.org</a></p>
             </div>
             <div class="social-links">
                 <a href="https://www.youtube.com/@mattheweruogun165" target="_blank" rel="noopener"
-                    aria-label="YouTube">
+                    aria-label="Visit our YouTube channel">
                     <img src="images/youtube.svg" alt="YouTube" width="30" height="30" loading="lazy">
                 </a>
-                <a href="https://x.com/Emstarmaks" target="_blank" rel="noopener" aria-label="X">
+                <a href="https://x.com/Emstarmaks" target="_blank" rel="noopener" aria-label="Follow us on X">
                     <img src="images/twitter-x.svg" alt="X" width="30" height="30" loading="lazy">
                 </a>
                 <a href="https://www.linkedin.com/in/matthew-eruogun/" target="_blank" rel="noopener"
-                    aria-label="LinkedIn">
+                    aria-label="Connect with us on LinkedIn">
                     <img src="images/linkedin.svg" alt="LinkedIn" width="30" height="30" loading="lazy">
                 </a>
             </div>
