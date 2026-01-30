@@ -251,7 +251,9 @@ footer {
     margin: 0 auto
 }
 
-.footer-link {
+
+.footer-link,
+footer a {
     color: var(--accent-color) !important;
     text-decoration: underline
 }
