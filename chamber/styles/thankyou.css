@@ -1,62 +1,45 @@
 #thankyou-main {
-    padding: 2rem 1rem;
-    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #f4f7f6;
+    min-height: 60vh;
 }
 
 .confirmation-section {
-    max-width: 700px;
+    max-width: 650px;
     margin: 0 auto;
-    background-color: var(--light-text-color);
-    padding: 2rem;
+    background-color: white;
+    padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .confirmation-section h1 {
-    color: var(--chamber-primary);
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    color: #2e5a88;
+    margin-bottom: 1rem;
 }
-
-#thank-you-message {
-    color: var(--text-color);
-    font-weight: 400;
-}
-
-#applicant-name {
-    font-weight: 700;
-    color: var(--chamber-accent);
-}
-
 
 .submission-details-container {
     text-align: left;
     margin: 2rem 0;
-    padding: 1rem;
-    border: 1px solid var(--medium-border);
+    padding: 1.5rem;
+    background-color: #f0f4f8;
     border-radius: 8px;
-    background-color: var(--light-blue-bg);
-}
-
-.submission-details-container h3 {
-    color: var(--chamber-primary);
-    border-bottom: 1px solid var(--light-border);
-    padding-bottom: 0.5rem;
-    margin-top: 0;
+    border-left: 5px solid #ffcc33;
 }
 
 .details-card ul {
     list-style: none;
     padding: 0;
-    margin: 1rem 0 0 0;
 }
 
 .details-card ul li {
-    padding: 0.5rem 0;
-    border-bottom: 1px dotted var(--lightest-border);
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e0e0e0;
     display: flex;
+    flex-wrap: wrap;
+    /* Helps on mobile */
     justify-content: space-between;
-    align-items: center;
 }
 
 .details-card ul li:last-child {
@@ -64,30 +47,27 @@
 }
 
 .details-card ul li strong {
-    font-weight: 600;
-    color: var(--text-color);
-    flex-basis: 40%;
+    color: #333;
+    margin-right: 10px;
 }
 
 .details-card ul li span {
-    text-align: right;
-    flex-basis: 60%;
-    color: var(--dark-text-secondary);
-    font-style: italic;
+    color: #555;
+    word-break: break-all;
 }
 
 .cta-button {
     display: inline-block;
-    background-color: var(--chamber-accent);
-    color: var(--chamber-primary);
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
+    background-color: #ffcc33;
+    color: #2e5a88;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: 700;
-    margin-top: 1.5rem;
-    transition: background-color 0.3s;
+    transition: transform 0.2s;
 }
 
 .cta-button:hover {
-    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

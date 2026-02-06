@@ -1,17 +1,15 @@
-//Thankyou.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const detailsDiv = document.getElementById('submission-details');
     const nameSpan = document.getElementById('applicant-name');
 
-    // Define a map of the required field names to their display labels
+    // Mapped to match the 'name' attributes in the join.html form
     const requiredFields = {
         'fname': "First Name",
         'lname': "Last Name",
         'email': "Email Address",
         'phone': "Mobile Phone",
-        'bizname': "Business/Organization",
+        'orgname': "Business/Organization", // Updated from bizname to orgname
         'timestamp': "Submission Date/Time"
     };
 
@@ -31,11 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
             // Special formatting for the timestamp
             if (key === 'timestamp') {
                 try {
-                    // Format the ISO timestamp into a more human-readable format
                     const date = new Date(value);
-                    value = date.toLocaleDateString('en-US', { dateStyle: 'medium' }) + ' at ' + date.toLocaleTimeString('en-US', { timeStyle: 'short' });
+                    // Checks if date is valid before formatting
+                    if (!isNaN(date.getTime())) {
+                        value = date.toLocaleDateString('en-US', { dateStyle: 'medium' }) +
+                            ' at ' +
+                            date.toLocaleTimeString('en-US', { timeStyle: 'short' });
+                    }
                 } catch (e) {
-                    // Keep original value if formatting fails
+                    console.error("Timestamp formatting failed", e);
                 }
             }
 
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nameSpan.textContent = 'valued applicant';
         }
     } else {
-        detailsDiv.innerHTML = '<p>No required form data was found. Please ensure the form submission was successful.</p>';
+        detailsDiv.innerHTML = '<p>No application data was found. Please ensure you submitted the form correctly.</p>';
         nameSpan.textContent = 'valued applicant';
     }
 });

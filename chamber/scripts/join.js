@@ -2,53 +2,44 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Set the hidden timestamp field upon page load
     const timestampField = document.getElementById('timestamp');
     if (timestampField) {
+        // Formats as YYYY-MM-DDTHH:mm:ss.sssZ
         timestampField.value = new Date().toISOString();
     }
 
-    // 2. Modal Functionality
-    const modalTriggers = document.querySelectorAll('.modal-trigger');
-    const closeButtons = document.querySelectorAll('.close-button');
+    // 2. Modal Functionality using <dialog> element
+    // Selects the 'Learn More' buttons
+    const modalTriggers = document.querySelectorAll('.modal-open');
 
     modalTriggers.forEach(trigger => {
-        trigger.addEventListener('click', (event) => {
-            event.preventDefault();
-            const modalId = trigger.getAttribute('data-modal');
+        trigger.addEventListener('click', () => {
+            const modalId = trigger.getAttribute('data-target');
             const modal = document.getElementById(modalId);
+
             if (modal) {
-                modal.style.display = 'block';
-                modal.setAttribute('aria-hidden', 'false');
-                // Accessibility: Set focus to the close button so keyboard users can exit easily
-                const closeBtn = modal.querySelector('.close-button');
-                if (closeBtn) closeBtn.focus();
+                // .showModal() is the native method for <dialog> tags
+                modal.showModal();
             }
         });
     });
 
-    const closeModal = (modal) => {
-        if (modal) {
-            modal.style.display = 'none';
-            modal.setAttribute('aria-hidden', 'true');
-        }
-    };
-
+    // Handle closing the modals
+    const closeButtons = document.querySelectorAll('.modal-close');
     closeButtons.forEach(closeBtn => {
         closeBtn.addEventListener('click', () => {
-            closeModal(closeBtn.closest('.modal'));
+            const modal = closeBtn.closest('dialog');
+            if (modal) {
+                modal.close();
+            }
         });
     });
 
-    // Close on clicking outside
-    window.addEventListener('click', (event) => {
-        if (event.target.classList.contains('modal')) {
-            closeModal(event.target);
-        }
-    });
-
-    // Accessibility: Close on Escape key
-    window.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            const openModal = document.querySelector('.modal[style*="display: block"]');
-            if (openModal) closeModal(openModal);
-        }
+    // Close modal if user clicks the backdrop (outside the dialog box)
+    const dialogs = document.querySelectorAll('dialog');
+    dialogs.forEach(dialog => {
+        dialog.addEventListener('click', (event) => {
+            if (event.target === dialog) {
+                dialog.close();
+            }
+        });
     });
 });

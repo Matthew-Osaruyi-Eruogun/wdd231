@@ -1,40 +1,27 @@
 #join-main {
     padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.membership-form-section h1,
-.membership-levels-section h2 {
+.membership-form-section h1 {
     color: var(--chamber-primary);
     border-bottom: 2px solid var(--chamber-accent);
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
 }
 
-
 form {
-    background-color: var(--form-background);
+    background-color: var(--form-background, #f9f9f9);
     padding: 1.5rem;
-    border: 1px solid var(--light-border);
+    border: 1px solid var(--light-border, #ddd);
     border-radius: 8px;
     margin-bottom: 2rem;
 }
 
-fieldset {
-    margin: 1.5rem 0;
-    border: 1px solid var(--medium-border);
-    border-radius: 5px;
-    padding: 1rem;
-}
-
-legend {
-    color: var(--chamber-primary);
-    font-weight: 700;
-    padding: 0 0.5rem;
-}
-
 label {
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     font-weight: 600;
     color: var(--text-color);
 }
@@ -45,13 +32,12 @@ input[type="tel"],
 textarea,
 select {
     display: block;
-    width: 95%;
+    width: 100%;
+    box-sizing: border-box;
     padding: 0.75rem;
-    margin-top: 0.25rem;
-    border: 1px solid var(--medium-border);
+    margin-top: 0.4rem;
+    border: 1px solid var(--medium-border, #ccc);
     border-radius: 4px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
-    transition: border-color 0.3s;
 }
 
 input:focus,
@@ -62,30 +48,24 @@ select:focus {
     box-shadow: 0 0 5px rgba(255, 204, 51, 0.5);
 }
 
-.submit-button-container {
-    display: block;
-    text-align: center;
-    margin-top: 2rem;
-}
-
-input[type="submit"] {
+.submit-btn {
     background-color: var(--chamber-primary);
-    color: var(--light-text-color);
+    color: white;
     padding: 1rem 2rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.1rem;
     font-weight: 700;
-    transition: background-color 0.3s, transform 0.1s;
+    width: 100%;
+    transition: background-color 0.3s;
 }
 
-input[type="submit"]:hover {
+.submit-btn:hover {
     background-color: var(--chamber-hover);
-    transform: scale(1.02);
 }
 
-
+/* --- Membership Cards & Animation --- */
 .membership-cards {
     display: grid;
     gap: 1.5rem;
@@ -93,33 +73,14 @@ input[type="submit"]:hover {
 }
 
 .card {
-    background-color: var(--light-text-color);
+    background-color: white;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.card h3 {
-    color: var(--chamber-primary);
-    margin-top: 0;
-}
-
-.card a {
-    color: var(--chamber-primary);
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    margin-top: 0.5rem;
-}
-
-.card a:hover {
-    text-decoration: underline;
-    color: var(--chamber-hover);
-}
-
-/* --- Initial Animation for Cards (Non-hover) --- */
+/* Initial Load Animation (Criterion 14) */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -132,111 +93,57 @@ input[type="submit"]:hover {
     }
 }
 
-.initial-animate {
+.animate-card {
     opacity: 0;
-    animation: fadeInUp 1s ease-out forwards;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
-/* Stagger the animation (No change) */
-.membership-cards .initial-animate:nth-child(1) {
-    animation-delay: 0s;
+.animate-card:nth-child(1) {
+    animation-delay: 0.1s;
 }
 
-.membership-cards .initial-animate:nth-child(2) {
-    animation-delay: 0.2s;
+.animate-card:nth-child(2) {
+    animation-delay: 0.3s;
 }
 
-.membership-cards .initial-animate:nth-child(3) {
-    animation-delay: 0.4s;
+.animate-card:nth-child(3) {
+    animation-delay: 0.5s;
 }
 
-.membership-cards .initial-animate:nth-child(4) {
-    animation-delay: 0.6s;
+.animate-card:nth-child(4) {
+    animation-delay: 0.7s;
 }
 
-
-/* ========================================= */
-/* MODAL STYLES */
-/* ========================================= */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: var(--light-text-color);
-}
-
-.modal-content {
-    background-color: var(--light-text-color);
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid var(--dark-border);
-    width: 80%;
-    max-width: 500px;
+/* --- Native Dialog (Modal) Styles --- */
+dialog {
+    border: none;
     border-radius: 8px;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    max-width: 500px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-.modal-content h3 {
-    color: var(--chamber-primary);
-    border-bottom: 2px solid var(--light-border);
-    padding-bottom: 10px;    
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
 }
 
-
-.modal-content ul {
-    list-style-type: disc;
-    padding-left: 20px;
- }
-
- .modal-content h3,
- .modal-content p,
- .modal-content ul,
- .modal-content li {
-    background-color: var(--light-text-color);
- }
-
-.close-button {
-    color: var(--medium-gray);
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+.modal-close {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--chamber-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
 }
 
-.close-button:hover,
-.close-button:focus {
-    color: var(--text-color);
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-/* ========================================= */
-/* MEDIA QUERY: Large Screens (min-width: 1000px) */
-/* (No change here, as it's only layout) */
-/* ========================================= */
+/* Layout for larger screens */
 @media (min-width: 1000px) {
-    .join-grid-container {
-        grid-template-columns: 2fr 1fr;
-        gap: 30px;
-    }
-
-    .membership-form-section {
-        padding: 0 1rem;
-    }
-
-    .membership-levels-section {
-        order: 1;
-        padding-top: 1rem;
-    }
-
-    .membership-cards {
-        grid-template-columns: 1fr;
+    .join-container {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 2rem;
+        align-items: start;
     }
 }
