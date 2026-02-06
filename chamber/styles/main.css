@@ -318,7 +318,30 @@ footer a.footer-link {
 }
 
 /* --- RESPONSIVE QUERIES --- */
+
+/* Tablet & Desktop (Merged for efficiency) */
 @media (min-width: 768px) {
+
+   #menu-toggle {
+        display: none;
+    }
+
+    .navigation {
+        display: block;
+        width: auto;
+    }
+
+    .navigation ul {
+        display: flex;
+        margin-top: 0;
+    }
+
+    .navigation li a {
+        border-top: none;
+        padding: 0.5rem 1.5rem;
+    }
+
+    /* Home Grid */
     .home-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -339,9 +362,20 @@ footer a.footer-link {
     }
 }
 
+/* Large Desktop */
 @media (min-width: 1000px) {
+
+    /* Footer Grid */
     .footer-grid {
         grid-template-columns: repeat(3, 1fr);
         align-items: center;
+    }
+
+    
+    .join-main {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 3rem;
+        align-items: start;
     }
 }
