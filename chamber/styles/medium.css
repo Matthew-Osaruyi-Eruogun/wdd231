@@ -1,0 +1,55 @@
+@media (min-width: 641px) and (max-width: 999px) {
+    #discover-main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "hero hero"
+            "visitor stats"
+            "gallery gallery";
+        gap: 1.5rem;
+    }
+
+    #poi-gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "card1 card2"
+            "card3 card4"
+            "card5 card6"
+            "card7 card8";
+        gap: 1rem;
+    }
+
+    /* Map the classes for Medium view as well */
+    .poi-card-1 {
+        grid-area: card1;
+    }
+
+    .poi-card-2 {
+        grid-area: card2;
+    }
+
+    .poi-card-3 {
+        grid-area: card3;
+    }
+
+    .poi-card-4 {
+        grid-area: card4;
+    }
+
+    .poi-card-5 {
+        grid-area: card5;
+    }
+
+    .poi-card-6 {
+        grid-area: card6;
+    }
+
+    .poi-card-7 {
+        grid-area: card7;
+    }
+
+    .poi-card-8 {
+        grid-area: card8;
+    }
+}

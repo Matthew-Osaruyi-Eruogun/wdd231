@@ -362,6 +362,41 @@ footer a.footer-link {
     }
 }
 
+/* Small Screen Layout using Named Areas */
+#discover-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "hero"
+        "visitor"
+        "stats"
+        "gallery";
+    gap: 1.5rem;
+}
+
+#discover-hero {
+    grid-area: hero;
+}
+
+#visitor-message {
+    grid-area: visitor;
+}
+
+#city-demographics {
+    grid-area: stats;
+}
+
+#poi-gallery {
+    grid-area: gallery;
+}
+
+/* Standard Gallery Grid */
+#poi-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
 /* Large Desktop */
 @media (min-width: 1000px) {
 

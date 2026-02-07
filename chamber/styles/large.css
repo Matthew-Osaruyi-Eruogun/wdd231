@@ -1,0 +1,67 @@
+@media (min-width: 1000px) {
+    #discover-main {
+        grid-template-columns: 300px 1fr;
+        grid-template-areas:
+            "visitor hero"
+            "stats hero"
+            "gallery gallery";
+    }
+
+    
+    #poi-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "card1 card2 card3"
+            "card4 card5 card6"
+            "card7 card8 .";
+    
+    }
+
+    
+    .poi-card img {
+        transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .poi-card img:hover {
+        transform: scale(1.05);
+        filter: brightness(1.1) saturate(1.2);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media (min-width: 1000px) {
+    /* ... your existing code ... */
+
+    /* ADD THIS: Mapping the JS classes to your named areas */
+    .poi-card-1 {
+        grid-area: card1;
+    }
+
+    .poi-card-2 {
+        grid-area: card2;
+    }
+
+    .poi-card-3 {
+        grid-area: card3;
+    }
+
+    .poi-card-4 {
+        grid-area: card4;
+    }
+
+    .poi-card-5 {
+        grid-area: card5;
+    }
+
+    .poi-card-6 {
+        grid-area: card6;
+    }
+
+    .poi-card-7 {
+        grid-area: card7;
+    }
+
+    .poi-card-8 {
+        grid-area: card8;
+    }
+}
