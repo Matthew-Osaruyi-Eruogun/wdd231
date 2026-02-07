@@ -19,12 +19,11 @@
     <meta property="og:url" content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/discover.html">
 
     <link rel="preload" href="fonts/roboto-700.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/roboto-reg.woff2" as="font" type="font/woff2"
-        crossorigin>
+    <link rel="preload" href="fonts/roboto-reg.woff2" as="font" type="font/woff2" crossorigin>
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css?v=1.1">
-    <link rel="stylesheet" href="styles/medium.css?v=1.1" media="(min-width: 600px)">
+    <link rel="stylesheet" href="styles/medium.css?v=1.1" media="(min-width: 641px)">
     <link rel="stylesheet" href="styles/large.css?v=1.1" media="(min-width: 1000px)">
 </head>
 
@@ -34,7 +33,7 @@
             <a href="home.html" class="logo-link">
                 <img src="images/benin-chambers-logo.webp" alt="Benin City Chamber of Commerce Logo" class="logo"
                     width="90" height="88">
-                <h1>Benin City Chamber of Commerce</h1>
+                <h2>Benin City Chamber</h2>
             </a>
             <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav"
                 aria-label="Toggle Menu">&#9776;</button>
@@ -55,19 +54,22 @@
             <p>Benin City is a historical and commercial hub, offering a unique blend of ancient heritage and modern
                 commerce.</p>
         </section>
+
         <section id="visitor-message" class="card">
-            <h2>Welcome to Benin City</h2>
+            <h2>Visitor Status</h2>
             <p id="visit-message-text">Loading visit information...</p>
         </section>
+
         <section id="city-demographics" class="card">
-            <h2>Benin City Demographics & Features</h2>
+            <h2>Demographics & Features</h2>
             <div class="demographics-grid">
                 <p><strong>Population (Metro):</strong> Approx. 2.5 Million</p>
-                <p><strong>Major Industries:</strong> Manufacturing, Trade, IT/Tech, Agriculture</p>
-                <p><strong>Key Feature:</strong> Home to the historic Kingdom of Benin.</p>
-                <p><strong>Transportation:</strong> Major regional airport (BEN), extensive road network.</p>
+                <p><strong>Major Industries:</strong> Manufacturing, Trade, IT/Tech</p>
+                <p><strong>Key Feature:</strong> Ancient Kingdom of Benin.</p>
+                <p><strong>Transportation:</strong> Benin Airport (BEN).</p>
             </div>
         </section>
+
         <section id="poi-gallery" class="card">
             <h2>Points of Interest</h2>
         </section>
@@ -76,10 +78,12 @@
     <footer>
         <div class="footer-grid">
             <div class="contact-info">
-                <h3>Benin City Chamber of Commerce</h3>
-                <p>3rd & 4th Floor, Palm House, Benin Sapele Rd, Oka, Benin City, Edo State. PMB:300102 </p>
-                <p>Email: <a href="mailto:info@benin-citycc.org">info@benin-citycc.org</a></p>
-                <p>Phone: +234-806-055-3201</p>
+                <h3>Contact Us</h3>
+                <address>
+                    Palm House, Benin Sapele Rd, Benin City, Edo State.<br>
+                    Email: <a href="mailto:info@benin-citycc.org">info@benin-citycc.org</a><br>
+                    Phone: +234-806-055-3201
+                </address>
             </div>
             <div class="social-links">
                 <a href="#" aria-label="Visit our YouTube channel"><img src="images/youtube.svg" alt="YouTube"
@@ -90,12 +94,13 @@
                         width="30" height="30"></a>
             </div>
             <div class="developer-info">
-                <p>&copy; <span id="copyright-year"></span> Benin City Chamber of Commerce</p>
-                <p>WDD 231 Project - Matthew Osaruyi Eruogun</p>
+                <p>&copy; <span id="copyright-year"></span> Benin City Chamber</p>
+                <p>WDD 231 - Matthew Osaruyi Eruogun</p>
                 <p>Last Modification: <span id="last-modified"></span></p>
             </div>
         </div>
     </footer>
+
     <script src="scripts/main.js?v=1.1" defer></script>
     <script src="scripts/discover.js" type="module"></script>
 </body>

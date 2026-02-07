@@ -31,8 +31,7 @@ if (gallery) {
         const card = document.createElement('section');
         card.className = `poi-card poi-card-${index + 1}`;
 
-        // Create elements
-        const title = document.createElement('h2');
+        const title = document.createElement('h3'); 
         title.textContent = spot.name;
 
         const figure = document.createElement('figure');
@@ -43,9 +42,10 @@ if (gallery) {
         img.src = `images/${spot.image}`;
         img.alt = `Photo of ${spot.name}`;
         img.loading = 'lazy';
-        // Standards-based dimensions to prevent CLS
-        img.width = 400;
-        img.height = 300;
+
+       
+        img.width = 300;
+        img.height = 200;
 
         imageContainer.appendChild(img);
         figure.appendChild(imageContainer);
@@ -58,6 +58,7 @@ if (gallery) {
 
         const button = document.createElement('button');
         button.textContent = "Learn More";
+        button.setAttribute('aria-label', `Learn more about ${spot.name}`);
 
         card.append(title, figure, address, description, button);
         gallery.appendChild(card);

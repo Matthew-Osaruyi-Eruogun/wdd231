@@ -35,7 +35,7 @@ export const pointsOfInterest = [
         name: "New Benin Market",
         address: "New Benin, Benin City, Edo State",
         description: "A bustling commercial center and one of the largest markets in the city, vital for trade and local commerce.",
-        image: "new-market .webp"
+        image: "new-market.webp"
     },
     {
         name: "Benin Golf Club",
