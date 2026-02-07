@@ -8,6 +8,8 @@
     --light-text-color: #ffffff;
     --light-border: #dddddd;
     --medium-border: #cccccc;
+    --card-shadow: rgba(0, 0, 0, 0.05);
+    --nav-border: rgba(255, 255, 255, 0.1);
 
     --heading-font: 'Roboto', sans-serif;
     --body-font: 'Open Sans', sans-serif;
@@ -16,7 +18,7 @@
     --chamber-primary: var(--primary-color);
     --chamber-accent: var(--accent-color);
     --chamber-hover: #003380;
-    --form-background: #ffffff;
+    --form-background: var(--light-text-color);
     --accent-hover: #ffd54f;
 }
 
@@ -63,7 +65,7 @@ main {
     padding: 1.5rem;
     border: 1px solid var(--light-border);
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+    box-shadow: 0 2px 4px var(--card-shadow);
 }
 
 /* --- HEADER & NAVIGATION --- */
@@ -132,7 +134,7 @@ header {
     padding: 1rem;
     color: var(--light-text-color);
     text-decoration: none;
-    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-top: 1px solid var(--nav-border);
     transition: background 0.3s;
 }
 
@@ -150,7 +152,7 @@ header {
 }
 
 #poi-gallery {
-display: grid;
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     min-height: 400px;
@@ -159,7 +161,7 @@ display: grid;
 .poi-card {
     display: flex;
     flex-direction: column;
-    background: white;
+    background: var(--light-text-color);
     padding: 1rem;
     border-radius: 8px;
     border: 1px solid var(--light-border);
@@ -179,7 +181,7 @@ display: grid;
 }
 
 .image-ratio-box {
-    background-color: #eee;
+    background-color: var(--medium-border);
     overflow: hidden;
     border-radius: 4px;
     aspect-ratio: 3 / 2;
@@ -197,7 +199,7 @@ display: grid;
     margin-top: auto;
     padding: 0.8rem;
     background: var(--primary-color);
-    color: white;
+    color: var(--light-text-color);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -207,7 +209,7 @@ display: grid;
 /* --- FOOTER --- */
 footer {
     background-color: var(--footer-bg);
-    color: #ffffff;
+    color: var(--light-text-color);
     padding: 3rem 1rem;
     margin-top: 3rem;
     text-align: center;
@@ -228,12 +230,12 @@ footer h3 {
 
 footer p,
 footer address {
-    color: #ffffff;
+    color: var(--light-text-color);
     line-height: 1.8;
 }
 
 footer a {
-    color: #ffca28;
+    color: var(--accent-color);
     text-decoration: underline;
     font-weight: 700;
     padding: 0.5rem;
