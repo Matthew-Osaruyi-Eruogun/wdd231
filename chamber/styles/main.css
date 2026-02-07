@@ -397,6 +397,19 @@ footer a.footer-link {
     gap: 1.5rem;
 }
 
+.poi-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.image-ratio-box {
+    background-color: #eee;
+    overflow: hidden;
+}
+
 /* Large Desktop */
 @media (min-width: 1000px) {
 

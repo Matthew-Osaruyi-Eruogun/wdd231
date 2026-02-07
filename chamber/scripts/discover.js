@@ -42,9 +42,7 @@ if (gallery) {
         img.src = `images/${spot.image}`;
         img.alt = `Photo of ${spot.name}`;
         img.loading = 'lazy';
-
-       
-        img.width = 300;
+        img.width = 300;  
         img.height = 200;
 
         imageContainer.appendChild(img);
