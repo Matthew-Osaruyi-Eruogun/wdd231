@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benin City Chamber of Commerce | Discover</title>
-    <meta name="description" content="Discover the rich history, landmarks, and vibrant culture of Benin City, Edo State with the Benin City Chamber of Commerce.">
+    <meta name="description"
+        content="Discover the rich history, landmarks, and vibrant culture of Benin City, Edo State with the Benin City Chamber of Commerce.">
     <meta name="author" content="Matthew Osaruyi Eruogun, WDD 231">
 
     <link rel="preload" href="fonts/roboto-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/roboto-reg.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="modulepreload" href="scripts/discover.js">
     <link rel="modulepreload" href="data/spots.mjs">
 
     <link rel="icon" href="images/favicon.ico">
@@ -24,8 +27,8 @@
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css?v=1.2">
-    <link rel="stylesheet" href="styles/medium.css?v=1.2" media="print" onload="this.media='(min-width: 641px)'">
-    <link rel="stylesheet" href="styles/large.css?v=1.2" media="print" onload="this.media='(min-width: 1000px)'">
+    <link rel="stylesheet" href="styles/medium.css?v=1.2" media="(min-width: 641px)">
+    <link rel="stylesheet" href="styles/large.css?v=1.2" media="(min-width: 1000px)">
 </head>
 
 <body>
@@ -33,7 +36,7 @@
         <div class="header-content">
             <a href="home.html" class="logo-link">
                 <img src="images/benin-chambers-logo.webp" alt="Benin City Chamber of Commerce Logo" class="logo"
-                    width="90" height="88">
+                    width="90" height="88" fetchpriority="high">
                 <h2>Benin City Chamber</h2>
             </a>
             <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav"
@@ -87,12 +90,15 @@
                 </address>
             </div>
             <div class="social-links">
-                <a href="#" aria-label="Visit our YouTube channel"><img src="images/youtube.svg" alt="YouTube"
-                        width="30" height="30"></a>
-                <a href="#" aria-label="Visit our Twitter page"><img src="images/twitter-x.svg" alt="Twitter" width="30"
-                        height="30"></a>
-                <a href="#" aria-label="Visit our LinkedIn page"><img src="images/linkedin.svg" alt="LinkedIn"
-                        width="30" height="30"></a>
+                <a href="#" aria-label="Visit our YouTube channel">
+                    <img src="images/youtube.svg" alt="YouTube" width="30" height="30" loading="lazy">
+                </a>
+                <a href="#" aria-label="Visit our Twitter page">
+                    <img src="images/twitter-x.svg" alt="Twitter" width="30" height="30" loading="lazy">
+                </a>
+                <a href="#" aria-label="Visit our LinkedIn page">
+                    <img src="images/linkedin.svg" alt="LinkedIn" width="30" height="30" loading="lazy">
+                </a>
             </div>
             <div class="developer-info">
                 <p>&copy; <span id="copyright-year"></span> Benin City Chamber</p>
