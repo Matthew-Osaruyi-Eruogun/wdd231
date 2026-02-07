@@ -150,12 +150,10 @@ header {
 }
 
 #poi-gallery {
-    display: grid;
+display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
-    content-visibility: auto;
-    contain-intrinsic-size: auto 400px;
-    min-height: 500px;
+    min-height: 400px;
 }
 
 .poi-card {
