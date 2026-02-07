@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benin City Chamber of Commerce | Discover</title>
+
     <meta name="description"
-        content="Discover the history, landmarks, and culture of Benin City with the Chamber of Commerce.">
+        content="Discover the rich history, landmarks, and vibrant culture of Benin City, Edo State with the Benin City Chamber of Commerce.">
     <meta name="author" content="Matthew Osaruyi Eruogun, WDD 231">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@400;700&display=swap"
         rel="stylesheet">
@@ -19,6 +21,15 @@
     <script src="scripts/discover.js" type="module"></script>
 
     <link rel="icon" href="images/favicon.ico">
+    <link rel="canonical" href="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/discover.html">
+
+    <meta property="og:title" content="Discover Benin City: History, Culture, and Commerce">
+    <meta property="og:description"
+        content="Learn factual information about Benin City's rich heritage and strategic features.">
+    <meta property="og:image"
+        content="https://matthew-osaruyi-eruogun.github.io/wdd231/images/benin-chambers-logo.webp">
+    <meta property="og:url" content="https://matthew-osaruyi-eruogun.github.io/wdd231/chamber/discover.html">
+
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css?v=1.2">
     <link rel="stylesheet" href="styles/medium.css?v=1.2" media="(min-width: 641px)">
@@ -29,8 +40,8 @@
     <header>
         <div class="header-content">
             <a href="home.html" class="logo-link">
-                <img src="images/benin-chambers-logo.webp" alt="Benin City Chamber Logo" class="logo" width="90"
-                    height="88" fetchpriority="high">
+                <img src="images/benin-chambers-logo.webp" alt="Benin City Chamber of Commerce Logo" class="logo"
+                    width="90" height="88" fetchpriority="high">
                 <h2>Benin City Chamber</h2>
             </a>
             <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav"
@@ -48,8 +59,9 @@
 
     <main id="discover-main">
         <section id="discover-hero" class="card">
-            <h1>Discover Benin City</h1>
-            <p>A unique blend of ancient heritage and modern commerce.</p>
+            <h1>Discover the Heart of Edo State: Benin City</h1>
+            <p>Benin City is a historical and commercial hub, offering a unique blend of ancient heritage and modern
+                commerce.</p>
         </section>
 
         <section id="visitor-message" class="card">
@@ -57,20 +69,50 @@
             <p id="visit-message-text">Loading visit information...</p>
         </section>
 
-        <aside id="city-demographics" class="card">
-            <h2>Demographics</h2>
-            <p><strong>Population:</strong> ~2.5 Million</p>
-            <p><strong>Industries:</strong> Trade, Tech, Manufacturing</p>
-        </aside>
+        <section id="city-demographics" class="card">
+            <h2>Demographics & Features</h2>
+            <div class="demographics-grid">
+                <p><strong>Population (Metro):</strong> Approx. 2.5 Million</p>
+                <p><strong>Major Industries:</strong> Manufacturing, Trade, IT/Tech</p>
+                <p><strong>Key Feature:</strong> Ancient Kingdom of Benin.</p>
+                <p><strong>Transportation:</strong> Benin Airport (BEN).</p>
+            </div>
+        </section>
 
-        <section id="poi-gallery">
+        <section id="poi-gallery" class="card">
+            <h2>Points of Interest</h2>
         </section>
     </main>
 
     <footer>
         <div class="footer-grid">
-            <p>&copy; <span id="copyright-year"></span> Benin City Chamber</p>
-            <p>Last Modification: <span id="last-modified"></span></p>
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <address>
+                    Palm House, Benin Sapele Rd, Benin City, Edo State.<br>
+                    Email: <a href="mailto:info@benin-citycc.org">info@benin-citycc.org</a><br>
+                    Phone: +234-806-055-3201
+                </address>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Visit our YouTube channel">
+                    <img src="images/youtube.svg" alt="Follow the Benin City Chamber of Commerce on YouTube" width="30"
+                        height="30" loading="lazy">
+                </a>
+                <a href="#" aria-label="Visit our Twitter page">
+                    <img src="images/twitter-x.svg" alt="Follow the Benin City Chamber of Commerce on X Twitter"
+                        width="30" height="30" loading="lazy">
+                </a>
+                <a href="#" aria-label="Visit our LinkedIn page">
+                    <img src="images/linkedin.svg" alt="Follow the Benin City Chamber of Commerce on LinkedIn"
+                        width="30" height="30" loading="lazy">
+                </a>
+            </div>
+            <div class="developer-info">
+                <p>&copy; <span id="copyright-year"></span> Benin City Chamber</p>
+                <p>WDD 231 - Matthew Osaruyi Eruogun</p>
+                <p>Last Modification: <span id="last-modified"></span></p>
+            </div>
         </div>
     </footer>
 </body>
