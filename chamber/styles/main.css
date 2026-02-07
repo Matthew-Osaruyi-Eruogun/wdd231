@@ -1,6 +1,5 @@
 /* --- VARIABLES --- */
 :root {
-    /* --- VARIABLES --- */
     --primary-color: #001f4c;
     --secondary-color: #916d03;
     --accent-color: #ffca28;
@@ -10,7 +9,6 @@
     --light-border: #dddddd;
     --medium-border: #cccccc;
 
-    
     --heading-font: 'Roboto', sans-serif;
     --body-font: 'Open Sans', sans-serif;
 
@@ -135,7 +133,7 @@ header {
     color: var(--light-text-color);
     text-decoration: none;
     border-top: 1px solid rgba(255, 255, 255, .1);
-    transition: background .3s;
+    transition: background 0.3s;
 }
 
 .navigation li a.active {
@@ -144,7 +142,7 @@ header {
     font-weight: 700;
 }
 
-/* --- DISCOVER PAGE & GALLERY --- */
+/* --- GALLERY --- */
 #discover-main {
     display: grid;
     grid-template-columns: 1fr;
@@ -208,7 +206,7 @@ header {
     min-height: 48px;
 }
 
-/* --- FOOTER (Contrast & Accessibility Fix) --- */
+/* --- FOOTER --- */
 footer {
     background-color: var(--footer-bg);
     color: #ffffff;
