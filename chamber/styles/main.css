@@ -66,7 +66,6 @@ main {
     border: 1px solid var(--light-border);
     border-radius: 8px;
     box-shadow: 0 2px 4px var(--card-shadow);
-    margin-bottom: 1rem;
 }
 
 /* --- HEADER & NAVIGATION --- */
@@ -97,12 +96,11 @@ header {
 .logo-link h2 {
     color: var(--light-text-color);
     margin-bottom: 0;
-    font-size: 1.2rem;
 }
 
 .logo {
     width: 60px;
-    height: auto;
+    height: 60px;
     object-fit: contain;
 }
 
@@ -146,20 +144,18 @@ header {
     font-weight: 700;
 }
 
-/* --- DISCOVER PAGE GALLERY --- */
+/* --- GALLERY --- */
 #discover-main {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
 }
 
-
 #poi-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     min-height: 400px;
-    grid-column: 1 / -1;
 }
 
 .poi-card {
@@ -169,14 +165,13 @@ header {
     padding: 1rem;
     border-radius: 8px;
     border: 1px solid var(--light-border);
-    box-shadow: 0 2px 4px var(--card-shadow);
     animation: fadeIn 0.4s ease-out forwards;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(5px);
     }
 
     to {
@@ -185,14 +180,12 @@ header {
     }
 }
 
-
 .image-ratio-box {
     background-color: var(--medium-border);
     overflow: hidden;
     border-radius: 4px;
     aspect-ratio: 3 / 2;
     width: 100%;
-    margin-bottom: 0.8rem;
 }
 
 .poi-card img {
@@ -200,11 +193,6 @@ header {
     height: 100%;
     object-fit: cover;
     display: block;
-}
-
-.poi-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
 }
 
 .poi-card button {
@@ -216,11 +204,6 @@ header {
     border-radius: 4px;
     cursor: pointer;
     min-height: 48px;
-    transition: background 0.3s;
-}
-
-.poi-card button:hover {
-    background: var(--chamber-hover);
 }
 
 /* --- FOOTER --- */
@@ -255,7 +238,8 @@ footer a {
     color: var(--accent-color);
     text-decoration: underline;
     font-weight: 700;
-    padding: 0.2rem;
+    padding: 0.5rem;
+    display: inline-block;
 }
 
 .social-links {
@@ -271,8 +255,6 @@ footer a {
 }
 
 /* --- MEDIA QUERIES --- */
-
-/* Tablet and Desktop Navigation */
 @media (min-width: 768px) {
     #menu-toggle {
         display: none;
@@ -280,11 +262,6 @@ footer a {
 
     header {
         flex-direction: row;
-        justify-content: center;
-        padding: 0.5rem 1rem;
-    }
-
-    .header-content {
         justify-content: space-around;
     }
 
@@ -295,13 +272,12 @@ footer a {
 
     .navigation ul {
         display: flex;
-        gap: 0.5rem;
+        gap: 1rem;
         margin-top: 0;
     }
 
     .navigation li a {
         border-top: none;
-        padding: 0.8rem 1.2rem;
     }
 
     .footer-grid {
@@ -310,23 +286,17 @@ footer a {
     }
 
     .social-links {
-        justify-content: center;
+        justify-content: flex-start;
     }
 }
 
-
 @media (min-width: 1024px) {
     #discover-main {
-        grid-template-columns: 350px 1fr;
-        align-items: start;
+        grid-template-columns: 320px 1fr;
     }
 
-    
-    #discover-hero {
-        grid-column: 1 / -1;
-    }
-
+    #discover-hero,
     #poi-gallery {
-        grid-column: 1 / -1;
+        grid-column: span 2;
     }
 }
