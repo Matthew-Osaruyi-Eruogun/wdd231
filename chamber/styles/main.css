@@ -279,6 +279,8 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 1000px;
     min-height: 800px;
 }
 
@@ -304,7 +306,7 @@ header {
     display: block;
 }
 
-/* --- FOOTER (ACCESSIBILITY FIX) --- */
+/* --- FOOTER (ACCESSIBILITY & PERFORMANCE FIX) --- */
 footer {
     background-color: var(--footer-bg);
     color: #ffffff;
@@ -322,16 +324,16 @@ footer p,
 footer address,
 footer div {
     color: #ffffff;
-    
 }
 
 footer address {
     font-style: normal;
     margin-bottom: 1rem;
+    line-height: 1.8;
 }
 
 footer a {
-    color: var(--accent-color);
+    color: #ffd54f;
     text-decoration: underline;
     font-weight: 700;
     min-width: 44px;
