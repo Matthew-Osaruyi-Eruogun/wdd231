@@ -279,7 +279,7 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
-    min-height: 600px;
+    min-height: 800px;
 }
 
 .poi-card {
@@ -304,13 +304,25 @@ header {
     display: block;
 }
 
-/* --- FOOTER --- */
+/* --- FOOTER (ACCESSIBILITY FIX) --- */
 footer {
     background-color: var(--footer-bg);
-    color: var(--light-text-color);
+    color: #ffffff;
     padding: 3rem 1rem;
     margin-top: 3rem;
     text-align: center;
+}
+
+footer h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+footer p,
+footer address,
+footer div {
+    color: #ffffff;
+    
 }
 
 footer address {
@@ -321,6 +333,7 @@ footer address {
 footer a {
     color: var(--accent-color);
     text-decoration: underline;
+    font-weight: 700;
     min-width: 44px;
     min-height: 44px;
     display: inline-block;
