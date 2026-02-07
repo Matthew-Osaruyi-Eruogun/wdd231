@@ -38,11 +38,20 @@ if (gallery) {
         const imageContainer = document.createElement('div');
         imageContainer.classList.add('image-ratio-box');
 
+        
         const img = document.createElement('img');
         img.src = `images/${spot.image}`;
         img.alt = `Photo of ${spot.name}`;
-        img.loading = 'lazy';
-        img.width = 300;  
+
+        
+        if (index < 2) {
+            img.loading = 'eager';
+            img.fetchPriority = 'high'; 
+        } else {
+            img.loading = 'lazy';
+        }
+
+        img.width = 300;
         img.height = 200;
 
         imageContainer.appendChild(img);
