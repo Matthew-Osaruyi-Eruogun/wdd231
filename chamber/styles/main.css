@@ -301,6 +301,8 @@ footer a {
     }
 }
 
+
+
 /* --- DIRECTORY STYLES (Mobile First) --- */
 .view-toggle {
     display: flex;
@@ -326,12 +328,11 @@ footer a {
     color: var(--light-text-color);
 }
 
-/* Base Directory Container */
 #directory-container {
     margin-top: 2rem;
 }
 
-/* Grid View - Mobile is 1 column by default */
+/* Grid View Styles */
 .grid-view {
     display: grid;
     grid-template-columns: 1fr;
@@ -356,32 +357,51 @@ footer a {
     margin-bottom: 1rem;
 }
 
-/* List View - Forces single column structure */
+/* List View Styles - Now shows logos */
 .list-view {
     display: flex;
     flex-direction: column;
-    gap: 0;
 }
 
 .list-view section {
     display: flex;
-    flex-direction: column;
-    padding: 1rem;
+    align-items: center;
+    padding: 0.75rem;
     border-bottom: 1px solid var(--light-border);
     background: var(--light-text-color);
+    gap: 1rem;
 }
 
-/* Alternate row colors for the list */
 .list-view section:nth-child(even) {
     background-color: #f9f9f9;
 }
 
+/* Show logo as a small thumbnail in list view */
 .list-view section img {
-    display: none;
-    
+    display: block;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
 }
 
 .list-view section h3 {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    flex: 1;
+    
+}
+
+.list-view section p,
+.list-view section a {
+    display: none;
+    
+}
+
+/* Show extra info on slightly larger mobile/tablets */
+@media (min-width: 480px) {
+    .list-view section p {
+        display: block;
+        font-size: 0.9rem;
+        margin: 0;
+    }
 }

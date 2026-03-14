@@ -1,4 +1,6 @@
 @media (min-width: 1000px) {
+
+    
     #discover-main {
         grid-template-columns: 300px 1fr;
         grid-template-areas:
@@ -7,17 +9,15 @@
             "gallery gallery";
     }
 
-    
     #poi-gallery {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas:
             "card1 card2 card3"
             "card4 card5 card6"
             "card7 card8 .";
-    
     }
 
-    
     .poi-card img {
         transition: transform 0.4s ease, filter 0.4s ease;
     }
@@ -27,12 +27,8 @@
         filter: brightness(1.1) saturate(1.2);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
-}
 
-@media (min-width: 1000px) {
-    /* ... your existing code ... */
-
-    /* ADD THIS: Mapping the JS classes to your named areas */
+    /* POI Card Area Assignments */
     .poi-card-1 {
         grid-area: card1;
     }
@@ -64,34 +60,57 @@
     .poi-card-8 {
         grid-area: card8;
     }
-}
 
-@media (min-width: 1000px) {
-    
-    
+    /* --- UPDATED DIRECTORY STYLES --- */
+
+    /* Grid View: 3 Columns */
     .grid-view {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
     }
 
-    /* List View: Horizontal row structure */
+    /* List View: Row structure for Desktop */
+    .list-view {
+        display: flex;
+        flex-direction: column;
+    }
+
     .list-view section {
+        display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         text-align: left;
+        padding: 0.5rem 1rem;
+        gap: 1.5rem;
+        
+    }
+
+    /* LOGO FIX: Ensuring images show in list view on large screens */
+    .list-view section img {
+        display: block;
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
     }
 
     .list-view section h3 {
         width: 25%;
+        margin: 0;
     }
 
     .list-view section p {
+        display: block;
         width: 20%;
         margin: 0;
     }
 
     .list-view section a {
+        display: block;
         width: 15%;
         text-align: right;
+        margin-left: auto;
+        
     }
 }
