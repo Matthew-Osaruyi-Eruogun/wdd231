@@ -65,3 +65,33 @@
         grid-area: card8;
     }
 }
+
+@media (min-width: 1000px) {
+    
+    
+    .grid-view {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* List View: Horizontal row structure */
+    .list-view section {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .list-view section h3 {
+        width: 25%;
+    }
+
+    .list-view section p {
+        width: 20%;
+        margin: 0;
+    }
+
+    .list-view section a {
+        width: 15%;
+        text-align: right;
+    }
+}

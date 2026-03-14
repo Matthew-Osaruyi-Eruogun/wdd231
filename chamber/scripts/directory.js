@@ -1,11 +1,12 @@
-/** * Directory Functionality for Chamber of Commerce
+/**
+ * Directory Functionality for Benin City Chamber of Commerce
  * Matthew Osaruyi Eruogun - WDD 231
  */
 
 const url = "data/members.json";
-const cards = document.querySelector("#cards-container"); // Ensure your HTML has an element with this ID
-const gridButton = document.querySelector("#grid");
-const listButton = document.querySelector("#list");
+const display = document.querySelector("#directory-container");
+const gridbutton = document.querySelector("#grid-button");
+const listbutton = document.querySelector("#list-button");
 
 // --- 1. Fetch JSON Data ---
 async function getMembers() {
@@ -24,7 +25,7 @@ async function getMembers() {
 
 // --- 2. Display Members Function ---
 const displayMembers = (members) => {
-    cards.innerHTML = ""; 
+    display.innerHTML = ""; // Clear existing content
 
     members.forEach((member) => {
         // Create elements
@@ -45,13 +46,13 @@ const displayMembers = (members) => {
         website.setAttribute("href", member.website);
         website.setAttribute("target", "_blank");
 
-        portrait.setAttribute("src", `images/${member.image}`); // Assumes images are in chamber/images/
+        // Note: images/ path relative to chamber/ directory
+        portrait.setAttribute("src", `images/${member.image}`);
         portrait.setAttribute("alt", `Logo for ${member.name}`);
         portrait.setAttribute("loading", "lazy");
         portrait.setAttribute("width", "200");
         portrait.setAttribute("height", "150");
 
-        // Add class for membership level styling
         level.textContent = `Membership: ${getMembershipLevel(member.membershipLevel)}`;
         level.className = "membership-level";
 
@@ -64,7 +65,7 @@ const displayMembers = (members) => {
         card.appendChild(level);
 
         // Append card to container
-        cards.appendChild(card);
+        display.appendChild(card);
     });
 };
 
@@ -76,19 +77,33 @@ const getMembershipLevel = (level) => {
 };
 
 // --- 3. Grid/List Toggle Logic ---
-gridButton.addEventListener("click", () => {
-    cards.classList.add("grid");
-    cards.classList.remove("list");
+gridbutton.addEventListener("click", () => {
+    // Add/Remove classes to the container
+    display.classList.add("grid-view");
+    display.classList.remove("list-view");
+
+    // Manage active button state
+    gridbutton.classList.add("view-active");
+    listbutton.classList.remove("view-active");
 });
 
-listButton.addEventListener("click", () => {
-    cards.classList.add("list");
-    cards.classList.remove("grid");
+listbutton.addEventListener("click", () => {
+    // Add/Remove classes to the container
+    display.classList.add("list-view");
+    display.classList.remove("grid-view");
+
+    // Manage active button state
+    listbutton.classList.add("view-active");
+    gridbutton.classList.remove("view-active");
 });
 
 // --- 4. Footer Date Logic ---
-document.querySelector("#currentyear").textContent = new Date().getFullYear();
-document.querySelector("#lastModified").textContent = `Last Modification: ${document.lastModified}`;
+// Matches your IDs: #copyright-year and #last-modified
+const yearSpan = document.querySelector("#copyright-year");
+const lastModSpan = document.querySelector("#last-modified");
+
+if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+if (lastModSpan) lastModSpan.textContent = `Last Modification: ${document.lastModified}`;
 
 // Initialize
 getMembers();
