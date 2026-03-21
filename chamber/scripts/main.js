@@ -3,6 +3,7 @@ const yearSpan = document.querySelector('#copyright-year');
 const lastModifiedSpan = document.querySelector('#last-modified');
 
 if (yearSpan) {
+    // Dynamically sets the current year for the copyright
     yearSpan.textContent = new Date().getFullYear();
 }
 
@@ -14,10 +15,12 @@ if (lastModifiedSpan) {
         year: "numeric",
         hour: "2-digit",
         minute: "2-digit",
-        second: "2-digit"
+        second: "2-digit",
+        hour12: true // Adds AM/PM for better readability
     }).format(lastMod);
 
-    lastModifiedSpan.textContent = formattedDate;
+    // This ensures the label is always present regardless of HTML content
+    lastModifiedSpan.textContent = `Last Modification: ${formattedDate}`;
 }
 
 // --- 2. MOBILE NAVIGATION TOGGLE ---

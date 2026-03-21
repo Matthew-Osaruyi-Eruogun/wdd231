@@ -461,4 +461,11 @@ footer a:hover {
     #spotlight-container {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
+
+.legal p {
+    color: var(--light-text-color);
+    /* This ensures 'Last Modification' is white */
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
 }
