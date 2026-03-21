@@ -27,9 +27,12 @@ const nav = document.querySelector('.navigation');
 if (menuButton && nav) {
     menuButton.addEventListener('click', () => {
         const isOpen = nav.classList.toggle('open');
+
+        // Synchronize ARIA attributes for accessibility
         menuButton.setAttribute('aria-expanded', isOpen);
         menuButton.setAttribute('aria-label', isOpen ? 'Close Navigation Menu' : 'Open Navigation Menu');
-        // Clean innerHTML toggle
+
+        // Clean innerHTML toggle: ✕ (multiplication sign) for close, ☰ (trigram) for open
         menuButton.innerHTML = isOpen ? '<span>&times;</span>' : '<span>&#9776;</span>';
     });
 }
@@ -49,7 +52,7 @@ if (directoryContainer) {
         if (member.membershipLevel === 3 || member.membershipLevel === 'Gold') levelName = 'Gold';
         else if (member.membershipLevel === 2 || member.membershipLevel === 'Silver') levelName = 'Silver';
 
-        // LCP Optimization: First 2 images load fast, others lazy load
+        // LCP Optimization: First 2 images load eager, others lazy
         const loadingStrategy = index < 2 ? 'eager' : 'lazy';
         const fetchPriority = index < 2 ? 'high' : 'auto';
         const companyName = member.name || member.companyName || "Chamber Member";
@@ -80,6 +83,7 @@ if (directoryContainer) {
 
     const displayMembers = async () => {
         try {
+            // Ensure path matches your project structure
             const response = await fetch('data/members.json');
             if (!response.ok) throw new Error('Could not load member data.');
             const members = await response.json();
@@ -96,6 +100,7 @@ if (directoryContainer) {
 
     displayMembers();
 
+    // Toggle between Grid and List views
     if (gridButton && listButton) {
         gridButton.addEventListener('click', () => {
             directoryContainer.className = 'grid-view';
