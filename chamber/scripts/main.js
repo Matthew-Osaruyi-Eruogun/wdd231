@@ -17,7 +17,7 @@ if (lastModifiedSpan) {
         second: "2-digit"
     }).format(lastMod);
 
-    lastModifiedSpan.textContent = `Last Modification: ${formattedDate}`;
+    lastModifiedSpan.textContent = formattedDate;
 }
 
 // --- 2. MOBILE NAVIGATION TOGGLE ---

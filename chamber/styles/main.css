@@ -309,17 +309,38 @@ footer {
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    align-items: start;
+}
+
+/* Fix for link visibility in footer */
+footer a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: var(--light-text-color);
 }
 
 .social-links {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
+    padding: 1rem 0;
 }
 
 .social-links img {
-    width: 30px;
+    width: 32px;
+    height: auto;
     filter: brightness(0) invert(1);
+    transition: transform 0.2s;
+}
+
+.social-links img:hover {
+    transform: scale(1.2);
+    filter: none;
+    /* Shows original icon colors on hover if desired */
 }
 
 /* --- SPOTLIGHTS (Home Page) --- */
@@ -416,7 +437,7 @@ footer {
     }
 
     .social-links {
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     #spotlight-container {
