@@ -155,7 +155,7 @@ header {
     font-weight: 700;
 }
 
-/* --- HERO SECTION (Overlapping CTA) --- */
+/* --- HERO SECTION --- */
 #hero {
     position: relative;
     width: 100%;
@@ -298,9 +298,23 @@ header {
 footer {
     background-color: var(--footer-bg);
     color: var(--light-text-color);
+    /* Sets base footer text to white */
     padding: 3rem 1rem;
     margin-top: 3rem;
     text-align: center;
+}
+
+footer h3 {
+    color: var(--accent-color);
+    /* Restores 'Contact Us' heading to Gold */
+    font-family: var(--heading-font);
+    margin-bottom: 1rem;
+}
+
+footer p {
+    color: var(--light-text-color);
+    /* Ensures address/phone is white */
+    margin-bottom: 0.5rem;
 }
 
 .footer-grid {
@@ -341,7 +355,7 @@ footer a:hover {
     filter: none;
 }
 
-/* --- SPOTLIGHTS (Home Page) --- */
+/* --- SPOTLIGHTS --- */
 #spotlight-container {
     display: grid;
     grid-template-columns: 1fr;
