@@ -336,6 +336,12 @@ footer a:hover {
     color: var(--light-text-color);
 }
 
+.footer-phone {
+    color: var(--light-text-color);
+    display: block;
+    margin-top: 5px;
+}
+
 .social-links {
     display: flex;
     justify-content: center;
