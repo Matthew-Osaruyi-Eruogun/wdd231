@@ -312,7 +312,6 @@ footer {
     align-items: start;
 }
 
-/* Fix for link visibility in footer */
 footer a {
     color: var(--accent-color);
     text-decoration: underline;
@@ -340,7 +339,6 @@ footer a:hover {
 .social-links img:hover {
     transform: scale(1.2);
     filter: none;
-    /* Shows original icon colors on hover if desired */
 }
 
 /* --- SPOTLIGHTS (Home Page) --- */
