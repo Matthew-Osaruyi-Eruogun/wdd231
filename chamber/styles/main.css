@@ -322,47 +322,6 @@ footer {
     filter: brightness(0) invert(1);
 }
 
-/* --- DESKTOP ADJUSTMENTS --- */
-@media (min-width: 768px) {
-    #menu-toggle {
-        display: none;
-    }
-
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 1rem 5%;
-    }
-
-    .navigation {
-        display: block;
-        width: auto;
-    }
-
-    .navigation ul {
-        display: flex;
-        gap: 1.5rem;
-        margin-top: 0;
-    }
-
-    .navigation li a {
-        border-top: none;
-    }
-
-    .home-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-
-    .footer-grid {
-        grid-template-columns: repeat(3, 1fr);
-        text-align: left;
-    }
-
-    .social-links {
-        justify-content: flex-start;
-    }
-
-
 /* --- SPOTLIGHTS (Home Page) --- */
 #spotlight-container {
     display: grid;
@@ -403,12 +362,6 @@ footer {
     margin-bottom: 1rem;
 }
 
-.spotlight-card hr {
-    border: none;
-    border-top: 1px solid var(--light-border);
-    margin: 1rem 0;
-}
-
 .member-link {
     display: inline-block;
     margin-top: 1rem;
@@ -426,8 +379,46 @@ footer {
     color: var(--light-text-color);
 }
 
-/* Responsive Spotlights */
+/* --- DESKTOP ADJUSTMENTS --- */
 @media (min-width: 768px) {
+    #menu-toggle {
+        display: none;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 5%;
+    }
+
+    .navigation {
+        display: block;
+        width: auto;
+    }
+
+    .navigation ul {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 0;
+    }
+
+    .navigation li a {
+        border-top: none;
+    }
+
+    .home-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left;
+    }
+
+    .social-links {
+        justify-content: flex-start;
+    }
+
     #spotlight-container {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
