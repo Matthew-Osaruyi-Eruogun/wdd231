@@ -15,12 +15,11 @@ if (lastModifiedSpan) {
         year: "numeric",
         hour: "2-digit",
         minute: "2-digit",
-        second: "2-digit",
-        hour12: true // Adds AM/PM for better readability
+        second: "2-digit"
     }).format(lastMod);
 
-    // This ensures the label is always present regardless of HTML content
-    lastModifiedSpan.textContent = `Last Modification: ${formattedDate}`;
+    // Only updates the content inside the span, preserving the "Last Modified:" text in the HTML
+    lastModifiedSpan.textContent = formattedDate;
 }
 
 // --- 2. MOBILE NAVIGATION TOGGLE ---
@@ -35,7 +34,7 @@ if (menuButton && nav) {
         menuButton.setAttribute('aria-expanded', isOpen);
         menuButton.setAttribute('aria-label', isOpen ? 'Close Navigation Menu' : 'Open Navigation Menu');
 
-        // Clean innerHTML toggle: ✕ (multiplication sign) for close, ☰ (trigram) for open
+        // Clean innerHTML toggle: ✕ for close, ☰ for open
         menuButton.innerHTML = isOpen ? '<span>&times;</span>' : '<span>&#9776;</span>';
     });
 }
@@ -86,7 +85,6 @@ if (directoryContainer) {
 
     const displayMembers = async () => {
         try {
-            // Ensure path matches your project structure
             const response = await fetch('data/members.json');
             if (!response.ok) throw new Error('Could not load member data.');
             const members = await response.json();
