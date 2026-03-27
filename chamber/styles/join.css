@@ -1,4 +1,4 @@
-#join-main {
+.join-main {
     padding: 1rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -136,6 +136,15 @@ dialog::backdrop {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+input:required {
+    border-left: 4px solid var(--chamber-accent);
+}
+
+/* Ensure labels are easy to read */
+label {
+    margin-top: 1rem;
 }
 
 /* Layout for larger screens */
