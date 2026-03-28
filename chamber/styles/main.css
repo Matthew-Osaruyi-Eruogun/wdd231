@@ -105,7 +105,6 @@ header {
 }
 
 .logo-link h1 {
-    /* Changed from h2 to match your HTML */
     color: var(--light-text-color);
     margin-bottom: 0;
     font-size: 1.5rem;
@@ -205,61 +204,6 @@ header {
     transform: scale(1.05);
 }
 
-/* --- HOME GRID --- */
-.home-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-/* --- GALLERY & DISCOVER --- */
-#discover-main {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-#poi-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.poi-card {
-    display: flex;
-    flex-direction: column;
-    background: var(--light-text-color);
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid var(--light-border);
-    animation: fadeIn 0.4s ease-out forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(5px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.image-ratio-box {
-    background-color: var(--medium-border);
-    overflow: hidden;
-    border-radius: 4px;
-    aspect-ratio: 3 / 2;
-}
-
-.poi-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 /* --- DIRECTORY STYLES --- */
 .view-toggle {
     display: flex;
@@ -355,63 +299,6 @@ footer a:hover {
     filter: none;
 }
 
-/* --- SPOTLIGHTS --- */
-#spotlight-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
-.spotlight-card {
-    background: var(--light-text-color);
-    padding: 1.5rem;
-    border: 1px solid var(--accent-color);
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 8px var(--card-shadow);
-    transition: transform 0.3s ease;
-}
-
-.spotlight-card:hover {
-    transform: translateY(-5px);
-}
-
-.spotlight-logo img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-    object-fit: contain;
-}
-
-.spotlight-card h3 {
-    font-size: 1.25rem;
-    color: var(--primary-color);
-}
-
-.spotlight-card .motto {
-    font-size: 0.9rem;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-}
-
-.member-link {
-    display: inline-block;
-    margin-top: 1rem;
-    color: var(--primary-color);
-    font-weight: bold;
-    text-decoration: none;
-    border: 2px solid var(--primary-color);
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: all 0.3s;
-}
-
-.member-link:hover {
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
-}
-
 /* --- DESKTOP ADJUSTMENTS --- */
 @media (min-width: 768px) {
     #menu-toggle {
@@ -443,7 +330,7 @@ footer a:hover {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
-   
+    /* Option A Fix: Two columns instead of three */
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         text-align: left;
@@ -460,10 +347,5 @@ footer a:hover {
 
     .social-links {
         justify-content: flex-start;
-        /* Aligns social icons with contact info */
-    }
-
-    #spotlight-container {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }

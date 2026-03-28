@@ -21,7 +21,7 @@ form {
 
 label {
     display: block;
-    margin-bottom: 1.2rem;
+    margin-top: 1rem;
     font-weight: 600;
     color: var(--text-color);
 }
@@ -38,6 +38,10 @@ select {
     margin-top: 0.4rem;
     border: 1px solid var(--medium-border, #ccc);
     border-radius: 4px;
+}
+
+input:required {
+    border-left: 4px solid var(--chamber-accent);
 }
 
 input:focus,
@@ -58,6 +62,7 @@ select:focus {
     font-size: 1.1rem;
     font-weight: 700;
     width: 100%;
+    margin-top: 1.5rem;
     transition: background-color 0.3s;
 }
 
@@ -70,14 +75,6 @@ select:focus {
     display: grid;
     gap: 1.5rem;
     margin-top: 1.5rem;
-}
-
-.card {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
 /* Initial Load Animation (Criterion 14) */
@@ -136,15 +133,6 @@ dialog::backdrop {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
-
-input:required {
-    border-left: 4px solid var(--chamber-accent);
-}
-
-/* Ensure labels are easy to read */
-label {
-    margin-top: 1rem;
 }
 
 /* Layout for larger screens */
