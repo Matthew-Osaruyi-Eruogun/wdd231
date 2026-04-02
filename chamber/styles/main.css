@@ -234,18 +234,20 @@ footer a {
     min-height: 100vh;
 }
 
+
 #poi-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
-    min-height: 800px;
+    min-height: 600px;
 }
+
 
 .image-ratio-box {
     display: block;
     width: 100%;
     aspect-ratio: 400 / 267;
-    background-color: #f4f4f4;
+    background-color: #eee;
     overflow: hidden;
 }
 
