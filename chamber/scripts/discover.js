@@ -42,20 +42,20 @@ if (gallery) {
         imageContainer.classList.add('image-ratio-box');
 
         
+    
         const img = document.createElement('img');
         img.src = `images/${spot.image}`;
         img.alt = `Photo of ${spot.name}`;
         img.width = 400;
         img.height = 267;
 
-        // Logic for prioritization
+    
         if (index === 0) {
-            img.loading = 'eager'; 
+            img.loading = 'eager';
             img.fetchPriority = 'high';
         } else {
             img.loading = 'lazy';
         }
-
         imageContainer.appendChild(img);
         figure.appendChild(imageContainer);
 
