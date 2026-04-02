@@ -231,9 +231,6 @@ footer a {
 
 
 #discover-main {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
     min-height: 100vh;
 }
 
@@ -241,14 +238,15 @@ footer a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
-    min-height: 600px;
+    min-height: 800px;
 }
 
 .image-ratio-box {
-    background-color: #eee;
-    aspect-ratio: 3 / 2;
+    display: block;
+    width: 100%;
+    aspect-ratio: 400 / 267;
+    background-color: #f4f4f4;
     overflow: hidden;
-    border-radius: 4px;
 }
 
 .image-ratio-box img {
@@ -256,7 +254,6 @@ footer a {
     height: 100%;
     object-fit: cover;
 }
-
 
 #visitor-message {
     min-height: 100px;
