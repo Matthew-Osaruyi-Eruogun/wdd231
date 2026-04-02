@@ -229,16 +229,38 @@ footer a {
     transform: scale(1.1);
 }
 
-#discover-main {
-    min-height: 80vh;
-  
-}
 
+#discover-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: 100vh;
+}
 
 #poi-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    min-height: 500px;
+    gap: 1.5rem;
+    min-height: 600px;
+}
+
+.image-ratio-box {
+    background-color: #eee;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.image-ratio-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+#visitor-message {
+    min-height: 100px;
+   
 }
 
 /* --- TABLET/DESKTOP FOOTER & HEADER --- */

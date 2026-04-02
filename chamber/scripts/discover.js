@@ -49,10 +49,11 @@ if (gallery) {
         img.width = 400;
         img.height = 267;
 
-        // Optimization: Priority loading for the first two items (Above the Fold)
-        if (index < 2) {
+
+        // Optimization: Priority loading for the first item (The LCP element)
+        if (index === 0) {
             img.loading = 'eager';
-            img.fetchPriority = 'high'; // Correct JS camelCase property
+            img.fetchPriority = 'high';
         } else {
             img.loading = 'lazy';
         }
@@ -68,7 +69,7 @@ if (gallery) {
 
         const button = document.createElement('button');
         button.textContent = "Learn More";
-        button.classList.add('member-link'); // Reusing existing card button styles
+        button.classList.add('member-link'); 
         button.setAttribute('aria-label', `Learn more about ${spot.name}`);
 
         card.append(title, figure, address, description, button);
