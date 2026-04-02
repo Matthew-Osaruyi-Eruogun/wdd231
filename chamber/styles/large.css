@@ -1,14 +1,34 @@
 @media (min-width: 1000px) {
 
-    
+    /* --- NAMED GRID AREAS FOR DISCOVER PAGE --- */
     #discover-main {
-        grid-template-columns: 300px 1fr;
+        display: grid;
+        grid-template-columns: 350px 1fr;
         grid-template-areas:
             "visitor hero"
             "stats hero"
             "gallery gallery";
+        gap: 20px;
     }
 
+    /* Assigning Areas */
+    #discover-hero {
+        grid-area: hero;
+    }
+
+    #visitor-message {
+        grid-area: visitor;
+    }
+
+    #city-demographics {
+        grid-area: stats;
+    }
+
+    #poi-gallery {
+        grid-area: gallery;
+    }
+
+    /* POI Gallery Grid */
     #poi-gallery {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -16,19 +36,25 @@
             "card1 card2 card3"
             "card4 card5 card6"
             "card7 card8 .";
+        gap: 1.5rem;
+        padding-top: 1rem;
     }
 
+    /* Image containment for cards */
     .poi-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 5px;
         transition: transform 0.4s ease, filter 0.4s ease;
     }
 
     .poi-card img:hover {
-        transform: scale(1.05);
-        filter: brightness(1.1) saturate(1.2);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        transform: scale(1.03);
+        filter: brightness(1.05);
     }
 
-    /* POI Card Area Assignments */
+   
     .poi-card-1 {
         grid-area: card1;
     }
@@ -61,33 +87,19 @@
         grid-area: card8;
     }
 
-    /* --- UPDATED DIRECTORY STYLES --- */
-
-    /* Grid View: 3 Columns */
+    /* --- DIRECTORY VIEW ADJUSTMENTS --- */
     .grid-view {
-        display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-    }
-
-    /* List View: Row structure for Desktop */
-    .list-view {
-        display: flex;
-        flex-direction: column;
     }
 
     .list-view section {
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
         align-items: center;
-        text-align: left;
-        padding: 0.5rem 1rem;
-        gap: 1.5rem;
-        
+        padding: 0.5rem 1.5rem;
+        gap: 2rem;
     }
 
-    /* LOGO FIX: Ensuring images show in list view on large screens */
     .list-view section img {
         display: block;
         width: 60px;
@@ -101,16 +113,13 @@
     }
 
     .list-view section p {
-        display: block;
         width: 20%;
         margin: 0;
     }
 
     .list-view section a {
-        display: block;
+        margin-left: auto;
         width: 15%;
         text-align: right;
-        margin-left: auto;
-        
     }
 }

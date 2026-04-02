@@ -46,6 +46,13 @@ h3 {
     margin-bottom: 1rem;
 }
 
+/* GLOBAL IMAGE RESET - Prevents images from falling out of borders */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -77,6 +84,8 @@ main {
     border: 1px solid var(--light-border);
     border-radius: 8px;
     box-shadow: 0 2px 4px var(--card-shadow);
+    overflow: hidden;
+   
 }
 
 /* --- HEADER & NAVIGATION --- */
@@ -104,7 +113,7 @@ header {
     text-decoration: none;
 }
 
-.logo-link h1 {
+.logo-link h2 {
     color: var(--light-text-color);
     margin-bottom: 0;
     font-size: 1.5rem;
@@ -156,98 +165,13 @@ header {
     font-weight: 700;
 }
 
-/* --- HERO SECTION --- */
-#hero {
-    position: relative;
-    width: 100%;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-#hero img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
-.hero-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 31, 76, 0.85);
-    padding: 2rem;
-    border-radius: 8px;
-    text-align: center;
-    border: 2px solid var(--accent-color);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    width: 90%;
-    max-width: 350px;
-}
-
-.cta {
-    display: inline-block;
-    padding: 1rem 1.5rem;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 700;
-    font-family: var(--heading-font);
-    border-radius: 4px;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.cta:hover {
-    background-color: var(--accent-hover);
-    transform: scale(1.05);
-}
-
-/* --- DIRECTORY STYLES --- */
-.view-toggle {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
-.view-toggle button {
-    padding: 0.75rem 1.5rem;
-    font-weight: bold;
-    border: 2px solid var(--primary-color);
-    background: var(--light-text-color);
-    color: var(--primary-color);
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.view-toggle button.view-active {
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
-}
-
-.grid-view {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.list-view section {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 1rem;
-    border-bottom: 1px solid var(--light-border);
-}
-
 /* --- FOOTER --- */
 footer {
     background-color: var(--footer-bg);
     color: var(--light-text-color);
-    padding: 2rem 1rem;
+    padding: 2.5rem 1rem;
     margin-top: 3rem;
 }
-
 
 .footer-grid {
     display: flex;
@@ -261,38 +185,22 @@ footer {
 
 footer h3 {
     color: var(--accent-color);
-    font-family: var(--heading-font);
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-}
-
-footer p {
-    color: var(--light-text-color);
-    margin-bottom: 0.3rem;
-    font-size: 0.9rem;
 }
 
 footer a {
     color: var(--accent-color);
     text-decoration: none;
-    transition: 0.3s;
-}
-
-footer a:hover {
-    color: var(--light-text-color);
-    text-decoration: underline;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
     gap: 1.2rem;
-    margin-top: 0.5rem;
 }
 
 .social-links img {
-    width: 28px;
-    height: auto;
+    width: 30px;
     filter: brightness(0) invert(1);
     transition: transform 0.2s;
 }
@@ -301,7 +209,7 @@ footer a:hover {
     transform: scale(1.1);
 }
 
-/* --- DESKTOP ADJUSTMENTS (768px and up) --- */
+/* --- TABLET/DESKTOP FOOTER & HEADER --- */
 @media (min-width: 768px) {
     #menu-toggle {
         display: none;
@@ -336,14 +244,11 @@ footer a:hover {
         text-align: left;
     }
 
-    
     .social-links {
         justify-content: flex-start;
     }
 
-    
     .developer-info {
         text-align: right;
-        align-self: flex-end;
     }
 }
