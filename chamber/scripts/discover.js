@@ -41,21 +41,20 @@ if (gallery) {
         const imageContainer = document.createElement('div');
         imageContainer.classList.add('image-ratio-box');
 
-        
-    
+
         const img = document.createElement('img');
         img.src = `images/${spot.image}`;
         img.alt = `Photo of ${spot.name}`;
-        img.width = 400;
-        img.height = 267;
-
-    
+        img.width = 400;  
+        img.height = 267; 
+        img.style.display = "block"; 
         if (index === 0) {
             img.loading = 'eager';
-            img.fetchPriority = 'high';
+            img.setAttribute('fetchpriority', 'high'); 
         } else {
             img.loading = 'lazy';
         }
+
         imageContainer.appendChild(img);
         figure.appendChild(imageContainer);
 
@@ -67,7 +66,7 @@ if (gallery) {
 
         const button = document.createElement('button');
         button.textContent = "Learn More";
-        button.classList.add('member-link'); 
+        button.classList.add('member-link');
         button.setAttribute('aria-label', `Learn more about ${spot.name}`);
 
         card.append(title, figure, address, description, button);
