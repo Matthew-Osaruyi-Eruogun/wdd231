@@ -1,9 +1,6 @@
 // gallery.js
 
-/**
- * REQUIRED: Modal Dialog Logic.
- * Handles opening and closing the style details modal using DOM Manipulation and Event Handling.
- */
+
 function setupModalLogic() {
     // Select elements using appropriate methods (querySelector, querySelectorAll)
     const modal = document.getElementById('style-modal');

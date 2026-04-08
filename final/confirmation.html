@@ -4,34 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quote Request Confirmation | Aso-Ebi Thread</title>
+    <title>Submission Received | Aso-Ebi Thread</title>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap"
         rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body id="confirmation-page">
-    <main class="confirmation-container">
-        <h1>Thank You for Your Request!</h1>
-        <p class="intro-text">Your quote request has been successfully submitted and forwarded to our network of
-            certified vendors. You should receive responses shortly.</p>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">Aso-Ebi Thread</a>
+        </div>
+    </header>
 
-        <section class="submitted-data">
-            <h2>Your Submitted Details</h2>
-            <ul id="form-data-list">
+    <main class="confirmation-container"
+        style="max-width: 800px; margin: 4rem auto; padding: 0 5%; text-align: center;">
+        <div class="success-icon" style="font-size: 4rem; color: var(--color-primary);">Checkmark Icon</div>
+        <h1>Thank You!</h1>
+        <p class="intro-text">Your request has been forwarded to our certified network. Vendors will contact you at the
+            email provided.</p>
+
+        <section class="submitted-data"
+            style="background: white; padding: 2rem; border-radius: 10px; box-shadow: var(--shadow); margin: 2rem 0; text-align: left;">
+            <h2 style="border: none; padding: 0; margin-bottom: 1rem;">Submission Summary</h2>
+            <ul id="form-data-list" style="list-style: none;">
                 <li>
-                    <p>Loading...</p>
+                    <p>Processing your details...</p>
                 </li>
             </ul>
         </section>
 
-        <p><a href="index.html" class="cta-primary">Return to Homepage</a></p>
+        <a href="index.html" class="cta-primary">Return to Homepage</a>
     </main>
 
+    <footer style="margin-top: auto;">
+        <p>&copy; <span id="currentyear"></span> Aso-Ebi Thread. All rights reserved.</p>
+    </footer>
+
     <script>
-        // JavaScript to read the URL parameters (form data) and display them
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
             const dataList = document.getElementById('form-data-list');
@@ -43,14 +57,20 @@
             }
 
             for (const [key, value] of params.entries()) {
-                const listItem = document.createElement('li');
-                // Format the key for readability (e.g., 'full-name' to 'Full Name')
-                const readableKey = key.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+                if (key === 'consent') continue; // Hide consent checkbox from summary
 
-                // Display the submitted key-value pairs
-                listItem.innerHTML = `<strong>${readableKey}:</strong> ${value || 'N/A'}`;
+                const listItem = document.createElement('li');
+                listItem.style.marginBottom = "10px";
+                listItem.style.borderBottom = "1px solid #eee";
+                listItem.style.paddingBottom = "5px";
+
+                const readableKey = key.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+                listItem.innerHTML = `<strong style="color: var(--color-primary);">${readableKey}:</strong> ${decodeURIComponent(value) || 'N/A'}`;
                 dataList.appendChild(listItem);
             }
+
+            // Set footer year
+            document.getElementById('currentyear').textContent = new Date().getFullYear();
         });
     </script>
 </body>

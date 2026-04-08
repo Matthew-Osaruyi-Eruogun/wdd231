@@ -7,12 +7,14 @@
     <title>Attributions & Resources | Aso-Ebi Thread</title>
     <meta name="description"
         content="A list of all external resources, assets, and data sources used in the Aso-Ebi Thread web project." />
-    <meta name="author" content="Your Name" />
+    <meta name="author" content="Matthew Osaruyi Eruogun" />
 
     <link rel="icon" href="images/favicon.ico">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap"
         rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
@@ -21,9 +23,7 @@
         <div class="header-content">
             <a href="index.html" class="logo">Aso-Ebi Thread</a>
             <nav class="main-nav">
-                <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
-                    &#9776;
-                </button>
+                <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">&#9776;</button>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="styles-gallery.html">Style Gallery</a></li>
@@ -34,62 +34,54 @@
         </div>
     </header>
 
-    <main>
+    <main class="form-container">
         <h1>Attributions & External Resources</h1>
         <p class="intro-text">This project utilizes the following resources. All efforts have been made to ensure proper
             citation and adherence to licensing terms.</p>
 
         <section class="attribution-section">
             <h2>Image Assets</h2>
-            <p>Please note: All images linked below are placeholders. In a real project, you would replace these with
-                actual images from sources like Unsplash, Pexels, or your own original photography, ensuring you meet
-                licensing requirements.</p>
+            <p><em>Note: All images used in this project are placeholders for demonstration purposes.</em></p>
             <ul>
-                <li>**Hero Background Image (`images/hero-bg.jpg`):** Placeholder - *[Cite Photographer/Source here,
-                    e.g., Photo by John Doe on Unsplash]*</li>
-                <li>**Style Gallery Images (`images/style1.jpg` to `images/style15.jpg`):** Placeholder - *[Cite Source
-                    here]*</li>
-                <li>**Vendor Logos (`images/vendor-***.png`):** Placeholder - *[Cite Source or indicate they are project
-                    mockups]*</li>
-                <li>**Favicon (`images/favicon.ico`):** Placeholder - *[Cite Source if applicable]*</li>
+                <li><strong>Hero Background:</strong> Placeholder via <a href="https://unsplash.com"
+                        target="_blank">Unsplash</a>.</li>
+                <li><strong>Style Gallery:</strong> Placeholder images sourced for layout testing.</li>
+                <li><strong>Vendor Logos:</strong> Custom mockups created for <em>Aso-Ebi Thread</em>.</li>
+                <li><strong>Favicon:</strong> Generated using project brand colors.</li>
             </ul>
         </section>
 
         <section class="attribution-section">
             <h2>Data and APIs</h2>
             <ul>
-                <li>**Vendor Data (`data/vendors.json`):** Created by the developer for demonstration purposes in this
-                    project.</li>
+                <li><strong>Vendor Data (<code>data/vendors.json</code>):</strong> Original dataset created for this
+                    project to simulate a real-world directory.</li>
             </ul>
         </section>
 
         <section class="attribution-section">
-            <h2>Typography and Libraries</h2>
+            <h2>Typography</h2>
             <ul>
-                <li>**Google Font API:** Used for importing the custom fonts:
-                    <ul>
-                        <li><a href="https://fonts.google.com/specimen/Playfair+Display" target="_blank">Playfair
-                                Display</a> (Headline Font)</li>
-                        <li><a href="https://fonts.google.com/specimen/Poppins" target="_blank">Poppins</a> (Body Font)
-                        </li>
-                    </ul>
+                <li><strong>Google Font API:</strong>
+                    <a href="https://fonts.google.com/specimen/Playfair+Display" target="_blank">Playfair Display</a>
+                    (Serif) and
+                    <a href="https://fonts.google.com/specimen/Poppins" target="_blank">Poppins</a> (Sans-serif).
                 </li>
             </ul>
         </section>
 
         <section class="attribution-section">
-            <h2>External Video Demonstration Link</h2>
-            <p>The link for the video demonstration required for this project:</p>
-            <p><a href="https://youtu.be/your-video-link" target="_blank">Project Video Demonstration (YouTube)</a></p>
+            <h2>Video Demonstration</h2>
+            <p>A video walkthrough of the project features:</p>
+            <p><a href="https://youtu.be/your-video-link" target="_blank" class="cta-secondary">Project Video
+                    Demonstration (YouTube)</a></p>
         </section>
-
     </main>
 
     <footer>
         <p>&copy; <span id="currentyear"></span> Aso-Ebi Thread. All rights reserved.</p>
         <p>
-            <a href="attributions.html">Attributions</a> |
-            <a href="https://youtu.be/your-video-link" target="_blank">Video Demonstration</a> |
+            <a href="attributions.html" class="active">Attributions</a> |
             Privacy Policy
         </p>
     </footer>

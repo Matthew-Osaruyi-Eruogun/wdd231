@@ -12,6 +12,8 @@
                 "Sequined George",
                 "French Tulle"
             ],
+            "contact_email": "contact@luxurylace.com",
+            "price_range": "$$$",
             "logo_url": "images/vendor-101-logo.png"
         },
         {
@@ -20,13 +22,15 @@
             "type": "Tailor/Designer",
             "location": "Abuja, NG",
             "rating": 4.9,
+            "min_bulk_order": 0,
             "specialties": [
                 "Bespoke Agbada",
                 "Modern Iro & Buba",
                 "Bridal Wear"
             ],
             "contact_email": "stylestitch@email.com",
-            "price_range": "$$$"
+            "price_range": "$$$",
+            "logo_url": "images/vendor-205-logo.png"
         },
         {
             "id": 112,
@@ -40,6 +44,8 @@
                 "Adire",
                 "Cotton"
             ],
+            "contact_email": "info@okinfabrics.ng",
+            "price_range": "$",
             "logo_url": "images/vendor-112-logo.png"
         },
         {
@@ -48,12 +54,14 @@
             "type": "Tailor/Designer",
             "location": "Lagos Mainland, NG",
             "rating": 4.7,
+            "min_bulk_order": 0,
             "specialties": [
                 "Gele tying",
                 "Female contemporary styles"
             ],
             "contact_email": "queenscouturier@email.com",
-            "price_range": "$$"
+            "price_range": "$$",
+            "logo_url": "images/vendor-218-logo.png"
         },
         {
             "id": 133,
@@ -67,6 +75,8 @@
                 "Brocade",
                 "George"
             ],
+            "contact_email": "sales@regalthreads.com",
+            "price_range": "$$$",
             "logo_url": "images/vendor-133-logo.png"
         },
         {
@@ -75,12 +85,14 @@
             "type": "Tailor/Designer",
             "location": "Kano, NG",
             "rating": 4.0,
+            "min_bulk_order": 0,
             "specialties": [
                 "Northern attire (Hawan Dala)",
                 "Gown design"
             ],
             "contact_email": "alphadesigns@email.com",
-            "price_range": "$$"
+            "price_range": "$$",
+            "logo_url": "images/vendor-240-logo.png"
         },
         {
             "id": 155,
@@ -94,6 +106,8 @@
                 "Tulle",
                 "Silk"
             ],
+            "contact_email": "diamond@textiles.ng",
+            "price_range": "$$$",
             "logo_url": "images/vendor-155-logo.png"
         },
         {
@@ -102,12 +116,14 @@
             "type": "Tailor/Designer",
             "location": "Abuja, NG",
             "rating": 4.8,
+            "min_bulk_order": 0,
             "specialties": [
                 "Corporate Traditional wear",
                 "Children's Aso-Ebi"
             ],
             "contact_email": "elegantstitch@email.com",
-            "price_range": "$$$"
+            "price_range": "$$$",
+            "logo_url": "images/vendor-261-logo.png"
         },
         {
             "id": 177,
@@ -120,6 +136,8 @@
                 "Wax Print (Ankara)",
                 "Tie-Dye (Adire)"
             ],
+            "contact_email": "hello@globalprints.com",
+            "price_range": "$$",
             "logo_url": "images/vendor-177-logo.png"
         },
         {
@@ -128,12 +146,14 @@
             "type": "Tailor/Designer",
             "location": "Ibadan, NG",
             "rating": 4.5,
+            "min_bulk_order": 0,
             "specialties": [
                 "Agbada",
                 "Sokoto/Buba sets"
             ],
             "contact_email": "fashionarchitects@email.com",
-            "price_range": "$$"
+            "price_range": "$$",
+            "logo_url": "images/vendor-282-logo.png"
         },
         {
             "id": 199,
@@ -146,6 +166,8 @@
                 "Heavy Lace",
                 "Sequin Materials"
             ],
+            "contact_email": "goldthread@fabrics.com",
+            "price_range": "$$$",
             "logo_url": "images/vendor-199-logo.png"
         },
         {
@@ -154,12 +176,14 @@
             "type": "Tailor/Designer",
             "location": "Lagos Island, NG",
             "rating": 4.9,
+            "min_bulk_order": 0,
             "specialties": [
                 "High-end suits",
                 "Traditional men's wear"
             ],
             "contact_email": "bespoke@email.com",
-            "price_range": "$$$$"
+            "price_range": "$$$$",
+            "logo_url": "images/vendor-290-logo.png"
         },
         {
             "id": 100,
@@ -173,6 +197,8 @@
                 "Fila",
                 "Gele"
             ],
+            "contact_email": "tradwears@gmail.com",
+            "price_range": "$$",
             "logo_url": "images/vendor-100-logo.png"
         },
         {
@@ -181,12 +207,14 @@
             "type": "Tailor/Designer",
             "location": "Lagos Mainland, NG",
             "rating": 5.0,
+            "min_bulk_order": 0,
             "specialties": [
                 "Engagement Dresses",
                 "Reception Gowns"
             ],
             "contact_email": "modernbride@email.com",
-            "price_range": "$$$$"
+            "price_range": "$$$$",
+            "logo_url": "images/vendor-200-logo.png"
         },
         {
             "id": 102,
@@ -200,6 +228,8 @@
                 "Chiffon",
                 "Brocade"
             ],
+            "contact_email": "silk@satinimports.com",
+            "price_range": "$$$",
             "logo_url": "images/vendor-102-logo.png"
         }
     ]
