@@ -33,7 +33,11 @@ body {
 
 main {
     flex-grow: 1;
-    width: 100%
+    width: 100%;
+    padding: 20px 5%;
+    /* Added padding for main content */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 img {
@@ -42,7 +46,7 @@ img {
     display: block
 }
 
-/* --- TYPOGRAPHY (CLS Fix Applied) --- */
+/* --- TYPOGRAPHY --- */
 h1,
 h2,
 h3 {
@@ -54,8 +58,8 @@ h1 {
     font-size: clamp(2em, 5vw, 3.5em);
     line-height: 1.2;
     min-height: 1.2em;
-    /* Reserves space to prevent CLS shift */
     margin-bottom: 0.5rem;
+    text-align: center;
 }
 
 h2 {
@@ -63,6 +67,11 @@ h2 {
     border-left: 5px solid var(--color-accent);
     padding-left: 15px;
     margin: 2rem 0 1rem
+}
+
+.intro-text {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 /* --- HEADER & NAV --- */
@@ -133,39 +142,12 @@ header {
     color: var(--color-white)
 }
 
-/* --- HERO SECTION --- */
-.hero {
-    position: relative;
-    height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background-color: #f0f0f0;
-    /* Placeholder color for SI audit */
-    width: 100%
-}
-
-.hero-background-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1
-}
-
-.hero-text-overlay {
-    position: relative;
-    z-index: 2;
-    background-color: rgba(0, 0, 0, .6);
-    padding: 2.5rem;
-    text-align: center;
-    color: #fff;
-    max-width: 700px;
-    margin: 20px;
-    border-radius: 12px
+/* --- GALLERY GRID FIX --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
 }
 
 /* --- CARDS & MODALS --- */
@@ -176,14 +158,16 @@ header {
     box-shadow: var(--shadow);
     height: 400px;
     cursor: pointer;
-    border-radius: 12px
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
 }
 
-.style-card-item img,
-.modal-content img {
+.style-card-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover
+    object-fit: cover;
+    /* This prevents the stretching seen in your screenshots */
 }
 
 .style-info {
@@ -194,11 +178,69 @@ header {
     color: #fff;
     padding: 15px;
     transform: translateY(100%);
-    transition: transform .3s
+    transition: transform .3s ease;
 }
 
 .style-card-item:hover .style-info {
     transform: translateY(0)
+}
+
+/* --- MODAL STYLES --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--color-white);
+    max-width: 800px;
+    width: 90%;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 600px) {
+    .modal-content {
+        flex-direction: row;
+    }
+}
+
+.modal-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+@media (min-width: 600px) {
+    .modal-image {
+        width: 50%;
+        height: auto;
+    }
+}
+
+.modal-details {
+    padding: 2rem;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--color-text);
+    cursor: pointer;
+    z-index: 1001;
 }
 
 /* --- FOOTER --- */
@@ -208,6 +250,11 @@ footer {
     padding: 2rem;
     margin-top: auto;
     border-top: 1px solid var(--color-accent)
+}
+
+footer a {
+    color: var(--color-primary);
+    text-decoration: none;
 }
 
 /* --- MEDIA QUERIES --- */
