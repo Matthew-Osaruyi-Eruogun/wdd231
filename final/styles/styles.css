@@ -20,7 +20,6 @@ body {
     min-height: 100vh;
 }
 
-
 img {
     max-width: 100%;
     height: auto;
@@ -113,8 +112,7 @@ header {
     color: var(--color-white);
 }
 
-/* --- Hero Section --- */
-
+/* --- Hero Section Fix --- */
 .hero {
     position: relative;
     width: 100%;
@@ -135,77 +133,19 @@ header {
     z-index: 1;
 }
 
-/* Style the text box to sit ON TOP of the image */
 .hero-text-overlay {
     position: relative;
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 2.5rem;
     border-radius: 12px;
     text-align: center;
     color: white;
     max-width: 700px;
+    margin: 20px;
 }
 
-/* Search bar styling */
-.search-bar {
-    display: flex;
-    gap: 10px;
-    margin-top: 1.5rem;
-}
-
-.search-bar input {
-    flex: 1;
-    padding: 12px;
-    border-radius: 5px;
-    border: none;
-}
-
-/* --- Buttons --- */
-.cta-primary,
-.cta-button {
-    display: inline-block;
-    background-color: var(--color-accent);
-    color: var(--color-text);
-    padding: 12px 24px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.3s;
-    text-align: center;
-}
-
-.cta-primary:hover,
-.cta-button:hover {
-    background-color: #b8952d;
-    transform: scale(1.05);
-}
-
-.cta-secondary {
-    display: inline-block;
-    color: var(--color-primary);
-    font-weight: 600;
-    text-decoration: none;
-    margin-top: 10px;
-    border-bottom: 2px solid var(--color-accent);
-}
-
-/* --- Vendor Section Fixes --- */
-.vendor-cta-box {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-}
-
-.quick-links {
-    clear: both;
-    padding-top: 15px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-/* --- Gallery Fix --- */
+/* --- Gallery & Cards --- */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -221,16 +161,14 @@ header {
     overflow: hidden;
     position: relative;
     box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
     height: 400px;
+    cursor: pointer;
 }
 
 .style-card-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
 .style-info {
@@ -240,47 +178,19 @@ header {
     background: rgba(139, 0, 0, 0.9);
     color: white;
     padding: 15px;
-    box-sizing: border-box;
     transform: translateY(100%);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease;
 }
 
 .style-card-item:hover .style-info {
     transform: translateY(0);
 }
 
-/* --- Vendor Grid --- */
-.vendor-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px;
-    align-items: start;
-}
-
-.vendor-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: contain;
-    background: #f0f0f0;
-    margin-bottom: 15px;
-    border-radius: 8px;
-}
-
-.vendor-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: var(--shadow);
-    border: 1px solid #eee;
-}
-
-/* --- Modal Styles --- */
+/* --- Modal Fix (Side-by-Side) --- */
 .modal {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -288,6 +198,7 @@ header {
     visibility: hidden;
     transition: 0.3s;
     z-index: 1000;
+    padding: 20px;
 }
 
 .modal.is-visible {
@@ -295,8 +206,50 @@ header {
     visibility: visible;
 }
 
-/* --- Desktop Layout Adjustments --- */
+.modal-content {
+    background: var(--color-white);
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 100%;
+    max-height: 50vh;
+    object-fit: cover;
+}
+
+.modal-details {
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Desktop Modal */
 @media (min-width: 768px) {
+    .modal-content {
+        grid-template-columns: 1fr 1fr;
+        max-height: 80vh;
+    }
+
+    .modal-content img {
+        max-height: 80vh;
+    }
+
     .hamburger {
         display: none;
     }
@@ -307,11 +260,6 @@ header {
         position: static;
         width: auto;
         border: none;
-        background: none;
-    }
-
-    .nav-links a {
-        padding: 10px 20px;
     }
 }
 
