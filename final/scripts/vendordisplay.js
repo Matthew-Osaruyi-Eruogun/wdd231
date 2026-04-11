@@ -1,9 +1,9 @@
 /* vendordisplay.js */
 let allVendors = [];
 
-// Dynamic Content Generation using Template Literals (Criterion 11)
 function displayVendors(vendors) {
     const vendorList = document.getElementById('vendor-list');
+    // This effectively removes the "Loading..." message by replacing innerHTML
     vendorList.innerHTML = vendors.map(vendor => `
         <div class="vendor-card">
             <img src="${vendor.logo_url || 'images/placeholder.png'}" alt="${vendor.name}" loading="lazy">
@@ -16,7 +16,6 @@ function displayVendors(vendors) {
     `).join('');
 }
 
-// Data Fetching with Try/Catch (Criterion 12)
 async function getVendorData() {
     try {
         const response = await fetch('data/vendors.json');
@@ -26,11 +25,10 @@ async function getVendorData() {
         displayVendors(allVendors);
     } catch (error) {
         console.error('Error:', error);
-        document.getElementById('vendor-list').innerHTML = '<p>Unable to load vendors.</p>';
+        document.getElementById('vendor-list').innerHTML = '<p>Unable to load vendors at this time.</p>';
     }
 }
 
-// Array Methods: Filter (Criterion 11)
 function setupFilter() {
     const filterSelect = document.getElementById('vendor-type');
     if (filterSelect) {

@@ -1,38 +1,39 @@
 /* main.js */
 import { initVendorDirectory } from './vendordisplay.js';
 
-/* Handle Navigation: Wayfinding and Responsive Menu */
+/**
+ * 1. Improved Wayfinding & Menu Logic
+ * Handles the hamburger menu and the 'active' class for nav links
+ */
 function handleNavigation() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const links = document.querySelectorAll('.nav-links a');
 
-    // 1. Improved Wayfinding Logic
-    // Uses .includes() to handle sub-pages or parameters correctly
+    // Safety check: only proceed if these elements exist on the page
+    if (!hamburger || !navLinks) return;
+
+    // Wayfinding Logic
     const currentPath = window.location.pathname;
-
     links.forEach(link => {
-           link.classList.remove('active');
+        link.classList.remove('active');
+        const linkHref = link.getAttribute('href');
 
-        // Add active class if the href matches the current path
-        // Default to home if path is empty or just '/'
-        if (link.getAttribute('href') === currentPath.split('/').pop() ||
-            (currentPath === '/' && link.getAttribute('href') === 'index.html')) {
+        // Check if the current path matches the link href
+        if (currentPath.endsWith(linkHref) || (currentPath === '/' && linkHref === 'index.html')) {
             link.classList.add('active');
         }
     });
 
-    // 2. Responsive Menu Logic with Accessibility
+    // Responsive Menu Toggle
     hamburger.addEventListener('click', () => {
         const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
         navLinks.classList.toggle('open');
         hamburger.setAttribute('aria-expanded', !isExpanded);
-
-      
         hamburger.classList.toggle('is-active');
     });
 
-    // Close menu when a link is clicked (useful for mobile UX)
+    // Close menu when a link is clicked (improves mobile UX)
     links.forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('open');
@@ -41,7 +42,9 @@ function handleNavigation() {
     });
 }
 
-/* This updates Footer Dates */
+/**
+ * 2. Updates Footer Dates
+ */
 function setFooterYear() {
     const yearSpan = document.getElementById('currentyear');
     const lastModified = document.getElementById('lastModified');
@@ -55,7 +58,9 @@ function setFooterYear() {
     }
 }
 
-/* Simple Local Storage Greeting (Criterion Integration) */
+/**
+ * 3. Local Storage Greeting
+ */
 function initWelcomeMessage() {
     const messageContainer = document.getElementById('local-storage-message');
     if (!messageContainer) return;
@@ -64,7 +69,7 @@ function initWelcomeMessage() {
     const now = Date.now();
 
     if (lastVisit) {
-        const daysSince = Math.floor((now - lastVisit) / (1000 * 60 * 60 * 24));
+        const daysSince = Math.floor((now - Number(lastVisit)) / (1000 * 60 * 60 * 24));
         if (daysSince > 0) {
             const welcomeP = document.createElement('p');
             welcomeP.textContent = `Welcome back! It's been ${daysSince} day(s) since your last visit.`;
@@ -73,17 +78,21 @@ function initWelcomeMessage() {
         }
     }
 
-    localStorage.setItem('last-visit', now);
+    localStorage.setItem('last-visit', now.toString());
 }
 
-/* Initialize */
+/**
+ * 4. Main Initialization
+ */
 document.addEventListener('DOMContentLoaded', () => {
     handleNavigation();
     setFooterYear();
     initWelcomeMessage();
 
-    
-    if (document.body.id === 'vendors-page') {
+    // Check if we are on the vendors page to load vendor data
+    // Matches the <body id="vendors-page"> in your HTML
+    if (document.getElementById('vendors-page')) {
         initVendorDirectory();
     }
 });
+
