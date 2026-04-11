@@ -3,10 +3,17 @@ let allVendors = [];
 
 function displayVendors(vendors) {
     const vendorList = document.getElementById('vendor-list');
-    // This effectively removes the "Loading..." message by replacing innerHTML
+
+    // Updated map function to include width and height for images
     vendorList.innerHTML = vendors.map(vendor => `
         <div class="vendor-card">
-            <img src="${vendor.logo_url || 'images/placeholder.png'}" alt="${vendor.name}" loading="lazy">
+            <img 
+                src="${vendor.logo_url || 'images/placeholder.png'}" 
+                alt="${vendor.name} logo" 
+                loading="lazy" 
+                width="300" 
+                height="200"
+            >
             <h3>${vendor.name}</h3>
             <p class="vendor-type">Type: ${vendor.type}</p>
             <p class="vendor-location">📍 ${vendor.location}</p>
