@@ -21,14 +21,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preload" as="style"
+    <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap"
-        onload="this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap">
-    </noscript>
+        rel="stylesheet">
 
+    <link rel="stylesheet" href="styles/small.css" media="screen and (max-width: 600px)">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
@@ -51,7 +48,7 @@
     <main>
         <section class="hero">
             <img src="images/hero-bg.webp" alt="Elegant Aso-Ebi fabric and fashion background"
-                class="hero-background-img" loading="eager" fetchpriority="high" width="1200" height="450">
+                class="hero-background-img" loading="eager" fetchpriority="high" width="1200" height="0">
             <div class="hero-text-overlay">
                 <h1>Connect. Style. Celebrate.</h1>
                 <p>Simplifying Aso-Ebi coordination and inspiring your next traditional look.</p>
@@ -69,14 +66,12 @@
                 <p>Browse our curated collection of contemporary Nigerian fashion.</p>
                 <div class="style-cards-container">
                     <div class="style-card">
-                        <img src="images/modern.webp" alt="Contemporary Iro and Buba style" loading="lazy" width="700"
-                            height="864">
+                        <img src="images/modern.webp" alt="Contemporary Iro and Buba style" loading="lazy" width="700" height="864">
                         <h3>Modern Iro & Buba</h3>
                         <p>Elegance refined. See the latest Gele and accessory pairings.</p>
                     </div>
                     <div class="style-card">
-                        <img src="images/agbada.webp" alt="Stylish Agbada for men" loading="lazy" width="700"
-                            height="864">
+                        <img src="images/agbada.webp" alt="Stylish Agbada for men" loading="lazy" width="700" height="864">
                         <h3>Statement Agbada</h3>
                         <p>Bold designs and luxurious fabrics for the gentleman.</p>
                     </div>
@@ -118,7 +113,7 @@
         </p>
     </footer>
 
-    <script src="scripts/main.js" type="module" defer></script>
+    <script src="scripts/main.js" type="module"></script>
 </body>
 
 </html>
